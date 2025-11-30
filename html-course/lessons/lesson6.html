@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6: HTML Links</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            line-height: 1.8;
+            color: #333;
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #764ba2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .code-block .tag { color: #d73a49; font-weight: bold; }
+        .code-block .attr { color: #6f42c1; }
+        .code-block .value { color: #032f62; }
+        .code-block .text { color: #24292e; }
+        .info-box {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .tip {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .side-by-side {
+            display: table;
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: separate;
+            border-spacing: 15px 0;
+        }
+        .side-by-side .code-column {
+            display: table-cell;
+            width: 50%;
+            vertical-align: top;
+        }
+        .side-by-side .output-column {
+            display: table-cell;
+            width: 50%;
+            vertical-align: top;
+        }
+        .side-by-side h4 {
+            color: #667eea;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .output-box {
+            background-color: #fff;
+            border: 2px solid #667eea;
+            padding: 15px;
+            border-radius: 5px;
+            min-height: 100px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #764ba2;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lesson 6: HTML Links</h1>
+    
+    <h2>What are HTML Links?</h2>
+    <p>HTML links (also called hyperlinks) allow users to click and navigate from one page to another. Links are found in nearly all web pages and are what makes the web a "web"!</p>
+
+    <div class="info-box">
+        <strong>Key Points:</strong>
+        <ul>
+            <li>Links are created using the <strong>&lt;a&gt;</strong> (anchor) tag</li>
+            <li>The <strong>href</strong> attribute specifies the destination</li>
+            <li>Links can point to web pages, files, email addresses, or locations on the same page</li>
+            <li>The link text is what users see and click on</li>
+        </ul>
+    </div>
+
+    <h2>Basic Link Syntax</h2>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"https://www.example.com"</span><span class="tag">&gt;</span><span class="text">Visit Example</span><span class="tag">&lt;/a&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <a href="https://www.example.com">Visit Example</a>
+            </div>
+        </div>
+    </div>
+
+    <h2>Types of Links</h2>
+
+    <h3>1. External Links</h3>
+    <p>Links to other websites (use full URL):</p>
+
+    <div class="code-block">
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"https://www.google.com"</span><span class="tag">&gt;</span><span class="text">Go to Google</span><span class="tag">&lt;/a&gt;</span>
+    </div>
+
+    <h3>2. Internal Links</h3>
+    <p>Links to other pages on your own website:</p>
+
+    <div class="code-block">
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"about.html"</span><span class="tag">&gt;</span><span class="text">About Us</span><span class="tag">&lt;/a&gt;</span><br>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"contact.html"</span><span class="tag">&gt;</span><span class="text">Contact</span><span class="tag">&lt;/a&gt;</span>
+    </div>
+
+    <h3>3. Anchor Links (Jump Links)</h3>
+    <p>Links to a specific section on the same page:</p>
+
+    <div class="code-block">
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"#section2"</span><span class="tag">&gt;</span><span class="text">Jump to Section 2</span><span class="tag">&lt;/a&gt;</span><br>
+<br>
+<span class="tag">&lt;h2</span> <span class="attr">id</span>=<span class="value">"section2"</span><span class="tag">&gt;</span><span class="text">Section 2</span><span class="tag">&lt;/h2&gt;</span>
+    </div>
+
+    <h3>4. Email Links</h3>
+    <p>Links that open the user's email program:</p>
+
+    <div class="code-block">
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"mailto:someone@example.com"</span><span class="tag">&gt;</span><span class="text">Send Email</span><span class="tag">&lt;/a&gt;</span>
+    </div>
+
+    <h2>Link Attributes</h2>
+
+    <h3>The target Attribute</h3>
+    <p>Specifies where to open the linked document:</p>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"https://www.example.com"</span> <span class="attr">target</span>=<span class="value">"_blank"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">Open in New Tab</span><br>
+<span class="tag">&lt;/a&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <a href="https://www.example.com" target="_blank">Open in New Tab</a>
+                <p style="font-size: 0.9em; color: #666; margin-top: 10px;">(This link opens in a new tab/window)</p>
+            </div>
+        </div>
+    </div>
+
+    <table>
+        <tr>
+            <th>Target Value</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>_blank</td>
+            <td>Opens in a new window or tab</td>
+        </tr>
+        <tr>
+            <td>_self</td>
+            <td>Opens in the same frame (default)</td>
+        </tr>
+        <tr>
+            <td>_parent</td>
+            <td>Opens in the parent frame</td>
+        </tr>
+        <tr>
+            <td>_top</td>
+            <td>Opens in the full body of the window</td>
+        </tr>
+    </table>
+
+    <h3>The title Attribute</h3>
+    <p>Adds a tooltip that appears when you hover over the link:</p>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"page.html"</span> <span class="attr">title</span>=<span class="value">"Go to our main page"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">Home</span><br>
+<span class="tag">&lt;/a&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <a href="page.html" title="Go to our main page">Home</a>
+                <p style="font-size: 0.9em; color: #666; margin-top: 10px;">(Hover over the link to see the tooltip)</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Link with Image</h2>
+    <p>You can use an image as a link by placing an &lt;img&gt; tag inside an &lt;a&gt; tag:</p>
+
+    <div class="code-block">
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"home.html"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"logo.png"</span> <span class="attr">alt</span>=<span class="value">"Home"</span> <span class="attr">width</span>=<span class="value">"100"</span><span class="tag">&gt;</span><br>
+<span class="tag">&lt;/a&gt;</span>
+    </div>
+
+    <h2>Link to Download Files</h2>
+    <p>Use the <strong>download</strong> attribute to download a file instead of navigating to it:</p>
+
+    <div class="code-block">
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"document.pdf"</span> <span class="attr">download</span><span class="tag">&gt;</span><span class="text">Download PDF</span><span class="tag">&lt;/a&gt;</span>
+    </div>
+
+    <h2>Button-Style Links</h2>
+    <p>You can style links to look like buttons using CSS:</p>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"signup.html"</span> <span class="attr">style</span>=<span class="value">"background-color: #667eea; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">Sign Up Now</span><br>
+<span class="tag">&lt;/a&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <a href="signup.html" style="background-color: #667eea; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Sign Up Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="tip">
+        <strong>💡 Best Practices:</strong>
+        <ul>
+            <li>Use descriptive link text (avoid "click here")</li>
+            <li>Make link text meaningful and tell users where they'll go</li>
+            <li>Use <strong>target="_blank"</strong> carefully - let users decide how to open links</li>
+            <li>Test all your links to make sure they work</li>
+            <li>Use relative URLs for internal pages and absolute URLs for external sites</li>
+        </ul>
+    </div>
+
+    <h2>Link States and Styling</h2>
+    <p>Links can have different states:</p>
+
+    <div class="info-box">
+        <ul>
+            <li><strong>a:link</strong> - Normal, unvisited link (usually blue)</li>
+            <li><strong>a:visited</strong> - Link that user has visited (usually purple)</li>
+            <li><strong>a:hover</strong> - Link when user hovers over it</li>
+            <li><strong>a:active</strong> - Link at the moment it is clicked</li>
+        </ul>
+    </div>
+
+    <h2>Practice Exercise</h2>
+    <div class="info-box">
+        <strong>Try This:</strong>
+        <p>Create a simple navigation menu with:</p>
+        <ul>
+            <li>5 internal links (Home, About, Services, Blog, Contact)</li>
+            <li>At least one external link that opens in a new tab</li>
+            <li>An email link</li>
+            <li>A jump link to a section lower on the same page</li>
+            <li>Add title attributes to all links</li>
+        </ul>
+    </div>
+
+</body>
+</html>
+

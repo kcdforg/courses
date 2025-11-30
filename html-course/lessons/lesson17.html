@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 17: Final Project</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            line-height: 1.8;
+            color: #333;
+        }
+        h1 { color: #667eea; margin-bottom: 20px; }
+        h2 { color: #764ba2; margin-top: 30px; margin-bottom: 15px; }
+        h3 { color: #667eea; margin-top: 20px; }
+        .info-box {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .project-box {
+            background-color: #f8f9fa;
+            border: 2px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .checklist {
+            background-color: #fff;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .success-box {
+            background-color: #d4edda;
+            border: 2px solid #28a745;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        ul { margin-left: 20px; }
+        li { margin: 8px 0; }
+    </style>
+</head>
+<body>
+    <h1>Lesson 17: Final Project - Build Your Portfolio Website</h1>
+    
+    <h2>Project Overview</h2>
+    <p>Congratulations on completing all 16 lessons! Now it's time to put everything together and create your own personal portfolio website.</p>
+
+    <div class="project-box">
+        <h3>🎯 Project Goal</h3>
+        <p>Create a <strong>multi-page personal portfolio website</strong> that showcases what you've learned and tells your story.</p>
+    </div>
+
+    <h2>Required Pages</h2>
+
+    <h3>1. Home Page (index.html)</h3>
+    <div class="info-box">
+        <strong>Must Include:</strong>
+        <ul>
+            <li>Header with your name and navigation menu</li>
+            <li>Welcome section with H1 heading</li>
+            <li>Brief introduction about yourself</li>
+            <li>Image of yourself or avatar</li>
+            <li>Links to other pages</li>
+            <li>Footer with copyright and contact info</li>
+        </ul>
+    </div>
+
+    <h3>2. About Page (about.html)</h3>
+    <div class="info-box">
+        <strong>Must Include:</strong>
+        <ul>
+            <li>Detailed bio with multiple paragraphs</li>
+            <li>Your hobbies (unordered list)</li>
+            <li>Your skills (ordered list)</li>
+            <li>Educational background</li>
+            <li>Personal interests</li>
+        </ul>
+    </div>
+
+    <h3>3. Projects/Gallery Page (projects.html)</h3>
+    <div class="info-box">
+        <strong>Must Include:</strong>
+        <ul>
+            <li>At least 3 project showcases</li>
+            <li>Images for each project</li>
+            <li>Description of each project</li>
+            <li>Use sections or articles for each project</li>
+        </ul>
+    </div>
+
+    <h3>4. Contact Page (contact.html)</h3>
+    <div class="info-box">
+        <strong>Must Include:</strong>
+        <ul>
+            <li>Contact form with name, email, and message fields</li>
+            <li>Radio buttons for reason (feedback, question, collaboration)</li>
+            <li>Checkbox for newsletter subscription</li>
+            <li>Submit button</li>
+            <li>Your social media links (if any)</li>
+        </ul>
+    </div>
+
+    <h2>Technical Requirements</h2>
+
+    <div class="checklist">
+        <h3>✓ HTML Structure Checklist</h3>
+        <ul>
+            <li>✓ Valid HTML5 structure (DOCTYPE, html, head, body)</li>
+            <li>✓ Proper meta tags (charset, viewport, description)</li>
+            <li>✓ Meaningful page titles for each page</li>
+            <li>✓ Semantic HTML (header, nav, main, section, article, footer)</li>
+            <li>✓ Consistent navigation on all pages</li>
+        </ul>
+
+        <h3>✓ Content Requirements</h3>
+        <ul>
+            <li>✓ At least 10 different HTML tags used</li>
+            <li>✓ Proper heading hierarchy (H1 → H2 → H3)</li>
+            <li>✓ At least 5 images with alt text</li>
+            <li>✓ At least 1 table</li>
+            <li>✓ Multiple lists (ordered and unordered)</li>
+            <li>✓ At least 10 internal and external links</li>
+            <li>✓ A complete contact form</li>
+        </ul>
+
+        <h3>✓ Best Practices</h3>
+        <ul>
+            <li>✓ All images have descriptive alt text</li>
+            <li>✓ All form inputs have labels</li>
+            <li>✓ Use HTML entities for special characters</li>
+            <li>✓ Descriptive link text (no "click here")</li>
+            <li>✓ Code is properly indented and organized</li>
+            <li>✓ Valid HTML (no unclosed tags)</li>
+        </ul>
+    </div>
+
+    <h2>Bonus Features (Optional)</h2>
+
+    <div class="info-box">
+        <strong>Extra Credit:</strong>
+        <ul>
+            <li>Add a table showing your weekly schedule or skills</li>
+            <li>Embed a YouTube video on your projects page</li>
+            <li>Add an iframe with Google Maps to your location</li>
+            <li>Include audio file (favorite song or introduction)</li>
+            <li>Create a nested list for complex information</li>
+            <li>Add Open Graph meta tags for social sharing</li>
+            <li>Use div and span for additional styling hooks</li>
+            <li>Include HTML entities and special symbols</li>
+        </ul>
+    </div>
+
+    <h2>Suggested Page Structure</h2>
+
+    <div class="project-box">
+        <h3>File Organization</h3>
+        <pre style="background: #f4f4f4; padding: 15px; border-radius: 5px;">
+portfolio/
+├── index.html
+├── about.html
+├── projects.html
+├── contact.html
+├── images/
+│   ├── profile.jpg
+│   ├── project1.jpg
+│   ├── project2.jpg
+│   └── project3.jpg
+└── README.txt (optional)
+        </pre>
+    </div>
+
+    <h2>Project Timeline</h2>
+
+    <div class="info-box">
+        <strong>Recommended Steps:</strong>
+        <ol>
+            <li><strong>Day 1:</strong> Plan your content and structure</li>
+            <li><strong>Day 2:</strong> Create index.html and about.html</li>
+            <li><strong>Day 3:</strong> Create projects.html and contact.html</li>
+            <li><strong>Day 4:</strong> Add images and refine content</li>
+            <li><strong>Day 5:</strong> Test all links, forms, and validate HTML</li>
+            <li><strong>Day 6:</strong> Final review and improvements</li>
+        </ol>
+    </div>
+
+    <h2>Evaluation Criteria</h2>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+        <tr style="background-color: #764ba2; color: white;">
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Category</th>
+            <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Points</th>
+        </tr>
+        <tr>
+            <td style="padding: 12px; border: 1px solid #ddd;">HTML Structure & Semantics</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">25 points</td>
+        </tr>
+        <tr>
+            <td style="padding: 12px; border: 1px solid #ddd;">Content Quality & Completeness</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">25 points</td>
+        </tr>
+        <tr>
+            <td style="padding: 12px; border: 1px solid #ddd;">Proper Use of Elements</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">20 points</td>
+        </tr>
+        <tr>
+            <td style="padding: 12px; border: 1px solid #ddd;">Accessibility & Best Practices</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">15 points</td>
+        </tr>
+        <tr>
+            <td style="padding: 12px; border: 1px solid #ddd;">Code Quality & Organization</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">15 points</td>
+        </tr>
+        <tr style="font-weight: bold;">
+            <td style="padding: 12px; border: 1px solid #ddd;">Total</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">100 points</td>
+        </tr>
+    </table>
+
+    <h2>Tips for Success</h2>
+
+    <div class="info-box">
+        <ul>
+            <li><strong>Start Simple:</strong> Get basic structure working first, then add details</li>
+            <li><strong>Test Often:</strong> Check your pages in a browser frequently</li>
+            <li><strong>Validate:</strong> Use W3C HTML Validator to check for errors</li>
+            <li><strong>Be Creative:</strong> Make it personal and unique to you</li>
+            <li><strong>Review Lessons:</strong> Go back to lessons when you forget syntax</li>
+            <li><strong>Ask for Help:</strong> Don't hesitate to review documentation</li>
+        </ul>
+    </div>
+
+    <div class="success-box">
+        <h2 style="color: #28a745; margin-top: 0;">🎉 Congratulations!</h2>
+        <p style="font-size: 1.2em; margin: 15px 0;">You've completed the HTML course!</p>
+        <p>You now have the fundamental skills to create web pages. This final project is your opportunity to showcase everything you've learned.</p>
+        <p style="margin-top: 20px;"><strong>Remember:</strong> Every expert web developer started exactly where you are now. Keep practicing, stay curious, and keep building!</p>
+        <p style="font-size: 1.5em; margin-top: 20px;">Good luck with your project! 🚀</p>
+    </div>
+
+    <h2>Next Steps After Completion</h2>
+
+    <div class="info-box">
+        <strong>Continue Your Learning:</strong>
+        <ul>
+            <li><strong>CSS:</strong> Style your HTML to make it beautiful</li>
+            <li><strong>JavaScript:</strong> Add interactivity to your pages</li>
+            <li><strong>Responsive Design:</strong> Make sites work on all devices</li>
+            <li><strong>Web Frameworks:</strong> Learn modern development tools</li>
+            <li><strong>Build Projects:</strong> Create real websites for practice</li>
+        </ul>
+    </div>
+
+</body>
+</html>
+

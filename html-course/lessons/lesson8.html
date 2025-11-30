@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 8: HTML Lists</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            line-height: 1.8;
+            color: #333;
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #764ba2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        h3 {
+            color: #667eea;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .code-block .tag { color: #d73a49; font-weight: bold; }
+        .code-block .text { color: #24292e; }
+        .info-box {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .tip {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .side-by-side {
+            display: table;
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: separate;
+            border-spacing: 15px 0;
+        }
+        .side-by-side .code-column {
+            display: table-cell;
+            width: 50%;
+            vertical-align: top;
+        }
+        .side-by-side .output-column {
+            display: table-cell;
+            width: 50%;
+            vertical-align: top;
+        }
+        .side-by-side h4 {
+            color: #667eea;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .output-box {
+            background-color: #fff;
+            border: 2px solid #667eea;
+            padding: 15px;
+            border-radius: 5px;
+            min-height: 100px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #764ba2;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lesson 8: HTML Lists</h1>
+    
+    <h2>What are HTML Lists?</h2>
+    <p>HTML lists allow web developers to group related items together. There are three types of lists in HTML: unordered lists, ordered lists, and description lists.</p>
+
+    <div class="info-box">
+        <strong>Types of Lists:</strong>
+        <ul>
+            <li><strong>Unordered Lists</strong> - Use bullets (•)</li>
+            <li><strong>Ordered Lists</strong> - Use numbers or letters</li>
+            <li><strong>Description Lists</strong> - Terms with descriptions</li>
+        </ul>
+    </div>
+
+    <h2>Unordered Lists (&lt;ul&gt;)</h2>
+    <p>An unordered list starts with the <strong>&lt;ul&gt;</strong> tag. Each list item starts with the <strong>&lt;li&gt;</strong> tag. List items are marked with bullets.</p>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;ul&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Coffee</span><span class="tag">&lt;/li&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Tea</span><span class="tag">&lt;/li&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Milk</span><span class="tag">&lt;/li&gt;</span><br>
+<span class="tag">&lt;/ul&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <ul>
+                    <li>Coffee</li>
+                    <li>Tea</li>
+                    <li>Milk</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <h2>Ordered Lists (&lt;ol&gt;)</h2>
+    <p>An ordered list starts with the <strong>&lt;ol&gt;</strong> tag. Each list item starts with the <strong>&lt;li&gt;</strong> tag. List items are marked with numbers by default.</p>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;ol&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">First step</span><span class="tag">&lt;/li&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Second step</span><span class="tag">&lt;/li&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Third step</span><span class="tag">&lt;/li&gt;</span><br>
+<span class="tag">&lt;/ol&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <ol>
+                    <li>First step</li>
+                    <li>Second step</li>
+                    <li>Third step</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <h2>Ordered List Types</h2>
+    <p>You can change the numbering style using the <strong>type</strong> attribute:</p>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;ol</span> <span class="attr">type</span>=<span class="value">"A"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Item A</span><span class="tag">&lt;/li&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Item B</span><span class="tag">&lt;/li&gt;</span><br>
+<span class="tag">&lt;/ol&gt;</span><br>
+<br>
+<span class="tag">&lt;ol</span> <span class="attr">type</span>=<span class="value">"i"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Item i</span><span class="tag">&lt;/li&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Item ii</span><span class="tag">&lt;/li&gt;</span><br>
+<span class="tag">&lt;/ol&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <ol type="A">
+                    <li>Item A</li>
+                    <li>Item B</li>
+                </ol>
+                <ol type="i">
+                    <li>Item i</li>
+                    <li>Item ii</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <table>
+        <tr>
+            <th>Type Value</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>type="1"</td>
+            <td>Numbers (default)</td>
+            <td>1, 2, 3...</td>
+        </tr>
+        <tr>
+            <td>type="A"</td>
+            <td>Uppercase letters</td>
+            <td>A, B, C...</td>
+        </tr>
+        <tr>
+            <td>type="a"</td>
+            <td>Lowercase letters</td>
+            <td>a, b, c...</td>
+        </tr>
+        <tr>
+            <td>type="I"</td>
+            <td>Uppercase Roman numerals</td>
+            <td>I, II, III...</td>
+        </tr>
+        <tr>
+            <td>type="i"</td>
+            <td>Lowercase Roman numerals</td>
+            <td>i, ii, iii...</td>
+        </tr>
+    </table>
+
+    <h2>Starting Number</h2>
+    <p>Use the <strong>start</strong> attribute to begin counting from a specific number:</p>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;ol</span> <span class="attr">start</span>=<span class="value">"5"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Fifth item</span><span class="tag">&lt;/li&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Sixth item</span><span class="tag">&lt;/li&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Seventh item</span><span class="tag">&lt;/li&gt;</span><br>
+<span class="tag">&lt;/ol&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <ol start="5">
+                    <li>Fifth item</li>
+                    <li>Sixth item</li>
+                    <li>Seventh item</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <h2>Nested Lists</h2>
+    <p>Lists can be nested inside other lists to create sublists:</p>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;ul&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Fruits</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ul&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Apple</span><span class="tag">&lt;/li&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Orange</span><span class="tag">&lt;/li&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/ul&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/li&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Vegetables</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ul&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Carrot</span><span class="tag">&lt;/li&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Broccoli</span><span class="tag">&lt;/li&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/ul&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/li&gt;</span><br>
+<span class="tag">&lt;/ul&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <ul>
+                    <li>Fruits
+                        <ul>
+                            <li>Apple</li>
+                            <li>Orange</li>
+                        </ul>
+                    </li>
+                    <li>Vegetables
+                        <ul>
+                            <li>Carrot</li>
+                            <li>Broccoli</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <h2>Description Lists (&lt;dl&gt;)</h2>
+    <p>Description lists are used to display terms and their descriptions:</p>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;dl&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;dt&gt;</span><span class="text">HTML</span><span class="tag">&lt;/dt&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;dd&gt;</span><span class="text">HyperText Markup Language</span><span class="tag">&lt;/dd&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;dt&gt;</span><span class="text">CSS</span><span class="tag">&lt;/dt&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;dd&gt;</span><span class="text">Cascading Style Sheets</span><span class="tag">&lt;/dd&gt;</span><br>
+<span class="tag">&lt;/dl&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <dl>
+                    <dt><strong>HTML</strong></dt>
+                    <dd>HyperText Markup Language</dd>
+                    <dt><strong>CSS</strong></dt>
+                    <dd>Cascading Style Sheets</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <strong>Description List Tags:</strong>
+        <ul>
+            <li><strong>&lt;dl&gt;</strong> - Defines the description list</li>
+            <li><strong>&lt;dt&gt;</strong> - Defines a term (name)</li>
+            <li><strong>&lt;dd&gt;</strong> - Defines the description of the term</li>
+        </ul>
+    </div>
+
+    <h2>Practical Example: Recipe</h2>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;h3&gt;</span><span class="text">Pancake Recipe</span><span class="tag">&lt;/h3&gt;</span><br>
+<span class="tag">&lt;h4&gt;</span><span class="text">Ingredients:</span><span class="tag">&lt;/h4&gt;</span><br>
+<span class="tag">&lt;ul&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">2 cups flour</span><span class="tag">&lt;/li&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">2 eggs</span><span class="tag">&lt;/li&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">1 cup milk</span><span class="tag">&lt;/li&gt;</span><br>
+<span class="tag">&lt;/ul&gt;</span><br>
+<span class="tag">&lt;h4&gt;</span><span class="text">Instructions:</span><span class="tag">&lt;/h4&gt;</span><br>
+<span class="tag">&lt;ol&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Mix ingredients</span><span class="tag">&lt;/li&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Heat pan</span><span class="tag">&lt;/li&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Cook pancakes</span><span class="tag">&lt;/li&gt;</span><br>
+<span class="tag">&lt;/ol&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <h3 style="margin-top: 0;">Pancake Recipe</h3>
+                <h4>Ingredients:</h4>
+                <ul>
+                    <li>2 cups flour</li>
+                    <li>2 eggs</li>
+                    <li>1 cup milk</li>
+                </ul>
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Mix ingredients</li>
+                    <li>Heat pan</li>
+                    <li>Cook pancakes</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="tip">
+        <strong>💡 Best Practices:</strong>
+        <ul>
+            <li>Use unordered lists when the order doesn't matter</li>
+            <li>Use ordered lists for sequential steps or rankings</li>
+            <li>Keep list items concise and parallel in structure</li>
+            <li>Don't use lists just for indentation - use CSS instead</li>
+            <li>Always close your &lt;li&gt; tags</li>
+        </ul>
+    </div>
+
+    <h2>Styling Lists with CSS</h2>
+    <p>You can customize list appearance using CSS:</p>
+
+    <div class="code-block">
+<span class="tag">&lt;ul</span> <span class="attr">style</span>=<span class="value">"list-style-type: square;"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">Square bullets</span><span class="tag">&lt;/li&gt;</span><br>
+<span class="tag">&lt;/ul&gt;</span><br>
+<br>
+<span class="tag">&lt;ul</span> <span class="attr">style</span>=<span class="value">"list-style-type: none;"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;</span><span class="text">No bullets</span><span class="tag">&lt;/li&gt;</span><br>
+<span class="tag">&lt;/ul&gt;</span>
+    </div>
+
+    <h2>Practice Exercise</h2>
+    <div class="info-box">
+        <strong>Try This:</strong>
+        <p>Create a page about your school with:</p>
+        <ul>
+            <li>An unordered list of school facilities</li>
+            <li>An ordered list of class periods/schedule</li>
+            <li>A nested list showing subjects and their topics</li>
+            <li>A description list of teachers and their subjects</li>
+        </ul>
+    </div>
+
+</body>
+</html>
+

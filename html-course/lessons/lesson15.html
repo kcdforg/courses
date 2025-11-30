@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 15: Web Accessibility</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            line-height: 1.8;
+            color: #333;
+        }
+        h1 { color: #667eea; margin-bottom: 20px; }
+        h2 { color: #764ba2; margin-top: 30px; margin-bottom: 15px; }
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .code-block .tag { color: #d73a49; font-weight: bold; }
+        .code-block .attr { color: #6f42c1; }
+        .code-block .value { color: #032f62; }
+        .code-block .text { color: #24292e; }
+        .info-box {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .tip {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lesson 15: Web Accessibility (A11y)</h1>
+    
+    <h2>What is Web Accessibility?</h2>
+    <p>Web accessibility means making websites usable by everyone, including people with disabilities (visual, auditory, motor, cognitive).</p>
+
+    <div class="info-box">
+        <strong>Why It Matters:</strong>
+        <ul>
+            <li>15% of world population has some form of disability</li>
+            <li>Legal requirement in many countries</li>
+            <li>Better user experience for everyone</li>
+            <li>Improves SEO</li>
+        </ul>
+    </div>
+
+    <h2>1. Alternative Text for Images</h2>
+    <p>Screen readers use alt text to describe images to visually impaired users.</p>
+
+    <div class="code-block">
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"dog.jpg"</span> <span class="attr">alt</span>=<span class="value">"Golden retriever playing in park"</span><span class="tag">&gt;</span>
+    </div>
+
+    <div class="tip">
+        <strong>Alt Text Tips:</strong>
+        <ul>
+            <li>Be descriptive but concise</li>
+            <li>Don't say "image of" or "picture of"</li>
+            <li>Empty alt="" for decorative images</li>
+            <li>Include text if image contains text</li>
+        </ul>
+    </div>
+
+    <h2>2. Proper Labels for Forms</h2>
+    <p>Always use &lt;label&gt; tags with form inputs:</p>
+
+    <div class="code-block">
+<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"email"</span><span class="tag">&gt;</span><span class="text">Email Address:</span><span class="tag">&lt;/label&gt;</span><br>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"email"</span> <span class="attr">id</span>=<span class="value">"email"</span> <span class="attr">name</span>=<span class="value">"email"</span><span class="tag">&gt;</span>
+    </div>
+
+    <h2>3. Semantic HTML</h2>
+    <p>Use meaningful tags instead of generic divs:</p>
+
+    <div class="code-block">
+<span class="text">✗ Bad:</span><br>
+<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"header"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/div&gt;</span><br>
+<br>
+<span class="text">✓ Good:</span><br>
+<span class="tag">&lt;header&gt;</span>...<span class="tag">&lt;/header&gt;</span>
+    </div>
+
+    <h2>4. Keyboard Navigation</h2>
+    <p>Ensure all interactive elements can be accessed with keyboard (Tab key):</p>
+
+    <div class="code-block">
+<span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="value">"submit"</span><span class="tag">&gt;</span><span class="text">Submit</span><span class="tag">&lt;/button&gt;</span><br>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"page.html"</span><span class="tag">&gt;</span><span class="text">Link</span><span class="tag">&lt;/a&gt;</span>
+    </div>
+
+    <h2>5. Color Contrast</h2>
+    <p>Ensure sufficient contrast between text and background:</p>
+    
+    <div class="info-box">
+        <strong>WCAG Standards:</strong>
+        <ul>
+            <li>Normal text: 4.5:1 contrast ratio</li>
+            <li>Large text: 3:1 contrast ratio</li>
+            <li>Don't rely on color alone to convey information</li>
+        </ul>
+    </div>
+
+    <h2>6. Language Attribute</h2>
+    <p>Helps screen readers pronounce content correctly:</p>
+
+    <div class="code-block">
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="value">"en"</span><span class="tag">&gt;</span>
+    </div>
+
+    <h2>7. Skip Links</h2>
+    <p>Allow keyboard users to skip repetitive navigation:</p>
+
+    <div class="code-block">
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"#main-content"</span> <span class="attr">class</span>=<span class="value">"skip-link"</span><span class="tag">&gt;</span><span class="text">Skip to main content</span><span class="tag">&lt;/a&gt;</span><br>
+<br>
+<span class="tag">&lt;main</span> <span class="attr">id</span>=<span class="value">"main-content"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">Content...</span><br>
+<span class="tag">&lt;/main&gt;</span>
+    </div>
+
+    <h2>8. ARIA Attributes (Advanced)</h2>
+    <p>ARIA (Accessible Rich Internet Applications) provides extra information for assistive technologies:</p>
+
+    <div class="code-block">
+<span class="tag">&lt;button</span> <span class="attr">aria-label</span>=<span class="value">"Close dialog"</span><span class="tag">&gt;</span><span class="text">X</span><span class="tag">&lt;/button&gt;</span><br>
+<br>
+<span class="tag">&lt;nav</span> <span class="attr">aria-label</span>=<span class="value">"Main navigation"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/nav&gt;</span>
+    </div>
+
+    <h2>Accessibility Checklist</h2>
+
+    <div class="info-box">
+        <strong>✓ Essential Checks:</strong>
+        <ul>
+            <li>All images have alt text</li>
+            <li>All form inputs have labels</li>
+            <li>Proper heading hierarchy (H1→H2→H3)</li>
+            <li>Sufficient color contrast</li>
+            <li>Keyboard navigation works</li>
+            <li>Links have descriptive text</li>
+            <li>HTML is semantic</li>
+            <li>Language is declared</li>
+            <li>Video has captions/transcripts</li>
+            <li>No content flashes rapidly</li>
+        </ul>
+    </div>
+
+    <h2>Good vs Bad Examples</h2>
+
+    <h3>Links</h3>
+    <div class="code-block">
+<span class="text">✗ Bad: </span><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"..."</span><span class="tag">&gt;</span><span class="text">Click here</span><span class="tag">&lt;/a&gt;</span><br>
+<span class="text">✓ Good: </span><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"..."</span><span class="tag">&gt;</span><span class="text">Read full article about HTML</span><span class="tag">&lt;/a&gt;</span>
+    </div>
+
+    <h3>Buttons</h3>
+    <div class="code-block">
+<span class="text">✗ Bad: </span><span class="tag">&lt;div</span> <span class="attr">onclick</span>=<span class="value">"..."</span><span class="tag">&gt;</span><span class="text">Submit</span><span class="tag">&lt;/div&gt;</span><br>
+<span class="text">✓ Good: </span><span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="value">"submit"</span><span class="tag">&gt;</span><span class="text">Submit</span><span class="tag">&lt;/button&gt;</span>
+    </div>
+
+    <div class="tip">
+        <strong>💡 Remember:</strong>
+        <p>Accessibility benefits everyone - clear structure, good labels, and logical navigation make sites better for all users!</p>
+    </div>
+
+    <h2>Practice Exercise</h2>
+    <div class="info-box">
+        <strong>Try This:</strong>
+        <p>Review your previous projects and add:</p>
+        <ul>
+            <li>Alt text to all images</li>
+            <li>Proper labels to all form fields</li>
+            <li>lang attribute to HTML tag</li>
+            <li>Descriptive link text (no "click here")</li>
+            <li>Test keyboard navigation (Tab key)</li>
+        </ul>
+    </div>
+
+</body>
+</html>
+

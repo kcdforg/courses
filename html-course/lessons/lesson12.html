@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 12: Div & Span</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            line-height: 1.8;
+            color: #333;
+        }
+        h1 { color: #667eea; margin-bottom: 20px; }
+        h2 { color: #764ba2; margin-top: 30px; margin-bottom: 15px; }
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .code-block .tag { color: #d73a49; font-weight: bold; }
+        .code-block .attr { color: #6f42c1; }
+        .code-block .value { color: #032f62; }
+        .code-block .text { color: #24292e; }
+        .info-box {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .tip {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .side-by-side {
+            display: table;
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: separate;
+            border-spacing: 15px 0;
+        }
+        .side-by-side .code-column, .side-by-side .output-column {
+            display: table-cell;
+            width: 50%;
+            vertical-align: top;
+        }
+        .side-by-side h4 { color: #667eea; margin-top: 0; margin-bottom: 10px; }
+        .output-box {
+            background-color: #fff;
+            border: 2px solid #667eea;
+            padding: 15px;
+            border-radius: 5px;
+            min-height: 100px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #764ba2;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lesson 12: Div & Span Elements</h1>
+    
+    <h2>What are Div and Span?</h2>
+    <p>&lt;div&gt; and &lt;span&gt; are generic container elements used to group content for styling or scripting purposes.</p>
+
+    <div class="info-box">
+        <strong>Key Differences:</strong>
+        <ul>
+            <li><strong>&lt;div&gt;</strong> - Block-level element (takes full width, starts new line)</li>
+            <li><strong>&lt;span&gt;</strong> - Inline element (only takes needed width, stays in line)</li>
+        </ul>
+    </div>
+
+    <h2>The &lt;div&gt; Element</h2>
+    <p>A block-level container used to group sections of content.</p>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;div</span> <span class="attr">style</span>=<span class="value">"background-color: lightblue; padding: 10px;"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;h3&gt;</span><span class="text">Title</span><span class="tag">&lt;/h3&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span><span class="text">Content inside div</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="tag">&lt;/div&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <div style="background-color: lightblue; padding: 10px;">
+                    <h3 style="margin: 5px 0;">Title</h3>
+                    <p style="margin: 5px 0;">Content inside div</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>The &lt;span&gt; Element</h2>
+    <p>An inline container used to style part of text or inline content.</p>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;p&gt;</span><span class="text">This is </span><span class="tag">&lt;span</span> <span class="attr">style</span>=<span class="value">"color: red;"</span><span class="tag">&gt;</span><span class="text">important</span><span class="tag">&lt;/span&gt;</span><span class="text"> text.</span><span class="tag">&lt;/p&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <p>This is <span style="color: red;">important</span> text.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Block vs Inline</h2>
+
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>&lt;div&gt; (Block)</th>
+            <th>&lt;span&gt; (Inline)</th>
+        </tr>
+        <tr>
+            <td>Display</td>
+            <td>Takes full width</td>
+            <td>Takes only needed width</td>
+        </tr>
+        <tr>
+            <td>Line Break</td>
+            <td>Starts on new line</td>
+            <td>Stays in line</td>
+        </tr>
+        <tr>
+            <td>Width/Height</td>
+            <td>Can set width & height</td>
+            <td>Cannot set width & height</td>
+        </tr>
+        <tr>
+            <td>Use Case</td>
+            <td>Layout sections</td>
+            <td>Styling inline text</td>
+        </tr>
+    </table>
+
+    <h2>Using Div for Layout</h2>
+
+    <div class="code-block">
+<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"container"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"header"</span><span class="tag">&gt;</span><span class="text">Header</span><span class="tag">&lt;/div&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"content"</span><span class="tag">&gt;</span><span class="text">Main Content</span><span class="tag">&lt;/div&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"footer"</span><span class="tag">&gt;</span><span class="text">Footer</span><span class="tag">&lt;/div&gt;</span><br>
+<span class="tag">&lt;/div&gt;</span>
+    </div>
+
+    <h2>Using Span for Styling</h2>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;p&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">Price: </span><span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="value">"price"</span><span class="tag">&gt;</span><span class="text">$99</span><span class="tag">&lt;/span&gt;</span><br>
+<span class="tag">&lt;/p&gt;</span><br>
+<br>
+<span class="tag">&lt;p&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">Call </span><span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="value">"phone"</span><span class="tag">&gt;</span><span class="text">555-1234</span><span class="tag">&lt;/span&gt;</span><br>
+<span class="tag">&lt;/p&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <p>Price: <span style="font-weight: bold; color: green;">$99</span></p>
+                <p>Call <span style="color: blue; text-decoration: underline;">555-1234</span></p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Classes and IDs</h2>
+    <p>Div and span are often used with class or id attributes for CSS styling:</p>
+
+    <div class="code-block">
+<span class="tag">&lt;div</span> <span class="attr">id</span>=<span class="value">"header"</span> <span class="attr">class</span>=<span class="value">"blue-bg"</span><span class="tag">&gt;</span><span class="text">Header</span><span class="tag">&lt;/div&gt;</span><br>
+<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"card"</span><span class="tag">&gt;</span><span class="text">Card 1</span><span class="tag">&lt;/div&gt;</span><br>
+<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"card"</span><span class="tag">&gt;</span><span class="text">Card 2</span><span class="tag">&lt;/div&gt;</span>
+    </div>
+
+    <h2>Nested Divs</h2>
+
+    <div class="code-block">
+<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"outer"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"inner"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span><span class="text">Nested content</span><span class="tag">&lt;/p&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/div&gt;</span><br>
+<span class="tag">&lt;/div&gt;</span>
+    </div>
+
+    <div class="tip">
+        <strong>💡 Best Practices:</strong>
+        <ul>
+            <li>Use semantic HTML when possible (&lt;header&gt;, &lt;nav&gt;, etc.)</li>
+            <li>Use &lt;div&gt; when no semantic tag fits</li>
+            <li>Use &lt;span&gt; only for inline styling</li>
+            <li>Give meaningful class names</li>
+            <li>Don't overuse - avoid "div soup"</li>
+        </ul>
+    </div>
+
+    <h2>When to Use What</h2>
+
+    <div class="info-box">
+        <strong>Use Semantic Tags:</strong>
+        <ul>
+            <li>&lt;header&gt;, &lt;footer&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;section&gt;</li>
+        </ul>
+        <strong>Use &lt;div&gt; for:</strong>
+        <ul>
+            <li>Generic containers without semantic meaning</li>
+            <li>Layout wrappers</li>
+            <li>Grouping for styling</li>
+        </ul>
+        <strong>Use &lt;span&gt; for:</strong>
+        <ul>
+            <li>Styling part of text</li>
+            <li>Inline elements that need styling</li>
+        </ul>
+    </div>
+
+    <h2>Practice Exercise</h2>
+    <div class="info-box">
+        <strong>Try This:</strong>
+        <p>Create a product card using divs and spans:</p>
+        <ul>
+            <li>Outer &lt;div&gt; as container</li>
+            <li>Inner divs for image, title, description</li>
+            <li>&lt;span&gt; for price with colored styling</li>
+            <li>&lt;span&gt; for "Sale" badge</li>
+        </ul>
+    </div>
+
+</body>
+</html>
+

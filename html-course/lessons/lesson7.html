@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7: HTML Images</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            line-height: 1.8;
+            color: #333;
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #764ba2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .code-block .tag { color: #d73a49; font-weight: bold; }
+        .code-block .attr { color: #6f42c1; }
+        .code-block .value { color: #032f62; }
+        .code-block .text { color: #24292e; }
+        .info-box {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .tip {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .side-by-side {
+            display: table;
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: separate;
+            border-spacing: 15px 0;
+        }
+        .side-by-side .code-column {
+            display: table-cell;
+            width: 50%;
+            vertical-align: top;
+        }
+        .side-by-side .output-column {
+            display: table-cell;
+            width: 50%;
+            vertical-align: top;
+        }
+        .side-by-side h4 {
+            color: #667eea;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .output-box {
+            background-color: #fff;
+            border: 2px solid #667eea;
+            padding: 15px;
+            border-radius: 5px;
+            min-height: 100px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #764ba2;
+            color: white;
+        }
+        .demo-img {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lesson 7: HTML Images</h1>
+    
+    <h2>What are HTML Images?</h2>
+    <p>Images can improve the design and appearance of a web page. HTML images are defined with the <strong>&lt;img&gt;</strong> tag.</p>
+
+    <div class="info-box">
+        <strong>Key Points:</strong>
+        <ul>
+            <li>The <strong>&lt;img&gt;</strong> tag is an empty element (no closing tag)</li>
+            <li>The <strong>src</strong> attribute specifies the image file path</li>
+            <li>The <strong>alt</strong> attribute provides alternative text</li>
+            <li>Images can be in various formats: JPG, PNG, GIF, SVG, etc.</li>
+        </ul>
+    </div>
+
+    <h2>Basic Image Syntax</h2>
+
+    <div class="code-block">
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"image.jpg"</span> <span class="attr">alt</span>=<span class="value">"Description of image"</span><span class="tag">&gt;</span>
+    </div>
+
+    <h2>Required Attributes</h2>
+
+    <h3>The src Attribute</h3>
+    <p>The <strong>src</strong> (source) attribute specifies the path to the image:</p>
+
+    <div class="code-block">
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"photo.jpg"</span> <span class="attr">alt</span>=<span class="value">"My Photo"</span><span class="tag">&gt;</span><br>
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"images/logo.png"</span> <span class="attr">alt</span>=<span class="value">"Company Logo"</span><span class="tag">&gt;</span><br>
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"https://www.example.com/pic.jpg"</span> <span class="attr">alt</span>=<span class="value">"External Image"</span><span class="tag">&gt;</span>
+    </div>
+
+    <h3>The alt Attribute</h3>
+    <p>The <strong>alt</strong> attribute provides alternative text if the image cannot be displayed. It's also important for accessibility (screen readers):</p>
+
+    <div class="info-box">
+        <strong>Why alt is important:</strong>
+        <ul>
+            <li>Helps visually impaired users understand the image</li>
+            <li>Displays if the image fails to load</li>
+            <li>Helps search engines understand the image content</li>
+            <li>Required for valid HTML</li>
+        </ul>
+    </div>
+
+    <h2>Image Size - Width and Height</h2>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"logo.png"</span> <span class="attr">alt</span>=<span class="value">"Logo"</span> <span class="attr">width</span>=<span class="value">"200"</span> <span class="attr">height</span>=<span class="value">"100"</span><span class="tag">&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <div class="demo-img" style="width: 200px; height: 100px;">Logo Image</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tip">
+        <strong>💡 Note:</strong> You can specify size in pixels (px) or percentages (%). It's best to specify both width and height to prevent page flickering while the image loads.
+    </div>
+
+    <h2>Image as a Link</h2>
+    <p>You can make an image clickable by wrapping it in an &lt;a&gt; tag:</p>
+
+    <div class="code-block">
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"home.html"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"home-icon.png"</span> <span class="attr">alt</span>=<span class="value">"Home"</span> <span class="attr">width</span>=<span class="value">"50"</span><span class="tag">&gt;</span><br>
+<span class="tag">&lt;/a&gt;</span>
+    </div>
+
+    <h2>Image Formats</h2>
+
+    <table>
+        <tr>
+            <th>Format</th>
+            <th>Extension</th>
+            <th>Best For</th>
+        </tr>
+        <tr>
+            <td>JPEG/JPG</td>
+            <td>.jpg, .jpeg</td>
+            <td>Photos, complex images with many colors</td>
+        </tr>
+        <tr>
+            <td>PNG</td>
+            <td>.png</td>
+            <td>Images with transparency, logos, graphics</td>
+        </tr>
+        <tr>
+            <td>GIF</td>
+            <td>.gif</td>
+            <td>Simple animations, icons</td>
+        </tr>
+        <tr>
+            <td>SVG</td>
+            <td>.svg</td>
+            <td>Vector graphics, scalable logos</td>
+        </tr>
+        <tr>
+            <td>WebP</td>
+            <td>.webp</td>
+            <td>Modern format, smaller file size</td>
+        </tr>
+    </table>
+
+    <h2>Image Alignment with CSS</h2>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"photo.jpg"</span> <span class="attr">alt</span>=<span class="value">"Photo"</span> <span class="attr">style</span>=<span class="value">"float: left; margin-right: 10px;"</span><span class="tag">&gt;</span><br>
+<span class="tag">&lt;p&gt;</span><span class="text">Text wraps around image.</span><span class="tag">&lt;/p&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <div class="demo-img" style="width: 80px; height: 80px; float: left; margin-right: 10px; font-size: 12px;">Image</div>
+                <p>Text wraps around the image on the left side.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Responsive Images</h2>
+    <p>Make images responsive so they scale with the page:</p>
+
+    <div class="code-block">
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"photo.jpg"</span> <span class="attr">alt</span>=<span class="value">"Photo"</span> <span class="attr">style</span>=<span class="value">"max-width: 100%; height: auto;"</span><span class="tag">&gt;</span>
+    </div>
+
+    <p>This ensures the image will never be larger than its container and maintains its aspect ratio.</p>
+
+    <h2>Image with Border and Styling</h2>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"photo.jpg"</span> <span class="attr">alt</span>=<span class="value">"Photo"</span> <span class="attr">style</span>=<span class="value">"border: 5px solid #667eea; border-radius: 10px;"</span><span class="tag">&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <div class="demo-img" style="border: 5px solid #667eea; border-radius: 10px;">Styled Image</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Image Maps</h2>
+    <p>Image maps allow you to create clickable areas on an image:</p>
+
+    <div class="code-block">
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"workplace.jpg"</span> <span class="attr">alt</span>=<span class="value">"Workplace"</span> <span class="attr">usemap</span>=<span class="value">"#workmap"</span><span class="tag">&gt;</span><br>
+<br>
+<span class="tag">&lt;map</span> <span class="attr">name</span>=<span class="value">"workmap"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;area</span> <span class="attr">shape</span>=<span class="value">"rect"</span> <span class="attr">coords</span>=<span class="value">"34,44,270,350"</span> <span class="attr">href</span>=<span class="value">"computer.html"</span> <span class="attr">alt</span>=<span class="value">"Computer"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;area</span> <span class="attr">shape</span>=<span class="value">"circle"</span> <span class="attr">coords</span>=<span class="value">"337,300,44"</span> <span class="attr">href</span>=<span class="value">"phone.html"</span> <span class="attr">alt</span>=<span class="value">"Phone"</span><span class="tag">&gt;</span><br>
+<span class="tag">&lt;/map&gt;</span>
+    </div>
+
+    <h2>The &lt;figure&gt; and &lt;figcaption&gt; Elements</h2>
+    <p>Use these semantic elements to add captions to images:</p>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;figure&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"sunset.jpg"</span> <span class="attr">alt</span>=<span class="value">"Sunset"</span> <span class="attr">width</span>=<span class="value">"300"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;figcaption&gt;</span><span class="text">Beautiful sunset</span><span class="tag">&lt;/figcaption&gt;</span><br>
+<span class="tag">&lt;/figure&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <figure style="margin: 0;">
+                    <div class="demo-img" style="width: 200px; margin: 0;">Sunset Image</div>
+                    <figcaption style="margin-top: 5px; font-style: italic; color: #666;">Beautiful sunset</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <h2>Common Image Attributes</h2>
+
+    <table>
+        <tr>
+            <th>Attribute</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>src</td>
+            <td>Specifies the image source</td>
+            <td>src="image.jpg"</td>
+        </tr>
+        <tr>
+            <td>alt</td>
+            <td>Alternative text</td>
+            <td>alt="Description"</td>
+        </tr>
+        <tr>
+            <td>width</td>
+            <td>Image width in pixels</td>
+            <td>width="200"</td>
+        </tr>
+        <tr>
+            <td>height</td>
+            <td>Image height in pixels</td>
+            <td>height="150"</td>
+        </tr>
+        <tr>
+            <td>title</td>
+            <td>Tooltip text on hover</td>
+            <td>title="My photo"</td>
+        </tr>
+        <tr>
+            <td>loading</td>
+            <td>Lazy loading (lazy/eager)</td>
+            <td>loading="lazy"</td>
+        </tr>
+    </table>
+
+    <div class="tip">
+        <strong>💡 Best Practices:</strong>
+        <ul>
+            <li>Always include the <strong>alt</strong> attribute</li>
+            <li>Use descriptive file names (sunset.jpg, not img1.jpg)</li>
+            <li>Optimize images for web (compress file size)</li>
+            <li>Specify width and height to prevent layout shifts</li>
+            <li>Use appropriate image formats for the content</li>
+            <li>Consider using responsive images for mobile devices</li>
+        </ul>
+    </div>
+
+    <h2>Practice Exercise</h2>
+    <div class="info-box">
+        <strong>Try This:</strong>
+        <p>Create a simple photo gallery page with:</p>
+        <ul>
+            <li>At least 4 images with proper alt text</li>
+            <li>Set width and height for each image</li>
+            <li>Make one image a clickable link</li>
+            <li>Add a border or rounded corners to at least one image</li>
+            <li>Use &lt;figure&gt; and &lt;figcaption&gt; for at least one image</li>
+        </ul>
+    </div>
+
+</body>
+</html>
+

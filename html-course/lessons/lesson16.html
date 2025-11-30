@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 16: HTML Entities & Special Characters</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            line-height: 1.8;
+            color: #333;
+        }
+        h1 { color: #667eea; margin-bottom: 20px; }
+        h2 { color: #764ba2; margin-top: 30px; margin-bottom: 15px; }
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .code-block .tag { color: #d73a49; font-weight: bold; }
+        .code-block .text { color: #24292e; }
+        .info-box {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #764ba2;
+            color: white;
+        }
+        .large { font-size: 24px; }
+    </style>
+</head>
+<body>
+    <h1>Lesson 16: HTML Entities & Special Characters</h1>
+    
+    <h2>What are HTML Entities?</h2>
+    <p>HTML entities are used to display special characters that are reserved in HTML or not available on your keyboard.</p>
+
+    <div class="info-box">
+        <strong>Why Use Entities?</strong>
+        <ul>
+            <li>Display reserved HTML characters (&lt;, &gt;, &amp;)</li>
+            <li>Show special symbols (©, ®, €, ™)</li>
+            <li>Add mathematical symbols (×, ÷, ≠)</li>
+            <li>Include accented characters (é, ñ, ü)</li>
+        </ul>
+    </div>
+
+    <h2>Entity Syntax</h2>
+    <p>Entities start with <strong>&amp;</strong> and end with <strong>;</strong></p>
+
+    <div class="code-block">
+<span class="text">Format: &amp;entity_name; or &amp;#entity_number;</span>
+    </div>
+
+    <h2>Reserved Characters</h2>
+    <p>These characters have special meaning in HTML and must be escaped:</p>
+
+    <table>
+        <tr>
+            <th>Character</th>
+            <th>Entity Name</th>
+            <th>Entity Number</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td class="large">&lt;</td>
+            <td>&amp;lt;</td>
+            <td>&amp;#60;</td>
+            <td>Less than</td>
+        </tr>
+        <tr>
+            <td class="large">&gt;</td>
+            <td>&amp;gt;</td>
+            <td>&amp;#62;</td>
+            <td>Greater than</td>
+        </tr>
+        <tr>
+            <td class="large">&amp;</td>
+            <td>&amp;amp;</td>
+            <td>&amp;#38;</td>
+            <td>Ampersand</td>
+        </tr>
+        <tr>
+            <td class="large">&quot;</td>
+            <td>&amp;quot;</td>
+            <td>&amp;#34;</td>
+            <td>Quotation mark</td>
+        </tr>
+        <tr>
+            <td class="large">&apos;</td>
+            <td>&amp;apos;</td>
+            <td>&amp;#39;</td>
+            <td>Apostrophe</td>
+        </tr>
+    </table>
+
+    <h3>Example</h3>
+    <div class="code-block">
+<span class="text">To display: </span><span class="tag">&lt;p&gt;</span><span class="text">Hello</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="text">You write: &amp;lt;p&amp;gt;Hello&amp;lt;/p&amp;gt;</span>
+    </div>
+
+    <h2>Common Symbols</h2>
+
+    <table>
+        <tr>
+            <th>Symbol</th>
+            <th>Entity Name</th>
+            <th>Entity Number</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td class="large">&copy;</td>
+            <td>&amp;copy;</td>
+            <td>&amp;#169;</td>
+            <td>Copyright</td>
+        </tr>
+        <tr>
+            <td class="large">&reg;</td>
+            <td>&amp;reg;</td>
+            <td>&amp;#174;</td>
+            <td>Registered trademark</td>
+        </tr>
+        <tr>
+            <td class="large">&trade;</td>
+            <td>&amp;trade;</td>
+            <td>&amp;#8482;</td>
+            <td>Trademark</td>
+        </tr>
+        <tr>
+            <td class="large">&euro;</td>
+            <td>&amp;euro;</td>
+            <td>&amp;#8364;</td>
+            <td>Euro</td>
+        </tr>
+        <tr>
+            <td class="large">&pound;</td>
+            <td>&amp;pound;</td>
+            <td>&amp;#163;</td>
+            <td>Pound</td>
+        </tr>
+        <tr>
+            <td class="large">&yen;</td>
+            <td>&amp;yen;</td>
+            <td>&amp;#165;</td>
+            <td>Yen</td>
+        </tr>
+        <tr>
+            <td class="large">&cent;</td>
+            <td>&amp;cent;</td>
+            <td>&amp;#162;</td>
+            <td>Cent</td>
+        </tr>
+    </table>
+
+    <h2>Mathematical Symbols</h2>
+
+    <table>
+        <tr>
+            <th>Symbol</th>
+            <th>Entity Name</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td class="large">&times;</td>
+            <td>&amp;times;</td>
+            <td>Multiplication</td>
+        </tr>
+        <tr>
+            <td class="large">&divide;</td>
+            <td>&amp;divide;</td>
+            <td>Division</td>
+        </tr>
+        <tr>
+            <td class="large">&plusmn;</td>
+            <td>&amp;plusmn;</td>
+            <td>Plus-minus</td>
+        </tr>
+        <tr>
+            <td class="large">&ne;</td>
+            <td>&amp;ne;</td>
+            <td>Not equal</td>
+        </tr>
+        <tr>
+            <td class="large">&le;</td>
+            <td>&amp;le;</td>
+            <td>Less than or equal</td>
+        </tr>
+        <tr>
+            <td class="large">&ge;</td>
+            <td>&amp;ge;</td>
+            <td>Greater than or equal</td>
+        </tr>
+    </table>
+
+    <h2>Arrows</h2>
+
+    <table>
+        <tr>
+            <th>Symbol</th>
+            <th>Entity Name</th>
+        </tr>
+        <tr>
+            <td class="large">&larr;</td>
+            <td>&amp;larr;</td>
+        </tr>
+        <tr>
+            <td class="large">&rarr;</td>
+            <td>&amp;rarr;</td>
+        </tr>
+        <tr>
+            <td class="large">&uarr;</td>
+            <td>&amp;uarr;</td>
+        </tr>
+        <tr>
+            <td class="large">&darr;</td>
+            <td>&amp;darr;</td>
+        </tr>
+    </table>
+
+    <h2>Non-Breaking Space</h2>
+    <p>Use <strong>&amp;nbsp;</strong> to create a space that won't break into a new line:</p>
+
+    <div class="code-block">
+<span class="text">10&amp;nbsp;AM</span> (keeps "10" and "AM" together)
+    </div>
+
+    <h2>Accented Characters</h2>
+
+    <table>
+        <tr>
+            <th>Character</th>
+            <th>Entity Name</th>
+        </tr>
+        <tr>
+            <td class="large">á é í ó ú</td>
+            <td>&amp;aacute; &amp;eacute; &amp;iacute; &amp;oacute; &amp;uacute;</td>
+        </tr>
+        <tr>
+            <td class="large">à è ì ò ù</td>
+            <td>&amp;agrave; &amp;egrave; &amp;igrave; &amp;ograve; &amp;ugrave;</td>
+        </tr>
+        <tr>
+            <td class="large">ñ</td>
+            <td>&amp;ntilde;</td>
+        </tr>
+        <tr>
+            <td class="large">ü</td>
+            <td>&amp;uuml;</td>
+        </tr>
+    </table>
+
+    <h2>Practical Examples</h2>
+
+    <div class="code-block">
+<span class="tag">&lt;p&gt;</span><span class="text">&amp;copy; 2025 My Company &amp;trade;</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="text">Displays: © 2025 My Company ™</span><br>
+<br>
+<span class="tag">&lt;p&gt;</span><span class="text">Price: &amp;euro;50</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="text">Displays: Price: €50</span><br>
+<br>
+<span class="tag">&lt;p&gt;</span><span class="text">5 &amp;times; 3 = 15</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="text">Displays: 5 × 3 = 15</span>
+    </div>
+
+    <h2>Emojis</h2>
+    <p>You can also use HTML entities for emojis:</p>
+
+    <table>
+        <tr>
+            <th>Emoji</th>
+            <th>Entity Number</th>
+        </tr>
+        <tr>
+            <td class="large">😀</td>
+            <td>&amp;#128512;</td>
+        </tr>
+        <tr>
+            <td class="large">❤️</td>
+            <td>&amp;#10084;</td>
+        </tr>
+        <tr>
+            <td class="large">⭐</td>
+            <td>&amp;#11088;</td>
+        </tr>
+        <tr>
+            <td class="large">✓</td>
+            <td>&amp;#10003;</td>
+        </tr>
+    </table>
+
+    <h2>Practice Exercise</h2>
+    <div class="info-box">
+        <strong>Try This:</strong>
+        <p>Create a page that displays:</p>
+        <ul>
+            <li>A copyright notice with © symbol</li>
+            <li>Product prices in different currencies (€, £, ¥)</li>
+            <li>A math equation using × and = symbols</li>
+            <li>HTML code example using &lt; and &gt;</li>
+            <li>Your name with accent marks (if applicable)</li>
+        </ul>
+    </div>
+
+</body>
+</html>
+

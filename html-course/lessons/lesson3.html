@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3: HTML Attributes</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            line-height: 1.8;
+            color: #333;
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #764ba2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .code-block .tag { color: #d73a49; font-weight: bold; }
+        .code-block .attr { color: #6f42c1; }
+        .code-block .value { color: #032f62; }
+        .code-block .text { color: #24292e; }
+        .code-block .doctype { color: #22863a; font-weight: bold; }
+        .info-box {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #667eea;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lesson 3: HTML Attributes</h1>
+    
+    <h2>What are HTML Attributes?</h2>
+    <p>HTML attributes provide additional information about HTML elements. Attributes are always specified in the start tag and usually come in name/value pairs like: <strong>name="value"</strong></p>
+
+    <div class="code-block">
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"https://www.example.com"</span><span class="tag">&gt;</span><span class="text">Visit Example</span><span class="tag">&lt;/a&gt;</span><br>
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"image.jpg"</span> <span class="attr">alt</span>=<span class="value">"Description"</span><span class="tag">&gt;</span>
+    </div>
+
+    <h2>Common HTML Attributes</h2>
+    
+    <table>
+        <tr>
+            <th>Attribute</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>href</td>
+            <td>Specifies the URL for a link</td>
+            <td>&lt;a href="url"&gt;</td>
+        </tr>
+        <tr>
+            <td>src</td>
+            <td>Specifies the source file for an image</td>
+            <td>&lt;img src="image.jpg"&gt;</td>
+        </tr>
+        <tr>
+            <td>alt</td>
+            <td>Alternative text for an image</td>
+            <td>&lt;img alt="description"&gt;</td>
+        </tr>
+        <tr>
+            <td>width & height</td>
+            <td>Specifies dimensions</td>
+            <td>&lt;img width="100" height="100"&gt;</td>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>Unique identifier for an element</td>
+            <td>&lt;div id="header"&gt;</td>
+        </tr>
+        <tr>
+            <td>class</td>
+            <td>Specifies one or more class names</td>
+            <td>&lt;p class="intro"&gt;</td>
+        </tr>
+        <tr>
+            <td>style</td>
+            <td>Specifies inline CSS styles</td>
+            <td>&lt;p style="color:red"&gt;</td>
+        </tr>
+        <tr>
+            <td>title</td>
+            <td>Extra information (tooltip)</td>
+            <td>&lt;p title="Tooltip"&gt;</td>
+        </tr>
+    </table>
+
+    <h2>The lang Attribute</h2>
+    <p>The language of the document can be declared in the &lt;html&gt; tag. This is important for accessibility and search engines:</p>
+
+    <div class="code-block">
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="value">"en"</span><span class="tag">&gt;</span>
+    </div>
+
+    <div class="info-box">
+        <strong>Best Practices:</strong>
+        <ul>
+            <li>Always use lowercase attribute names</li>
+            <li>Always quote attribute values (use double quotes)</li>
+            <li>Some attributes are required for certain elements</li>
+        </ul>
+    </div>
+
+    <h2>Examples with Multiple Attributes</h2>
+    
+    <div class="code-block">
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"logo.png"</span> <span class="attr">alt</span>=<span class="value">"Company Logo"</span> <span class="attr">width</span>=<span class="value">"200"</span> <span class="attr">height</span>=<span class="value">"100"</span><span class="tag">&gt;</span><br>
+<br>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"contact.html"</span> <span class="attr">title</span>=<span class="value">"Go to contact page"</span> <span class="attr">class</span>=<span class="value">"nav-link"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">Contact Us</span><br>
+<span class="tag">&lt;/a&gt;</span><br>
+<br>
+<span class="tag">&lt;p</span> <span class="attr">id</span>=<span class="value">"intro"</span> <span class="attr">class</span>=<span class="value">"highlight"</span> <span class="attr">style</span>=<span class="value">"font-size: 18px;"</span><span class="tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">Welcome to our website!</span><br>
+<span class="tag">&lt;/p&gt;</span>
+    </div>
+</body>
+</html>
+

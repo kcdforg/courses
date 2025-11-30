@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2: HTML Elements</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            line-height: 1.8;
+            color: #333;
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #764ba2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .code-block .tag { color: #d73a49; font-weight: bold; }
+        .code-block .attr { color: #6f42c1; }
+        .code-block .value { color: #032f62; }
+        .code-block .text { color: #24292e; }
+        .code-block .comment { color: #6a737d; font-style: italic; }
+        .info-box {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #667eea;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lesson 2: HTML Elements</h1>
+    
+    <h2>What is an HTML Element?</h2>
+    <p>An HTML element is defined by a start tag, some content, and an end tag. The element is everything from the start tag to the end tag.</p>
+
+    <div class="code-block">
+<span class="tag">&lt;tagname&gt;</span><span class="text">Content goes here...</span><span class="tag">&lt;/tagname&gt;</span>
+    </div>
+
+    <h2>Examples of HTML Elements</h2>
+    
+    <div class="code-block">
+<span class="tag">&lt;h1&gt;</span><span class="text">This is a heading</span><span class="tag">&lt;/h1&gt;</span><br>
+<span class="tag">&lt;p&gt;</span><span class="text">This is a paragraph</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"page.html"</span><span class="tag">&gt;</span><span class="text">This is a link</span><span class="tag">&lt;/a&gt;</span>
+    </div>
+
+    <h2>Nested Elements</h2>
+    <p>HTML elements can be nested (elements can contain other elements):</p>
+
+    <div class="code-block">
+<span class="tag">&lt;body&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;h1&gt;</span><span class="text">My Website</span><span class="tag">&lt;/h1&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span><span class="text">This is a </span><span class="tag">&lt;strong&gt;</span><span class="text">paragraph</span><span class="tag">&lt;/strong&gt;</span><span class="text"> with bold text.</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="tag">&lt;/body&gt;</span>
+    </div>
+
+    <div class="info-box">
+        <strong>Important:</strong> Never skip the end tag! Some elements might display correctly even if you forget the end tag, but this can produce unexpected results or errors.
+    </div>
+
+    <h2>Empty Elements</h2>
+    <p>Some HTML elements have no content and are called empty elements. They don't have an end tag:</p>
+
+    <table>
+        <tr>
+            <th>Element</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>&lt;br&gt;</td>
+            <td>Line break</td>
+        </tr>
+        <tr>
+            <td>&lt;hr&gt;</td>
+            <td>Horizontal line</td>
+        </tr>
+        <tr>
+            <td>&lt;img&gt;</td>
+            <td>Image</td>
+        </tr>
+        <tr>
+            <td>&lt;input&gt;</td>
+            <td>Input field</td>
+        </tr>
+    </table>
+
+    <h2>HTML is Not Case Sensitive</h2>
+    <p>HTML tags are not case sensitive: &lt;P&gt; means the same as &lt;p&gt;. However, it's best practice to use lowercase tags.</p>
+</body>
+</html>
+

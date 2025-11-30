@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5: HTML Paragraphs</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            line-height: 1.8;
+            color: #333;
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #764ba2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .code-block .tag { color: #d73a49; font-weight: bold; }
+        .code-block .text { color: #24292e; }
+        .info-box {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .tip {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .side-by-side {
+            display: table;
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: separate;
+            border-spacing: 15px 0;
+        }
+        .side-by-side .code-column {
+            display: table-cell;
+            width: 50%;
+            vertical-align: top;
+        }
+        .side-by-side .output-column {
+            display: table-cell;
+            width: 50%;
+            vertical-align: top;
+        }
+        .side-by-side h4 {
+            color: #667eea;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .output-box {
+            background-color: #fff;
+            border: 2px solid #667eea;
+            padding: 15px;
+            border-radius: 5px;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lesson 5: HTML Paragraphs</h1>
+    
+    <h2>What are HTML Paragraphs?</h2>
+    <p>HTML paragraphs are blocks of text defined with the <strong>&lt;p&gt;</strong> tag. A paragraph always starts on a new line, and browsers automatically add some space (margin) before and after each paragraph.</p>
+
+    <div class="info-box">
+        <strong>Key Points:</strong>
+        <ul>
+            <li>The <strong>&lt;p&gt;</strong> tag defines a paragraph</li>
+            <li>Paragraphs are block-level elements</li>
+            <li>Browsers automatically add spacing around paragraphs</li>
+            <li>Extra spaces and line breaks in your code are ignored</li>
+        </ul>
+    </div>
+
+    <h2>Basic Paragraph</h2>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;p&gt;</span><span class="text">This is a paragraph.</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="tag">&lt;p&gt;</span><span class="text">This is another paragraph.</span><span class="tag">&lt;/p&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <p>This is a paragraph.</p>
+                <p>This is another paragraph.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Paragraph Display</h2>
+    <p>You cannot be sure how HTML will display. Large or small screens, and resized windows will create different results. With HTML, you cannot change the display by adding extra spaces or extra lines in your HTML code.</p>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;p&gt;</span><br>
+<span class="text">This paragraph</span><br>
+<span class="text">contains a lot of lines</span><br>
+<span class="text">in the source code,</span><br>
+<span class="text">but the browser</span><br>
+<span class="text">ignores it.</span><br>
+<span class="tag">&lt;/p&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <p>This paragraph contains a lot of lines in the source code, but the browser ignores it.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Line Breaks - The &lt;br&gt; Tag</h2>
+    <p>Use the <strong>&lt;br&gt;</strong> tag to insert a line break without starting a new paragraph:</p>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;p&gt;</span><span class="text">This is</span><span class="tag">&lt;br&gt;</span><span class="text">a paragraph</span><span class="tag">&lt;br&gt;</span><span class="text">with line breaks.</span><span class="tag">&lt;/p&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <p>This is<br>a paragraph<br>with line breaks.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="tip">
+        <strong>💡 Note:</strong> The &lt;br&gt; tag is an empty tag, which means it has no end tag. It's also written as &lt;br/&gt; in XHTML.
+    </div>
+
+    <h2>Horizontal Rules - The &lt;hr&gt; Tag</h2>
+    <p>The <strong>&lt;hr&gt;</strong> tag creates a horizontal line (rule) to separate content:</p>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;p&gt;</span><span class="text">This is paragraph one.</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="tag">&lt;hr&gt;</span><br>
+<span class="tag">&lt;p&gt;</span><span class="text">This is paragraph two.</span><span class="tag">&lt;/p&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <p>This is paragraph one.</p>
+                <hr>
+                <p>This is paragraph two.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Preformatted Text - The &lt;pre&gt; Tag</h2>
+    <p>The <strong>&lt;pre&gt;</strong> tag preserves both spaces and line breaks:</p>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;pre&gt;</span><br>
+<span class="text">  My Poem</span><br>
+<span class="text">    Roses are red,</span><br>
+<span class="text">    Violets are blue.</span><br>
+<span class="tag">&lt;/pre&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <pre>  My Poem
+    Roses are red,
+    Violets are blue.</pre>
+            </div>
+        </div>
+    </div>
+
+    <h2>Text Formatting Elements</h2>
+    <p>You can use various tags inside paragraphs to format text:</p>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;p&gt;</span><span class="text">This is </span><span class="tag">&lt;b&gt;</span><span class="text">bold</span><span class="tag">&lt;/b&gt;</span><span class="text"> text.</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="tag">&lt;p&gt;</span><span class="text">This is </span><span class="tag">&lt;i&gt;</span><span class="text">italic</span><span class="tag">&lt;/i&gt;</span><span class="text"> text.</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="tag">&lt;p&gt;</span><span class="text">This is </span><span class="tag">&lt;u&gt;</span><span class="text">underlined</span><span class="tag">&lt;/u&gt;</span><span class="text"> text.</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="tag">&lt;p&gt;</span><span class="text">This is </span><span class="tag">&lt;strong&gt;</span><span class="text">important</span><span class="tag">&lt;/strong&gt;</span><span class="text"> text.</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="tag">&lt;p&gt;</span><span class="text">This is </span><span class="tag">&lt;em&gt;</span><span class="text">emphasized</span><span class="tag">&lt;/em&gt;</span><span class="text"> text.</span><span class="tag">&lt;/p&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Output:</h4>
+            <div class="output-box">
+                <p>This is <b>bold</b> text.</p>
+                <p>This is <i>italic</i> text.</p>
+                <p>This is <u>underlined</u> text.</p>
+                <p>This is <strong>important</strong> text.</p>
+                <p>This is <em>emphasized</em> text.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <strong>Semantic vs Visual Tags:</strong>
+        <ul>
+            <li><strong>&lt;strong&gt;</strong> and <strong>&lt;b&gt;</strong> both make text bold, but &lt;strong&gt; indicates importance</li>
+            <li><strong>&lt;em&gt;</strong> and <strong>&lt;i&gt;</strong> both make text italic, but &lt;em&gt; indicates emphasis</li>
+            <li>Use semantic tags (&lt;strong&gt;, &lt;em&gt;) for better accessibility and SEO</li>
+        </ul>
+    </div>
+
+    <h2>Other Useful Text Elements</h2>
+    <div class="code-block">
+<span class="tag">&lt;p&gt;</span><span class="text">This is </span><span class="tag">&lt;mark&gt;</span><span class="text">highlighted</span><span class="tag">&lt;/mark&gt;</span><span class="text"> text.</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="tag">&lt;p&gt;</span><span class="text">This is </span><span class="tag">&lt;small&gt;</span><span class="text">smaller</span><span class="tag">&lt;/small&gt;</span><span class="text"> text.</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="tag">&lt;p&gt;</span><span class="text">This is </span><span class="tag">&lt;del&gt;</span><span class="text">deleted</span><span class="tag">&lt;/del&gt;</span><span class="text"> text.</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="tag">&lt;p&gt;</span><span class="text">This is </span><span class="tag">&lt;ins&gt;</span><span class="text">inserted</span><span class="tag">&lt;/ins&gt;</span><span class="text"> text.</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="tag">&lt;p&gt;</span><span class="text">This is </span><span class="tag">&lt;sub&gt;</span><span class="text">subscript</span><span class="tag">&lt;/sub&gt;</span><span class="text"> text.</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="tag">&lt;p&gt;</span><span class="text">This is </span><span class="tag">&lt;sup&gt;</span><span class="text">superscript</span><span class="tag">&lt;/sup&gt;</span><span class="text"> text.</span><span class="tag">&lt;/p&gt;</span>
+    </div>
+
+    <div class="output-box">
+        <p>This is <mark>highlighted</mark> text.</p>
+        <p>This is <small>smaller</small> text.</p>
+        <p>This is <del>deleted</del> text.</p>
+        <p>This is <ins>inserted</ins> text.</p>
+        <p>This is <sub>subscript</sub> text.</p>
+        <p>This is <sup>superscript</sup> text.</p>
+    </div>
+
+    <div class="tip">
+        <strong>💡 Best Practices:</strong>
+        <ul>
+            <li>Always close your &lt;p&gt; tags</li>
+            <li>Use paragraphs to organize your content logically</li>
+            <li>Don't use empty paragraphs for spacing - use CSS instead</li>
+            <li>Keep paragraphs focused on one idea</li>
+        </ul>
+    </div>
+
+    <h2>Practice Exercise</h2>
+    <div class="info-box">
+        <strong>Try This:</strong>
+        <p>Create a short story or article with:</p>
+        <ul>
+            <li>At least 3 paragraphs</li>
+            <li>Use &lt;br&gt; for a line break within a paragraph</li>
+            <li>Add an &lt;hr&gt; to separate sections</li>
+            <li>Use at least 3 text formatting tags (bold, italic, etc.)</li>
+        </ul>
+    </div>
+
+</body>
+</html>
+

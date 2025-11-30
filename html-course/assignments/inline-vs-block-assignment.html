@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment: Inline vs Block Elements</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        h1 { color: #667eea; }
+        h2 { color: #764ba2; margin-top: 30px; }
+        .instruction-box {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .task {
+            background-color: #e7f3ff;
+            border: 2px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .example {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .demo-block {
+            background-color: lightblue;
+            border: 2px solid blue;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        .demo-inline {
+            background-color: lightcoral;
+            border: 2px solid red;
+            padding: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #764ba2;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>📝 Assignment: Inline vs Block Elements</h1>
+    
+    <div class="instruction-box">
+        <h2 style="margin-top: 0;">Instructions</h2>
+        <p><strong>Goal:</strong> Practice using inline and block elements to understand their differences.</p>
+        <p><strong>Time:</strong> 45-60 minutes</p>
+        <p><strong>Tools needed:</strong> Text editor and web browser</p>
+        <p><strong>Submission:</strong> Create a file named <code>inline-block-practice.html</code></p>
+    </div>
+
+    <h2>📚 Quick Reference</h2>
+
+    <h3>Block-Level Elements</h3>
+    <table>
+        <tr>
+            <th>Element</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>&lt;div&gt;</td>
+            <td>Generic container</td>
+        </tr>
+        <tr>
+            <td>&lt;p&gt;</td>
+            <td>Paragraph</td>
+        </tr>
+        <tr>
+            <td>&lt;h1&gt; to &lt;h6&gt;</td>
+            <td>Headings</td>
+        </tr>
+        <tr>
+            <td>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;</td>
+            <td>Lists</td>
+        </tr>
+        <tr>
+            <td>&lt;header&gt;, &lt;footer&gt;, &lt;section&gt;</td>
+            <td>Semantic elements</td>
+        </tr>
+    </table>
+
+    <h3>Inline Elements</h3>
+    <table>
+        <tr>
+            <th>Element</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>&lt;span&gt;</td>
+            <td>Generic inline container</td>
+        </tr>
+        <tr>
+            <td>&lt;a&gt;</td>
+            <td>Link</td>
+        </tr>
+        <tr>
+            <td>&lt;strong&gt;, &lt;b&gt;</td>
+            <td>Bold text</td>
+        </tr>
+        <tr>
+            <td>&lt;em&gt;, &lt;i&gt;</td>
+            <td>Italic text</td>
+        </tr>
+        <tr>
+            <td>&lt;img&gt;</td>
+            <td>Image</td>
+        </tr>
+    </table>
+
+    <h2>🎯 Tasks</h2>
+
+    <div class="task">
+        <h3>Task 1: Observe the Difference (10 points)</h3>
+        <p>Create the following and observe how they display:</p>
+        
+        <h4>Part A: Block Elements</h4>
+        <pre>
+&lt;div style="background-color: lightblue; padding: 10px;"&gt;First Box&lt;/div&gt;
+&lt;div style="background-color: lightgreen; padding: 10px;"&gt;Second Box&lt;/div&gt;
+&lt;div style="background-color: lightyellow; padding: 10px;"&gt;Third Box&lt;/div&gt;
+        </pre>
+        
+        <h4>Expected Result:</h4>
+        <div class="example">
+            <div style="background-color: lightblue; padding: 10px;">First Box</div>
+            <div style="background-color: lightgreen; padding: 10px;">Second Box</div>
+            <div style="background-color: lightyellow; padding: 10px;">Third Box</div>
+        </div>
+        
+        <h4>Part B: Inline Elements</h4>
+        <pre>
+&lt;span style="background-color: lightblue; padding: 5px;"&gt;First Item&lt;/span&gt;
+&lt;span style="background-color: lightgreen; padding: 5px;"&gt;Second Item&lt;/span&gt;
+&lt;span style="background-color: lightyellow; padding: 5px;"&gt;Third Item&lt;/span&gt;
+        </pre>
+        
+        <h4>Expected Result:</h4>
+        <div class="example">
+            <span style="background-color: lightblue; padding: 5px;">First Item</span>
+            <span style="background-color: lightgreen; padding: 5px;">Second Item</span>
+            <span style="background-color: lightyellow; padding: 5px;">Third Item</span>
+        </div>
+        
+        <p><strong>Question:</strong> What's the main difference you notice?</p>
+    </div>
+
+    <div class="task">
+        <h3>Task 2: Mixed Elements (15 points)</h3>
+        <p>Create a paragraph that uses BOTH block and inline elements:</p>
+        
+        <pre>
+&lt;div style="border: 2px solid blue; padding: 15px;"&gt;
+    &lt;h2&gt;My Favorite Foods&lt;/h2&gt;
+    &lt;p&gt;
+        I love &lt;strong&gt;pizza&lt;/strong&gt; and &lt;em&gt;pasta&lt;/em&gt;. 
+        My favorite restaurant is &lt;span style="color: red;"&gt;Italian Corner&lt;/span&gt;.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Visit their website at &lt;a href="#"&gt;www.italiancorner.com&lt;/a&gt;
+    &lt;/p&gt;
+&lt;/div&gt;
+        </pre>
+        
+        <h4>Expected Result:</h4>
+        <div class="example">
+            <div style="border: 2px solid blue; padding: 15px;">
+                <h2 style="margin-top: 0;">My Favorite Foods</h2>
+                <p>
+                    I love <strong>pizza</strong> and <em>pasta</em>. 
+                    My favorite restaurant is <span style="color: red;">Italian Corner</span>.
+                </p>
+                <p>
+                    Visit their website at <a href="#">www.italiancorner.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="task">
+        <h3>Task 3: Width Experiment (15 points)</h3>
+        <p>Try setting width on block vs inline elements and see what happens:</p>
+        
+        <h4>Part A: Block Element with Width</h4>
+        <pre>
+&lt;div style="width: 200px; background-color: lightblue; padding: 10px;"&gt;
+    I am 200px wide
+&lt;/div&gt;
+        </pre>
+        
+        <h4>Part B: Inline Element with Width (Won't Work!)</h4>
+        <pre>
+&lt;span style="width: 200px; background-color: lightcoral; padding: 10px;"&gt;
+    I tried to be 200px wide but I can't!
+&lt;/span&gt;
+        </pre>
+        
+        <h4>Expected Results:</h4>
+        <div class="example">
+            <div style="width: 200px; background-color: lightblue; padding: 10px; margin-bottom: 10px;">
+                I am 200px wide
+            </div>
+            <span style="width: 200px; background-color: lightcoral; padding: 10px;">
+                I tried to be 200px wide but I can't!
+            </span>
+        </div>
+        
+        <p><strong>Question:</strong> Why doesn't the span respect the width?</p>
+    </div>
+
+    <div class="task">
+        <h3>Task 4: Create a Contact Card (25 points)</h3>
+        <p>Create a contact card using BOTH block and inline elements:</p>
+        
+        <h4>Requirements:</h4>
+        <ul>
+            <li>Use &lt;div&gt; as the main container</li>
+            <li>Use &lt;h3&gt; for the person's name</li>
+            <li>Use &lt;p&gt; for job title</li>
+            <li>Use &lt;strong&gt; to highlight "Email:" and "Phone:"</li>
+            <li>Use &lt;span&gt; to color the email blue and phone green</li>
+            <li>Use &lt;a&gt; for a clickable email link</li>
+        </ul>
+        
+        <h4>Example Output:</h4>
+        <div class="example">
+            <div style="border: 2px solid #667eea; padding: 20px; max-width: 300px;">
+                <h3 style="margin-top: 0;">John Doe</h3>
+                <p>Web Developer</p>
+                <p>
+                    <strong>Email:</strong> 
+                    <span style="color: blue;">john@example.com</span>
+                </p>
+                <p>
+                    <strong>Phone:</strong> 
+                    <span style="color: green;">555-1234</span>
+                </p>
+                <p>
+                    <a href="mailto:john@example.com">Send Email</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="task">
+        <h3>Task 5: Navigation Menu (20 points)</h3>
+        <p>Create a simple navigation menu using block and inline elements:</p>
+        
+        <pre>
+&lt;nav style="background-color: #2c3e50; padding: 15px;"&gt;
+    &lt;a href="#" style="color: white; padding: 10px;"&gt;Home&lt;/a&gt;
+    &lt;a href="#" style="color: white; padding: 10px;"&gt;About&lt;/a&gt;
+    &lt;a href="#" style="color: white; padding: 10px;"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;
+        </pre>
+        
+        <h4>Expected Result:</h4>
+        <div class="example">
+            <nav style="background-color: #2c3e50; padding: 15px;">
+                <a href="#" style="color: white; padding: 10px; text-decoration: none;">Home</a>
+                <a href="#" style="color: white; padding: 10px; text-decoration: none;">About</a>
+                <a href="#" style="color: white; padding: 10px; text-decoration: none;">Contact</a>
+            </nav>
+        </div>
+        
+        <p><strong>Observe:</strong> The links (&lt;a&gt;) are inline, so they sit next to each other. The &lt;nav&gt; is block, so it takes full width.</p>
+    </div>
+
+    <div class="task">
+        <h3>Task 6: Challenge - Product Card (15 points)</h3>
+        <p>Create a product card combining everything you've learned:</p>
+        
+        <h4>Requirements:</h4>
+        <ul>
+            <li>Outer &lt;div&gt; container with border</li>
+            <li>&lt;h2&gt; for product name</li>
+            <li>&lt;p&gt; for description</li>
+            <li>&lt;span&gt; to highlight price in red and make it large</li>
+            <li>&lt;strong&gt; for "In Stock" text</li>
+            <li>&lt;div&gt; for a button-like section</li>
+        </ul>
+        
+        <h4>Sample Output:</h4>
+        <div class="example">
+            <div style="border: 2px solid #ddd; padding: 20px; max-width: 300px;">
+                <h2 style="margin-top: 0; color: #667eea;">Wireless Headphones</h2>
+                <p>High-quality sound with noise cancellation.</p>
+                <p>
+                    Price: <span style="color: red; font-size: 24px; font-weight: bold;">$99</span>
+                </p>
+                <p>
+                    <strong style="color: green;">✓ In Stock</strong>
+                </p>
+                <div style="background-color: #667eea; color: white; padding: 10px; text-align: center;">
+                    Add to Cart
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>📝 Answer These Questions (Bonus)</h2>
+    
+    <div class="task">
+        <ol>
+            <li>What happens when you put two &lt;div&gt; elements next to each other?</li>
+            <li>What happens when you put two &lt;span&gt; elements next to each other?</li>
+            <li>Can you set width and height on inline elements?</li>
+            <li>Do block elements respect top/bottom margins?</li>
+            <li>Name 3 block elements and 3 inline elements.</li>
+            <li>When would you use &lt;div&gt; instead of &lt;span&gt;?</li>
+            <li>Can you put a block element inside an inline element? Should you?</li>
+        </ol>
+    </div>
+
+    <h2>✅ Submission Checklist</h2>
+    
+    <div class="instruction-box">
+        <p>Before submitting, make sure you have:</p>
+        <ul>
+            <li>☐ Completed all 6 tasks</li>
+            <li>☐ Used at least 5 different block elements</li>
+            <li>☐ Used at least 5 different inline elements</li>
+            <li>☐ Answered the bonus questions</li>
+            <li>☐ Tested your HTML file in a browser</li>
+            <li>☐ Added comments explaining block vs inline in your code</li>
+        </ul>
+    </div>
+
+    <h2>📊 Grading Rubric</h2>
+    
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Points</th>
+        </tr>
+        <tr>
+            <td>Task 1: Observe the Difference</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>Task 2: Mixed Elements</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>Task 3: Width Experiment</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>Task 4: Contact Card</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Task 5: Navigation Menu</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>Task 6: Product Card</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>Bonus Questions</td>
+            <td>10</td>
+        </tr>
+        <tr style="font-weight: bold;">
+            <td>Total</td>
+            <td>110 points</td>
+        </tr>
+    </table>
+
+</body>
+</html>
+

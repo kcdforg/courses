@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11: Semantic HTML</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            line-height: 1.8;
+            color: #333;
+        }
+        h1 { color: #667eea; margin-bottom: 20px; }
+        h2 { color: #764ba2; margin-top: 30px; margin-bottom: 15px; }
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .code-block .tag { color: #d73a49; font-weight: bold; }
+        .code-block .text { color: #24292e; }
+        .info-box {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .tip {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .side-by-side {
+            display: table;
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: separate;
+            border-spacing: 15px 0;
+        }
+        .side-by-side .code-column, .side-by-side .output-column {
+            display: table-cell;
+            width: 50%;
+            vertical-align: top;
+        }
+        .side-by-side h4 { color: #667eea; margin-top: 0; margin-bottom: 10px; }
+        .output-box {
+            background-color: #fff;
+            border: 2px solid #667eea;
+            padding: 15px;
+            border-radius: 5px;
+            min-height: 100px;
+        }
+        .demo-layout {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        .demo-header { background-color: #667eea; color: white; padding: 10px; }
+        .demo-nav { background-color: #764ba2; color: white; padding: 10px; }
+        .demo-main { background-color: #f8f9fa; padding: 10px; min-height: 100px; }
+        .demo-aside { background-color: #e9ecef; padding: 10px; }
+        .demo-footer { background-color: #2c3e50; color: white; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Lesson 11: Semantic HTML</h1>
+    
+    <h2>What is Semantic HTML?</h2>
+    <p>Semantic HTML uses tags that clearly describe their meaning and purpose. Instead of using generic &lt;div&gt; everywhere, semantic tags tell both browsers and developers what the content represents.</p>
+
+    <div class="info-box">
+        <strong>Benefits:</strong>
+        <ul>
+            <li>Better SEO (search engines understand content)</li>
+            <li>Improved accessibility (screen readers work better)</li>
+            <li>Easier to maintain and read code</li>
+            <li>More meaningful HTML structure</li>
+        </ul>
+    </div>
+
+    <h2>Main Semantic Elements</h2>
+
+    <h3>&lt;header&gt;</h3>
+    <p>Represents introductory content or navigation links. Usually contains logo, site title, and main navigation.</p>
+    <div class="code-block">
+<span class="tag">&lt;header&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;h1&gt;</span><span class="text">My Website</span><span class="tag">&lt;/h1&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;nav&gt;</span><span class="text">Navigation here</span><span class="tag">&lt;/nav&gt;</span><br>
+<span class="tag">&lt;/header&gt;</span>
+    </div>
+
+    <h3>&lt;nav&gt;</h3>
+    <p>Contains navigation links for the website.</p>
+    <div class="code-block">
+<span class="tag">&lt;nav&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ul&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="value">"home.html"</span><span class="tag">&gt;</span><span class="text">Home</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="value">"about.html"</span><span class="tag">&gt;</span><span class="text">About</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/ul&gt;</span><br>
+<span class="tag">&lt;/nav&gt;</span>
+    </div>
+
+    <h3>&lt;main&gt;</h3>
+    <p>Contains the main content of the page. Only one per page.</p>
+    <div class="code-block">
+<span class="tag">&lt;main&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;h2&gt;</span><span class="text">Welcome</span><span class="tag">&lt;/h2&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span><span class="text">Main content goes here...</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="tag">&lt;/main&gt;</span>
+    </div>
+
+    <h3>&lt;article&gt;</h3>
+    <p>Self-contained content that could be distributed independently (blog post, news article, forum post).</p>
+    <div class="code-block">
+<span class="tag">&lt;article&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;h3&gt;</span><span class="text">Article Title</span><span class="tag">&lt;/h3&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span><span class="text">Article content...</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="tag">&lt;/article&gt;</span>
+    </div>
+
+    <h3>&lt;section&gt;</h3>
+    <p>Groups related content together. Usually has a heading.</p>
+    <div class="code-block">
+<span class="tag">&lt;section&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;h2&gt;</span><span class="text">About Us</span><span class="tag">&lt;/h2&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span><span class="text">Information about the company...</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="tag">&lt;/section&gt;</span>
+    </div>
+
+    <h3>&lt;aside&gt;</h3>
+    <p>Contains content indirectly related to main content (sidebar, related links).</p>
+    <div class="code-block">
+<span class="tag">&lt;aside&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;h3&gt;</span><span class="text">Related Links</span><span class="tag">&lt;/h3&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ul&gt;</span><span class="text">...</span><span class="tag">&lt;/ul&gt;</span><br>
+<span class="tag">&lt;/aside&gt;</span>
+    </div>
+
+    <h3>&lt;footer&gt;</h3>
+    <p>Contains footer information (copyright, contact info, links).</p>
+    <div class="code-block">
+<span class="tag">&lt;footer&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span><span class="text">&copy; 2025 My Website</span><span class="tag">&lt;/p&gt;</span><br>
+<span class="tag">&lt;/footer&gt;</span>
+    </div>
+
+    <h2>Complete Page Structure</h2>
+
+    <div class="side-by-side">
+        <div class="code-column">
+            <h4>HTML Code:</h4>
+            <div class="code-block">
+<span class="tag">&lt;body&gt;</span><br>
+&nbsp;&nbsp;<span class="tag">&lt;header&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;h1&gt;</span><span class="text">Site Title</span><span class="tag">&lt;/h1&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;nav&gt;</span><span class="text">Menu</span><span class="tag">&lt;/nav&gt;</span><br>
+&nbsp;&nbsp;<span class="tag">&lt;/header&gt;</span><br>
+<br>
+&nbsp;&nbsp;<span class="tag">&lt;main&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;article&gt;</span><span class="text">Content</span><span class="tag">&lt;/article&gt;</span><br>
+&nbsp;&nbsp;<span class="tag">&lt;/main&gt;</span><br>
+<br>
+&nbsp;&nbsp;<span class="tag">&lt;footer&gt;</span><span class="text">Footer</span><span class="tag">&lt;/footer&gt;</span><br>
+<span class="tag">&lt;/body&gt;</span>
+            </div>
+        </div>
+        <div class="output-column">
+            <h4>Visual Layout:</h4>
+            <div class="output-box">
+                <div class="demo-header">Header - Site Title & Nav</div>
+                <div class="demo-main">Main - Content Area</div>
+                <div class="demo-footer">Footer - Copyright</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tip">
+        <strong>💡 Best Practices:</strong>
+        <ul>
+            <li>Use semantic tags instead of &lt;div&gt; when possible</li>
+            <li>Only one &lt;main&gt; per page</li>
+            <li>&lt;article&gt; should make sense on its own</li>
+            <li>&lt;section&gt; should have a heading</li>
+            <li>Use &lt;header&gt; and &lt;footer&gt; in multiple contexts</li>
+        </ul>
+    </div>
+
+    <h2>Practice Exercise</h2>
+    <div class="info-box">
+        <strong>Try This:</strong>
+        <p>Create a blog homepage with:</p>
+        <ul>
+            <li>&lt;header&gt; with site title and navigation</li>
+            <li>&lt;main&gt; containing 2-3 &lt;article&gt; elements</li>
+            <li>&lt;aside&gt; with "Recent Posts" sidebar</li>
+            <li>&lt;footer&gt; with copyright info</li>
+        </ul>
+    </div>
+
+</body>
+</html>
+
