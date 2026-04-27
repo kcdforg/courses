@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3: HTML Basic Tags - Activity Based</title>
+    <link rel="stylesheet" href="../../css/lesson-activity.css">
+</head>
+<body>
+    <div class="lesson-header">
+        <h1>📝 Lesson 3: HTML Basic Tags</h1>
+        <p>Master the essential HTML tags every web developer needs to know</p>
+    </div>
+
+    <div class="tag-explanation">
+        <h2>📚 The Essential HTML Tags</h2>
+        
+        <p>In this lesson, you'll learn the most commonly used HTML tags that form the foundation of every web page. These are the tags you'll use in almost every HTML document you create!</p>
+        
+        <div class="key-points">
+            <strong>🎯 What You'll Learn:</strong>
+            <ul>
+                <li>How to structure an HTML document properly</li>
+                <li>Creating headings from h1 to h6</li>
+                <li>Adding paragraphs of text</li>
+                <li>Creating clickable links</li>
+                <li>Displaying images on your page</li>
+                <li>Adding line breaks with &lt;br&gt;</li>
+                <li>Creating dividers with &lt;hr&gt;</li>
+            </ul>
+        </div>
+        
+        <h3>The Basic HTML Structure:</h3>
+        <p>Every HTML page follows this simple structure:</p>
+        
+        <div class="tag-syntax">
+<span class="tag">&lt;html&gt;</span><br>
+<span class="tag">&lt;head&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;title&gt;</span><span class="text">Page Title</span><span class="tag">&lt;/title&gt;</span><br>
+<span class="tag">&lt;/head&gt;</span><br>
+<span class="tag">&lt;body&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">Your visible content goes here!</span><br>
+<span class="tag">&lt;/body&gt;</span><br>
+<span class="tag">&lt;/html&gt;</span>
+        </div>
+        
+        <h3>The Essential Tags:</h3>
+        
+        <div class="tag-showcase">
+            <div class="tag-card">
+                <span class="tag-name">&lt;h1&gt; to &lt;h6&gt;</span>
+                <h4>Headings</h4>
+                <p>Create headings of different sizes. h1 is the largest (most important), h6 is the smallest.</p>
+                <div class="tag-syntax" style="font-size: 0.9em;">
+<span class="tag">&lt;h1&gt;</span><span class="text">Main Title</span><span class="tag">&lt;/h1&gt;</span><br>
+<span class="tag">&lt;h2&gt;</span><span class="text">Subtitle</span><span class="tag">&lt;/h2&gt;</span>
+                </div>
+            </div>
+            
+            <div class="tag-card">
+                <span class="tag-name">&lt;p&gt;</span>
+                <h4>Paragraph</h4>
+                <p>Display blocks of text. Browsers automatically add space before and after paragraphs.</p>
+                <div class="tag-syntax" style="font-size: 0.9em;">
+<span class="tag">&lt;p&gt;</span><span class="text">This is a paragraph.</span><span class="tag">&lt;/p&gt;</span>
+                </div>
+            </div>
+            
+            <div class="tag-card">
+                <span class="tag-name">&lt;a&gt;</span>
+                <h4>Link (Anchor)</h4>
+                <p>Create clickable links to other pages or websites. Uses the href attribute.</p>
+                <div class="tag-syntax" style="font-size: 0.9em;">
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"page.html"</span><span class="tag">&gt;</span><span class="text">Click me</span><span class="tag">&lt;/a&gt;</span>
+                </div>
+            </div>
+            
+            <div class="tag-card">
+                <span class="tag-name">&lt;img&gt;</span>
+                <h4>Image</h4>
+                <p>Display images. This is a self-closing tag (no closing tag needed). Uses src attribute.</p>
+                <div class="tag-syntax" style="font-size: 0.9em;">
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"photo.jpg"</span> <span class="attr">alt</span>=<span class="value">"Description"</span><span class="tag">&gt;</span>
+                </div>
+            </div>
+            
+            <div class="tag-card">
+                <span class="tag-name">&lt;br&gt;</span>
+                <h4>Line Break</h4>
+                <p>Creates a line break within text. Self-closing tag (no closing tag needed).</p>
+                <div class="tag-syntax" style="font-size: 0.9em;">
+<span class="text">First line</span><span class="tag">&lt;br&gt;</span><br>
+<span class="text">Second line</span>
+                </div>
+            </div>
+            
+            <div class="tag-card">
+                <span class="tag-name">&lt;hr&gt;</span>
+                <h4>Horizontal Rule</h4>
+                <p>Creates a horizontal line/divider. Self-closing tag. Used to separate content sections.</p>
+                <div class="tag-syntax" style="font-size: 0.9em;">
+<span class="tag">&lt;hr&gt;</span>
+                </div>
+            </div>
+        </div>
+        
+        <h3>HTML Headings in Detail:</h3>
+        <p>HTML provides 6 levels of headings. Use them to organize your content:</p>
+        
+        <table>
+            <tr>
+                <th>Tag</th>
+                <th>Size</th>
+                <th>When to Use</th>
+            </tr>
+            <tr>
+                <td>&lt;h1&gt;</td>
+                <td>Largest</td>
+                <td>Main page title (use only once per page)</td>
+            </tr>
+            <tr>
+                <td>&lt;h2&gt;</td>
+                <td>Large</td>
+                <td>Major sections</td>
+            </tr>
+            <tr>
+                <td>&lt;h3&gt;</td>
+                <td>Medium-Large</td>
+                <td>Subsections within h2 sections</td>
+            </tr>
+            <tr>
+                <td>&lt;h4&gt;</td>
+                <td>Medium</td>
+                <td>Sub-subsections</td>
+            </tr>
+            <tr>
+                <td>&lt;h5&gt;</td>
+                <td>Small</td>
+                <td>Minor headings</td>
+            </tr>
+            <tr>
+                <td>&lt;h6&gt;</td>
+                <td>Smallest</td>
+                <td>Least important headings</td>
+            </tr>
+        </table>
+        
+        <div class="key-points" style="background-color: #fff3cd; border-left-color: #ffc107;">
+            <strong>💡 Best Practice:</strong>
+            <ul>
+                <li>Use headings in order (don't skip levels: h1 → h2 → h3)</li>
+                <li>Use only one h1 per page (for the main title)</li>
+                <li>Headings help organize content and improve accessibility</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="activities-container">
+        <div class="activities-header">
+            <h2>🎯 Practice Activity</h2>
+        </div>
+
+        <!-- Activity 1 -->
+        <div class="activity">
+            <div class="activity-header">
+                <div class="activity-number">1</div>
+                <div>
+                    <h3 class="activity-title">
+                        Build a Complete Web Page
+                        <span class="activity-level level-beginner">Beginner</span>
+                    </h3>
+                </div>
+            </div>
+            
+            <div class="activity-description">
+                <strong>Goal:</strong> Create a complete web page using all the basic HTML tags you've learned.
+            </div>
+            
+            <div class="activity-instructions">
+                <h4>📝 Instructions:</h4>
+                <ol>
+                    <li>Create a new file called <code>my-profile.html</code></li>
+                    <li>Set up the basic HTML structure (html, head, title, body)</li>
+                    <li>In the title, write "My Profile Page"</li>
+                    <li>Inside the body, create:
+                        <ul>
+                            <li>An <strong>h1</strong> heading with your name</li>
+                            <li>An <strong>h2</strong> heading that says "About Me"</li>
+                            <li>A <strong>paragraph</strong> introducing yourself (age, grade, hobbies)</li>
+                            <li>An <strong>&lt;hr&gt;</strong> horizontal line to separate sections</li>
+                            <li>Another <strong>h2</strong> heading that says "My Interests"</li>
+                            <li>A <strong>paragraph</strong> listing your interests, use <strong>&lt;br&gt;</strong> tags to put each interest on a new line</li>
+                            <li>An <strong>&lt;hr&gt;</strong> to separate sections again</li>
+                            <li>An <strong>h2</strong> heading that says "My Favorite Website"</li>
+                            <li>A <strong>link</strong> to your favorite website (use &lt;a&gt; tag)</li>
+                        </ul>
+                    </li>
+                    <li>Save and open in your browser!</li>
+                </ol>
+            </div>
+            
+            <div class="code-editor">
+                <div class="line"><span style="color: #569cd6;">&lt;html&gt;</span></div>
+                <div class="line"><span style="color: #569cd6;">&lt;head&gt;</span></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;title&gt;</span>My Profile Page<span style="color: #569cd6;">&lt;/title&gt;</span></div>
+                <div class="line"><span style="color: #569cd6;">&lt;/head&gt;</span></div>
+                <div class="line"><span style="color: #569cd6;">&lt;body&gt;</span></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;h1&gt;</span>Alex Johnson<span style="color: #569cd6;">&lt;/h1&gt;</span></div>
+                <div class="line">    </div>
+                <div class="line">    <span style="color: #569cd6;">&lt;h2&gt;</span>About Me<span style="color: #569cd6;">&lt;/h2&gt;</span></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;p&gt;</span>Hi! I'm Alex, I'm 13 years old and in 8th grade. I love playing basketball and coding!<span style="color: #569cd6;">&lt;/p&gt;</span></div>
+                <div class="line">    </div>
+                <div class="line">    <span style="color: #569cd6;">&lt;hr&gt;</span></div>
+                <div class="line">    </div>
+                <div class="line">    <span style="color: #569cd6;">&lt;h2&gt;</span>My Interests<span style="color: #569cd6;">&lt;/h2&gt;</span></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;p&gt;</span></div>
+                <div class="line">        Web development<span style="color: #569cd6;">&lt;br&gt;</span></div>
+                <div class="line">        Video games<span style="color: #569cd6;">&lt;br&gt;</span></div>
+                <div class="line">        Science experiments<span style="color: #569cd6;">&lt;br&gt;</span></div>
+                <div class="line">        Reading sci-fi books</div>
+                <div class="line">    <span style="color: #569cd6;">&lt;/p&gt;</span></div>
+                <div class="line">    </div>
+                <div class="line">    <span style="color: #569cd6;">&lt;hr&gt;</span></div>
+                <div class="line">    </div>
+                <div class="line">    <span style="color: #569cd6;">&lt;h2&gt;</span>My Favorite Website<span style="color: #569cd6;">&lt;/h2&gt;</span></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;p&gt;</span>Check out <span style="color: #569cd6;">&lt;a</span> <span style="color: #9cdcfe;">href</span>=<span style="color: #ce9178;">"https://www.nasa.gov"</span><span style="color: #569cd6;">&gt;</span>NASA's website<span style="color: #569cd6;">&lt;/a&gt;</span> - it's amazing!<span style="color: #569cd6;">&lt;/p&gt;</span></div>
+                <div class="line"><span style="color: #569cd6;">&lt;/body&gt;</span></div>
+                <div class="line"><span style="color: #569cd6;">&lt;/html&gt;</span></div>
+            </div>
+            
+            <div class="expected-output">
+                <h4>✅ Expected Output:</h4>
+                <h1 style="margin: 10px 0; font-size: 2em;">Alex Johnson</h1>
+                <h2 style="margin: 15px 0 10px 0; font-size: 1.5em;">About Me</h2>
+                <p style="margin: 10px 0;">Hi! I'm Alex, I'm 13 years old and in 8th grade. I love playing basketball and coding!</p>
+                <hr style="margin: 20px 0; border: none; border-top: 1px solid #ccc;">
+                <h2 style="margin: 15px 0 10px 0; font-size: 1.5em;">My Interests</h2>
+                <p style="margin: 10px 0;">
+                    Web development<br>
+                    Video games<br>
+                    Science experiments<br>
+                    Reading sci-fi books
+                </p>
+                <hr style="margin: 20px 0; border: none; border-top: 1px solid #ccc;">
+                <h2 style="margin: 15px 0 10px 0; font-size: 1.5em;">My Favorite Website</h2>
+                <p style="margin: 10px 0;">Check out <a href="https://www.nasa.gov">NASA's website</a> - it's amazing!</p>
+            </div>
+            
+            <details class="hints">
+                <summary>💡 Tips & Reminders</summary>
+                <div style="margin-top: 10px;">
+                    <ul>
+                        <li><strong>Links:</strong> The href attribute contains the website address</li>
+                        <li><strong>Link text:</strong> The text between &lt;a&gt; and &lt;/a&gt; is what users click</li>
+                        <li><strong>Headings:</strong> Use h1 for main title, h2 for sections</li>
+                        <li><strong>Paragraphs:</strong> Each &lt;p&gt; tag creates a new paragraph with spacing</li>
+                        <li><strong>&lt;br&gt; tag:</strong> Creates a line break within text (no closing tag needed)</li>
+                        <li><strong>&lt;hr&gt; tag:</strong> Creates a horizontal divider line (no closing tag needed)</li>
+                        <li><strong>Organization:</strong> Use proper indentation to make code readable</li>
+                    </ul>
+                </div>
+            </details>
+            
+            <div class="challenge">
+                <h4>🚀 Try More:</h4>
+                <ul>
+                    <li>Add an h3 heading for "My Skills" with a paragraph listing your skills</li>
+                    <li>Add more links to 2-3 other favorite websites</li>
+                    <li>Use h4, h5, or h6 headings to create sub-sections</li>
+                    <li>Try adding an image using &lt;img src="photo.jpg" alt="My photo"&gt; (you'll learn more about images in a later lesson)</li>
+                    <li>Add a "Contact" section with your email (or a pretend email for practice)</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; margin-top: 50px;">
+        <h3 style="margin-top: 0;">🎉 Awesome Work!</h3>
+        <p>You've learned the essential HTML tags! You now know how to:</p>
+        <ul>
+            <li>✓ Structure a complete HTML document</li>
+            <li>✓ Use headings (h1 to h6) to organize content</li>
+            <li>✓ Create paragraphs with the &lt;p&gt; tag</li>
+            <li>✓ Make clickable links with the &lt;a&gt; tag</li>
+            <li>✓ Add line breaks with &lt;br&gt;</li>
+            <li>✓ Create dividers with &lt;hr&gt;</li>
+            <li>✓ Understand image tags (&lt;img&gt;)</li>
+        </ul>
+        <p><strong>Next Lesson:</strong> <a href="lesson4.html" style="color: #ffd700;">HTML Attributes &rarr;</a></p>
+    </div>
+
+</body>
+</html>
+

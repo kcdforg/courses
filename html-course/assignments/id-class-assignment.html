@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment: Mastering ID and Class Attributes</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            min-height: 100vh;
+        }
+        
+        h1 { 
+            color: #667eea; 
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        
+        h2 { 
+            color: #764ba2; 
+            margin-top: 40px;
+            border-bottom: 3px solid #764ba2;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #667eea;
+        }
+        
+        .instruction-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .instruction-box h2 {
+            color: white;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            margin-top: 0;
+        }
+        
+        .instruction-box code {
+            background-color: rgba(255,255,255,0.2);
+            color: #ffd700;
+        }
+        
+        .task {
+            background-color: white;
+            border-left: 6px solid #667eea;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .task h3 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .points-badge {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        .example {
+            background-color: #f8f9fa;
+            border: 2px solid #e9ecef;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        
+        .info-box {
+            background-color: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .concept-box {
+            background-color: #e7f3ff;
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        code {
+            background-color: #f4f4f4;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            line-height: 1.5;
+        }
+        
+        pre .tag { color: #569cd6; }
+        pre .attr { color: #9cdcfe; }
+        pre .value { color: #ce9178; }
+        pre .comment { color: #6a9955; }
+        pre .selector { color: #d7ba7d; }
+        pre .property { color: #9cdcfe; }
+        
+        .checklist {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Demo styles for examples */
+        .demo-header {
+            background-color: #667eea;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        
+        .demo-card {
+            border: 2px solid #ddd;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            display: inline-block;
+            width: 200px;
+            vertical-align: top;
+        }
+        
+        .demo-card-featured {
+            border-color: #ffc107;
+            background-color: #fffef0;
+            box-shadow: 0 0 15px rgba(255, 193, 7, 0.4);
+        }
+        
+        .demo-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            color: white;
+        }
+        
+        .demo-btn-primary { background-color: #667eea; }
+        .demo-btn-success { background-color: #28a745; }
+        .demo-btn-danger { background-color: #dc3545; }
+        .demo-btn-warning { background-color: #ffc107; color: #333; }
+        
+        .highlight-text {
+            background-color: yellow;
+            padding: 2px 5px;
+        }
+        
+        .important-text {
+            color: red;
+            font-weight: bold;
+        }
+        
+        .nav-demo {
+            background-color: #2c3e50;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .nav-link-demo {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            display: inline-block;
+        }
+        
+        .nav-link-demo.active {
+            background-color: #667eea;
+            border-radius: 5px;
+        }
+        
+        .profile-card-demo {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 300px;
+        }
+        
+        .avatar-demo {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+        
+        .badge-demo {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin: 5px;
+        }
+        
+        .badge-new { background-color: #28a745; color: white; }
+        .badge-sale { background-color: #dc3545; color: white; }
+        .badge-popular { background-color: #ffc107; color: #333; }
+    </style>
+</head>
+<body>
+    <h1>🏷️ Assignment: Mastering ID and Class Attributes</h1>
+    <p class="subtitle">Practice identifying, styling, and organizing HTML elements</p>
+    
+    <div class="instruction-box">
+        <h2>📋 Assignment Instructions</h2>
+        <p><strong>Goal:</strong> Master the use of ID and Class attributes by building real-world UI components.</p>
+        <p><strong>Time:</strong> 90-120 minutes</p>
+        <p><strong>Tools needed:</strong> Text editor (VS Code) and web browser</p>
+        <p><strong>Submission:</strong> Create a file named <code>id-class-practice.html</code></p>
+        <p><strong>Total Points:</strong> 150 points</p>
+    </div>
+
+    <h2>📚 Quick Reference Guide</h2>
+
+    <div class="concept-box">
+        <h3>🆔 ID Attribute</h3>
+        <ul>
+            <li><strong>Syntax:</strong> <code>id="unique-name"</code></li>
+            <li><strong>CSS Selector:</strong> <code>#unique-name { }</code></li>
+            <li><strong>Rule:</strong> Only ONE element per page can have a specific ID</li>
+            <li><strong>Use for:</strong> Unique elements like headers, main content, footer</li>
+        </ul>
+    </div>
+
+    <div class="concept-box">
+        <h3>📦 Class Attribute</h3>
+        <ul>
+            <li><strong>Syntax:</strong> <code>class="group-name"</code></li>
+            <li><strong>CSS Selector:</strong> <code>.group-name { }</code></li>
+            <li><strong>Multiple classes:</strong> <code>class="class1 class2 class3"</code></li>
+            <li><strong>Use for:</strong> Reusable styles, component groups, shared styling</li>
+        </ul>
+    </div>
+
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>ID (#)</th>
+            <th>Class (.)</th>
+        </tr>
+        <tr>
+            <td>Uniqueness</td>
+            <td>Must be unique on page</td>
+            <td>Can be reused many times</td>
+        </tr>
+        <tr>
+            <td>Per Element</td>
+            <td>Only 1 ID allowed</td>
+            <td>Multiple classes allowed</td>
+        </tr>
+        <tr>
+            <td>CSS Priority</td>
+            <td>Higher (100 points)</td>
+            <td>Lower (10 points)</td>
+        </tr>
+        <tr>
+            <td>Example</td>
+            <td><code>&lt;div id="header"&gt;</code></td>
+            <td><code>&lt;div class="card"&gt;</code></td>
+        </tr>
+    </table>
+
+    <h2>📝 Tasks</h2>
+
+    <!-- Task 1 -->
+    <div class="task">
+        <h3>Task 1: Basic ID Usage <span class="points-badge">15 Points</span></h3>
+        <p>Create a page with unique sections using ID attributes.</p>
+        
+        <h4>Requirements:</h4>
+        <ul>
+            <li>Create a <code>&lt;header&gt;</code> with <code>id="site-header"</code></li>
+            <li>Create a <code>&lt;main&gt;</code> with <code>id="main-content"</code></li>
+            <li>Create a <code>&lt;footer&gt;</code> with <code>id="site-footer"</code></li>
+            <li>Style each section with different background colors</li>
+        </ul>
+
+        <h4>Example Code:</h4>
+        <pre>
+<span class="tag">&lt;style&gt;</span>
+    <span class="selector">#site-header</span> {
+        <span class="property">background-color</span>: <span class="value">#667eea</span>;
+        <span class="property">color</span>: <span class="value">white</span>;
+        <span class="property">padding</span>: <span class="value">20px</span>;
+        <span class="property">text-align</span>: <span class="value">center</span>;
+    }
+    
+    <span class="selector">#main-content</span> {
+        <span class="property">padding</span>: <span class="value">40px</span>;
+        <span class="property">min-height</span>: <span class="value">300px</span>;
+    }
+    
+    <span class="selector">#site-footer</span> {
+        <span class="property">background-color</span>: <span class="value">#333</span>;
+        <span class="property">color</span>: <span class="value">white</span>;
+        <span class="property">padding</span>: <span class="value">20px</span>;
+        <span class="property">text-align</span>: <span class="value">center</span>;
+    }
+<span class="tag">&lt;/style&gt;</span>
+
+<span class="tag">&lt;header</span> <span class="attr">id</span>=<span class="value">"site-header"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>My Website<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;/header&gt;</span>
+
+<span class="tag">&lt;main</span> <span class="attr">id</span>=<span class="value">"main-content"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;p&gt;</span>Welcome to my website content...<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/main&gt;</span>
+
+<span class="tag">&lt;footer</span> <span class="attr">id</span>=<span class="value">"site-footer"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;p&gt;</span>&copy; 2024 My Website<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/footer&gt;</span>
+        </pre>
+
+        <h4>Expected Result:</h4>
+        <div class="example">
+            <div style="background-color: #667eea; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0;">
+                <h2 style="margin: 0;">My Website</h2>
+            </div>
+            <div style="padding: 40px; background-color: white;">
+                <p>Welcome to my website content...</p>
+            </div>
+            <div style="background-color: #333; color: white; padding: 20px; text-align: center; border-radius: 0 0 8px 8px;">
+                <p style="margin: 0;">© 2024 My Website</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task 2 -->
+    <div class="task">
+        <h3>Task 2: Basic Class Usage <span class="points-badge">15 Points</span></h3>
+        <p>Style multiple elements with the same class.</p>
+        
+        <h4>Requirements:</h4>
+        <ul>
+            <li>Create 5 paragraphs</li>
+            <li>Give them all the class <code>text-box</code></li>
+            <li>Style the class to have background color, padding, margin, and rounded corners</li>
+        </ul>
+
+        <h4>Expected Result:</h4>
+        <div class="example">
+            <p style="background-color: #e7f3ff; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #667eea;">Paragraph 1 - All styled the same way!</p>
+            <p style="background-color: #e7f3ff; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #667eea;">Paragraph 2 - Using the same class</p>
+            <p style="background-color: #e7f3ff; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #667eea;">Paragraph 3 - How convenient!</p>
+            <p style="background-color: #e7f3ff; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #667eea;">Paragraph 4 - One class, multiple elements</p>
+            <p style="background-color: #e7f3ff; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #667eea;">Paragraph 5 - Classes are powerful!</p>
+        </div>
+    </div>
+
+    <!-- Task 3 -->
+    <div class="task">
+        <h3>Task 3: Multiple Classes - Button System <span class="points-badge">20 Points</span></h3>
+        <p>Create a button component system using multiple classes.</p>
+        
+        <h4>Requirements:</h4>
+        <ul>
+            <li>Create a base <code>.btn</code> class (padding, border, border-radius)</li>
+            <li>Create color modifier classes: <code>.btn-primary</code>, <code>.btn-success</code>, <code>.btn-danger</code>, <code>.btn-warning</code></li>
+            <li>Create size modifier classes: <code>.btn-sm</code>, <code>.btn-lg</code></li>
+            <li>Create 6 buttons combining different classes</li>
+        </ul>
+
+        <h4>Expected Result:</h4>
+        <div class="example">
+            <button class="demo-btn demo-btn-primary">Primary</button>
+            <button class="demo-btn demo-btn-success">Success</button>
+            <button class="demo-btn demo-btn-danger">Danger</button>
+            <button class="demo-btn demo-btn-warning">Warning</button>
+            <br><br>
+            <button class="demo-btn demo-btn-primary" style="font-size: 12px; padding: 5px 10px;">Small Primary</button>
+            <button class="demo-btn demo-btn-success" style="font-size: 18px; padding: 15px 30px;">Large Success</button>
+        </div>
+    </div>
+
+    <!-- Task 4 -->
+    <div class="task">
+        <h3>Task 4: Text Highlighting <span class="points-badge">15 Points</span></h3>
+        <p>Create inline text styling classes.</p>
+        
+        <h4>Requirements:</h4>
+        <ul>
+            <li>Create class <code>.highlight</code> (yellow background)</li>
+            <li>Create class <code>.important</code> (red, bold text)</li>
+            <li>Create class <code>.code</code> (monospace font, gray background)</li>
+            <li>Write a paragraph using all three classes on different words</li>
+        </ul>
+
+        <h4>Expected Result:</h4>
+        <div class="example">
+            <p style="font-size: 18px; line-height: 2;">
+                In HTML, we use <span class="highlight-text">ID</span> for unique elements and 
+                <span class="highlight-text">class</span> for groups. It's <span class="important-text">very important</span> 
+                to remember that each ID must be unique! Use <code>id="name"</code> in your HTML code.
+            </p>
+        </div>
+    </div>
+
+    <!-- Task 5 -->
+    <div class="task">
+        <h3>Task 5: Navigation Menu <span class="points-badge">20 Points</span></h3>
+        <p>Build a navigation bar using ID and classes.</p>
+        
+        <h4>Requirements:</h4>
+        <ul>
+            <li>Create a <code>&lt;nav&gt;</code> with <code>id="main-navigation"</code></li>
+            <li>Add 5 links with class <code>nav-link</code></li>
+            <li>Add an additional class <code>active</code> to the current page link</li>
+            <li>Style the active link differently (different background color)</li>
+        </ul>
+
+        <h4>Expected Result:</h4>
+        <div class="example">
+            <nav class="nav-demo">
+                <a href="#" class="nav-link-demo active">Home</a>
+                <a href="#" class="nav-link-demo">Products</a>
+                <a href="#" class="nav-link-demo">Services</a>
+                <a href="#" class="nav-link-demo">About</a>
+                <a href="#" class="nav-link-demo">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Task 6 -->
+    <div class="task">
+        <h3>Task 6: Product Cards with ID and Class <span class="points-badge">25 Points</span></h3>
+        <p>Create a product display using both ID and classes.</p>
+        
+        <h4>Requirements:</h4>
+        <ul>
+            <li>Create 4 product cards with class <code>product-card</code></li>
+            <li>Give each card a unique ID: <code>product-1</code>, <code>product-2</code>, etc.</li>
+            <li>Add class <code>featured</code> to one special product</li>
+            <li>Add badge classes: <code>badge</code>, <code>badge-new</code>, <code>badge-sale</code>, <code>badge-popular</code></li>
+            <li>Style featured products with a special border/shadow</li>
+        </ul>
+
+        <h4>Expected Result:</h4>
+        <div class="example">
+            <div class="demo-card">
+                <span class="badge-demo badge-new">NEW</span>
+                <h4>Product 1</h4>
+                <p>$29.99</p>
+            </div>
+            <div class="demo-card demo-card-featured">
+                <span class="badge-demo badge-popular">⭐ POPULAR</span>
+                <h4>Featured Product</h4>
+                <p>$49.99</p>
+            </div>
+            <div class="demo-card">
+                <span class="badge-demo badge-sale">SALE</span>
+                <h4>Product 3</h4>
+                <p><s>$39.99</s> $24.99</p>
+            </div>
+            <div class="demo-card">
+                <h4>Product 4</h4>
+                <p>$19.99</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task 7 -->
+    <div class="task">
+        <h3>Task 7: Profile Card <span class="points-badge">25 Points</span></h3>
+        <p>Build a complete profile card component.</p>
+        
+        <h4>Requirements:</h4>
+        <ul>
+            <li>Main container: <code>id="profile-card"</code>, <code>class="card gradient-bg"</code></li>
+            <li>Avatar div with <code>class="avatar"</code></li>
+            <li>Name with <code>class="profile-name"</code></li>
+            <li>Title with <code>class="profile-title"</code></li>
+            <li>Social links with <code>class="social-link"</code></li>
+            <li>Add hover effects to social links</li>
+        </ul>
+
+        <h4>Expected Result:</h4>
+        <div class="example" style="text-align: center;">
+            <div class="profile-card-demo">
+                <div class="avatar-demo">👤</div>
+                <h3 style="margin: 0;">John Doe</h3>
+                <p style="opacity: 0.8; margin: 5px 0 20px;">Web Developer</p>
+                <div>
+                    <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">📧</a>
+                    <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">🔗</a>
+                    <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">💼</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task 8 -->
+    <div class="task">
+        <h3>Task 8: Challenge - Complete Page Layout <span class="points-badge">15 Points</span></h3>
+        <p>Combine everything you've learned to create a complete page.</p>
+        
+        <h4>Requirements:</h4>
+        <ul>
+            <li>Header section with <code>id="header"</code></li>
+            <li>Navigation with proper ID and class usage</li>
+            <li>Main content area with <code>id="content"</code></li>
+            <li>Sidebar with <code>id="sidebar"</code></li>
+            <li>Footer with <code>id="footer"</code></li>
+            <li>Use at least 5 different classes throughout</li>
+            <li>Use multiple classes on at least 3 elements</li>
+        </ul>
+    </div>
+
+    <h2>🧪 Bonus Challenges (Extra Credit)</h2>
+
+    <div class="info-box">
+        <h3>Bonus 1: CSS Specificity Test (+5 points)</h3>
+        <p>Create an element with both ID and class. Apply conflicting styles and observe which wins.</p>
+        <pre>
+<span class="selector">#my-element</span> { <span class="property">color</span>: <span class="value">blue</span>; }
+<span class="selector">.my-class</span> { <span class="property">color</span>: <span class="value">red</span>; }
+
+<span class="comment">&lt;!-- Which color will show? --&gt;</span>
+<span class="tag">&lt;p</span> <span class="attr">id</span>=<span class="value">"my-element"</span> <span class="attr">class</span>=<span class="value">"my-class"</span><span class="tag">&gt;</span>Test<span class="tag">&lt;/p&gt;</span>
+        </pre>
+    </div>
+
+    <div class="info-box">
+        <h3>Bonus 2: Anchor Links (+5 points)</h3>
+        <p>Create a table of contents that links to different sections using IDs.</p>
+        <pre>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"#section-1"</span><span class="tag">&gt;</span>Go to Section 1<span class="tag">&lt;/a&gt;</span>
+
+<span class="tag">&lt;div</span> <span class="attr">id</span>=<span class="value">"section-1"</span><span class="tag">&gt;</span>
+    Section 1 content...
+<span class="tag">&lt;/div&gt;</span>
+        </pre>
+    </div>
+
+    <h2>❓ Understanding Questions</h2>
+
+    <div class="warning-box">
+        <p>Answer these questions in HTML comments at the end of your file:</p>
+        <ol>
+            <li>What happens if you use the same ID twice on a page?</li>
+            <li>How do you select an ID in CSS? How about a class?</li>
+            <li>Can an element have multiple IDs? Multiple classes?</li>
+            <li>When should you use ID vs class? Give an example of each.</li>
+            <li>What is CSS specificity and how do ID and class differ?</li>
+        </ol>
+    </div>
+
+    <h2>✅ Submission Checklist</h2>
+    
+    <div class="checklist">
+        <ul>
+            <li>☐ All 8 tasks completed</li>
+            <li>☐ Used <code>id</code> attribute at least 8 times</li>
+            <li>☐ Used <code>class</code> attribute at least 15 times</li>
+            <li>☐ Combined multiple classes on at least 5 elements</li>
+            <li>☐ Used both <code>#id</code> and <code>.class</code> selectors in CSS</li>
+            <li>☐ All styling uses proper CSS (no inline styles except where instructed)</li>
+            <li>☐ Answered all understanding questions</li>
+            <li>☐ Code is properly indented and readable</li>
+            <li>☐ File opens correctly in browser without errors</li>
+        </ul>
+    </div>
+
+    <h2>📊 Grading Rubric</h2>
+    
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Points</th>
+        </tr>
+        <tr>
+            <td>Task 1: Basic ID Usage</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>Task 2: Basic Class Usage</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>Task 3: Button System</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>Task 4: Text Highlighting</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>Task 5: Navigation Menu</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>Task 6: Product Cards</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Task 7: Profile Card</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Task 8: Complete Page</td>
+            <td>15</td>
+        </tr>
+        <tr style="font-weight: bold; background-color: #667eea; color: white;">
+            <td>Total</td>
+            <td>150 points</td>
+        </tr>
+        <tr>
+            <td>Bonus Challenges (extra credit)</td>
+            <td>+10</td>
+        </tr>
+    </table>
+
+    <div class="info-box">
+        <h3>💡 Pro Tips:</h3>
+        <ul>
+            <li>Use meaningful names: <code>nav-link</code> is better than <code>link1</code></li>
+            <li>Keep ID names unique and descriptive</li>
+            <li>Use hyphens for multi-word names: <code>main-content</code></li>
+            <li>Classes are for styling groups, IDs are for unique elements</li>
+            <li>Test your page in the browser as you code!</li>
+            <li>Use browser DevTools (F12) to inspect your elements</li>
+        </ul>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; margin-top: 40px; text-align: center;">
+        <h2 style="margin-top: 0;">🚀 Good Luck!</h2>
+        <p>Remember: Practice makes perfect. The more you use ID and class, the more natural it becomes!</p>
+        <p style="font-size: 0.9em; opacity: 0.8;">If you get stuck, review the lesson materials or ask for help.</p>
+    </div>
+
+</body>
+</html>
+

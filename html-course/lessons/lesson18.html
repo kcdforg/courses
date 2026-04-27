@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 18: ID and Class Attributes - Activity Based</title>
+    <link rel="stylesheet" href="../../css/lesson-activity.css">
+    <style>
+        /* Additional styles for this lesson */
+        .attribute-demo {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .id-example {
+            background-color: #fff3cd;
+            border: 3px solid #ffc107;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .class-example-box {
+            background-color: #d4edda;
+            border: 2px solid #28a745;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .comparison-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 3px solid;
+        }
+        
+        .comparison-card.id-card {
+            border-color: #ffc107;
+        }
+        
+        .comparison-card.class-card {
+            border-color: #28a745;
+        }
+        
+        .comparison-card h3 {
+            margin-top: 0;
+        }
+        
+        .warning-box {
+            background-color: #f8d7da;
+            border-left: 5px solid #dc3545;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .tip-box {
+            background-color: #cce5ff;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .live-demo {
+            background-color: white;
+            border: 2px solid #667eea;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        /* Demo styles for the lesson */
+        #unique-header {
+            background-color: #667eea;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        
+        .highlight {
+            background-color: yellow;
+            padding: 2px 5px;
+        }
+        
+        .important {
+            color: red;
+            font-weight: bold;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        .btn-primary {
+            background-color: #667eea;
+            color: white;
+        }
+        
+        .btn-success {
+            background-color: #28a745;
+            color: white;
+        }
+        
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lesson-header">
+        <h1>🏷️ Lesson 18: ID and Class Attributes</h1>
+        <p>Learn how to identify and group HTML elements for styling and functionality!</p>
+    </div>
+
+    <div class="tag-explanation">
+        <h2>📚 What are ID and Class?</h2>
+
+        <p><strong>ID</strong> and <strong>Class</strong> are special attributes that you add to HTML elements. They help you:</p>
+        
+        <ul>
+            <li><strong>Identify</strong> specific elements on your page</li>
+            <li><strong>Style</strong> elements with CSS</li>
+            <li><strong>Select</strong> elements with JavaScript</li>
+            <li><strong>Organize</strong> your HTML code</li>
+        </ul>
+
+        <div class="key-points">
+            <strong>🎯 Key Difference:</strong>
+            <ul>
+                <li><strong>ID</strong> = Unique identifier (like your National ID - only ONE person can have it)</li>
+                <li><strong>Class</strong> = Group identifier (like a school class - many students can belong to the same class)</li>
+            </ul>
+        </div>
+
+        <h3>🆔 The ID Attribute</h3>
+        
+        <p>An <strong>ID</strong> is a unique name for a single element. Each ID can only be used <strong>ONCE</strong> per page.</p>
+
+        <div class="tag-syntax">
+            <span class="tag">&lt;element</span> <span class="attr">id</span>=<span class="value">"uniqueName"</span><span class="tag">&gt;</span><span class="text">Content</span><span class="tag">&lt;/element&gt;</span>
+        </div>
+
+        <h4>ID Syntax Examples:</h4>
+        <div class="tag-syntax">
+            <span class="tag">&lt;h1</span> <span class="attr">id</span>=<span class="value">"main-title"</span><span class="tag">&gt;</span><span class="text">Welcome to My Website</span><span class="tag">&lt;/h1&gt;</span><br><br>
+            <span class="tag">&lt;div</span> <span class="attr">id</span>=<span class="value">"header"</span><span class="tag">&gt;</span><span class="text">This is the header section</span><span class="tag">&lt;/div&gt;</span><br><br>
+            <span class="tag">&lt;p</span> <span class="attr">id</span>=<span class="value">"intro-paragraph"</span><span class="tag">&gt;</span><span class="text">Introduction text here</span><span class="tag">&lt;/p&gt;</span>
+        </div>
+
+        <div class="live-demo">
+            <h4>🔴 Live Example - ID:</h4>
+            <div id="unique-header">
+                I have id="unique-header" - I'm the only one with this ID!
+            </div>
+        </div>
+
+        <h3>📦 The Class Attribute</h3>
+        
+        <p>A <strong>Class</strong> is a name that can be used on <strong>multiple</strong> elements. Think of it as a group name.</p>
+
+        <div class="tag-syntax">
+            <span class="tag">&lt;element</span> <span class="attr">class</span>=<span class="value">"groupName"</span><span class="tag">&gt;</span><span class="text">Content</span><span class="tag">&lt;/element&gt;</span>
+        </div>
+
+        <h4>Class Syntax Examples:</h4>
+        <div class="tag-syntax">
+            <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="value">"highlight"</span><span class="tag">&gt;</span><span class="text">This is highlighted</span><span class="tag">&lt;/p&gt;</span><br><br>
+            <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="value">"highlight"</span><span class="tag">&gt;</span><span class="text">This is also highlighted</span><span class="tag">&lt;/p&gt;</span><br><br>
+            <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="value">"highlight"</span><span class="tag">&gt;</span><span class="text">Me too!</span><span class="tag">&lt;/span&gt;</span>
+        </div>
+
+        <div class="live-demo">
+            <h4>🟢 Live Example - Class:</h4>
+            <p>This word is <span class="highlight">highlighted</span> using class.</p>
+            <p>Another <span class="highlight">highlighted</span> word - same class!</p>
+            <p>And <span class="highlight">one more</span> - all share the same class!</p>
+        </div>
+
+        <h3>🎨 Multiple Classes</h3>
+        
+        <p>An element can have <strong>multiple classes</strong> separated by spaces:</p>
+
+        <div class="tag-syntax">
+            <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="value">"btn btn-primary"</span><span class="tag">&gt;</span><span class="text">Click Me</span><span class="tag">&lt;/button&gt;</span><br><br>
+            <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="value">"btn btn-success"</span><span class="tag">&gt;</span><span class="text">Submit</span><span class="tag">&lt;/button&gt;</span><br><br>
+            <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="value">"btn btn-danger"</span><span class="tag">&gt;</span><span class="text">Delete</span><span class="tag">&lt;/button&gt;</span>
+        </div>
+
+        <div class="live-demo">
+            <h4>🔵 Live Example - Multiple Classes:</h4>
+            <button class="btn btn-primary">Click Me (btn + btn-primary)</button>
+            <button class="btn btn-success">Submit (btn + btn-success)</button>
+            <button class="btn btn-danger">Delete (btn + btn-danger)</button>
+        </div>
+
+        <h3>🔄 ID + Class Together</h3>
+        
+        <p>An element can have <strong>both</strong> an ID and classes:</p>
+
+        <div class="tag-syntax">
+            <span class="tag">&lt;div</span> <span class="attr">id</span>=<span class="value">"main-container"</span> <span class="attr">class</span>=<span class="value">"container large-box"</span><span class="tag">&gt;</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text">Content here</span><br>
+            <span class="tag">&lt;/div&gt;</span>
+        </div>
+
+        <h3>📊 ID vs Class - Comparison</h3>
+
+        <div class="comparison-grid">
+            <div class="comparison-card id-card">
+                <h3>🆔 ID</h3>
+                <ul>
+                    <li>Use <strong>#</strong> in CSS: <code>#myId { }</code></li>
+                    <li>Must be <strong>unique</strong> on page</li>
+                    <li>Only <strong>ONE</strong> ID per element</li>
+                    <li>Higher specificity (stronger)</li>
+                    <li>Can link to with <code>#id</code> in URL</li>
+                    <li>Good for: headers, main sections, unique elements</li>
+                </ul>
+            </div>
+            <div class="comparison-card class-card">
+                <h3>📦 Class</h3>
+                <ul>
+                    <li>Use <strong>.</strong> in CSS: <code>.myClass { }</code></li>
+                    <li>Can be <strong>reused</strong> on multiple elements</li>
+                    <li><strong>Multiple</strong> classes per element</li>
+                    <li>Lower specificity</li>
+                    <li>Cannot link to in URL</li>
+                    <li>Good for: styling groups, components, repeated patterns</li>
+                </ul>
+            </div>
+        </div>
+
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>ID</th>
+                <th>Class</th>
+            </tr>
+            <tr>
+                <td>CSS Selector</td>
+                <td><code>#name</code></td>
+                <td><code>.name</code></td>
+            </tr>
+            <tr>
+                <td>Uniqueness</td>
+                <td>Unique (once per page)</td>
+                <td>Reusable (many times)</td>
+            </tr>
+            <tr>
+                <td>Per Element</td>
+                <td>Only 1 ID</td>
+                <td>Multiple classes allowed</td>
+            </tr>
+            <tr>
+                <td>Real-life example</td>
+                <td>National ID Number</td>
+                <td>School Class (Grade 5)</td>
+            </tr>
+            <tr>
+                <td>When to use</td>
+                <td>For unique elements</td>
+                <td>For groups of similar elements</td>
+            </tr>
+        </table>
+
+        <div class="warning-box">
+            <h4>⚠️ Common Mistakes to Avoid:</h4>
+            <ul>
+                <li>❌ Using the same ID more than once on a page</li>
+                <li>❌ Starting ID/class names with numbers (use letters first)</li>
+                <li>❌ Using spaces in names (use hyphens instead: <code>my-class</code>)</li>
+                <li>❌ Confusing <code>#</code> (ID) with <code>.</code> (class) in CSS</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>💡 Naming Best Practices:</h4>
+            <ul>
+                <li>✅ Use meaningful names: <code>header</code>, <code>nav-menu</code>, <code>btn-submit</code></li>
+                <li>✅ Use lowercase letters</li>
+                <li>✅ Use hyphens for multiple words: <code>main-content</code></li>
+                <li>✅ Be descriptive: <code>product-card</code> is better than <code>card1</code></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="activities-container">
+        <div class="activities-header">
+            <h2>🎯 Activities</h2>
+        </div>
+
+        <!-- Activity 1 -->
+        <div class="activity">
+            <div class="activity-header">
+                <div class="activity-number">1</div>
+                <div>
+                    <h3 class="activity-title">
+                        Your First ID and Class
+                        <span class="activity-level level-beginner">Beginner</span>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="activity-description">
+                <strong>Goal:</strong> Create a simple page with ID and class attributes
+            </div>
+
+            <div class="activity-instructions">
+                <h4>📝 Instructions:</h4>
+                <ol>
+                    <li>Create a new file called <code>id-class-practice.html</code></li>
+                    <li>Add a heading with an ID of "page-title"</li>
+                    <li>Add 3 paragraphs, all with the class "text-content"</li>
+                    <li>Add internal CSS to style them</li>
+                </ol>
+            </div>
+
+            <div class="code-editor">
+                <div class="line"><span style="color: #569cd6;">&lt;html&gt;</span></div>
+                <div class="line"><span style="color: #569cd6;">&lt;head&gt;</span></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;title&gt;</span>ID and Class Practice<span style="color: #569cd6;">&lt;/title&gt;</span></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;style&gt;</span></div>
+                <div class="line">        <span style="color: #6a9955;">/* ID uses # symbol */</span></div>
+                <div class="line">        <span style="color: #d7ba7d;">#page-title</span> {</div>
+                <div class="line">            <span style="color: #9cdcfe;">color</span>: <span style="color: #ce9178;">blue</span>;</div>
+                <div class="line">            <span style="color: #9cdcfe;">text-align</span>: <span style="color: #ce9178;">center</span>;</div>
+                <div class="line">        }</div>
+                <div class="line">        </div>
+                <div class="line">        <span style="color: #6a9955;">/* Class uses . symbol */</span></div>
+                <div class="line">        <span style="color: #d7ba7d;">.text-content</span> {</div>
+                <div class="line">            <span style="color: #9cdcfe;">background-color</span>: <span style="color: #ce9178;">lightyellow</span>;</div>
+                <div class="line">            <span style="color: #9cdcfe;">padding</span>: <span style="color: #b5cea8;">10px</span>;</div>
+                <div class="line">            <span style="color: #9cdcfe;">margin</span>: <span style="color: #b5cea8;">10px</span>;</div>
+                <div class="line">        }</div>
+                <div class="line">    <span style="color: #569cd6;">&lt;/style&gt;</span></div>
+                <div class="line"><span style="color: #569cd6;">&lt;/head&gt;</span></div>
+                <div class="line"><span style="color: #569cd6;">&lt;body&gt;</span></div>
+                <div class="line"></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;h1</span> <span style="color: #9cdcfe;">id</span>=<span style="color: #ce9178;">"page-title"</span><span style="color: #569cd6;">&gt;</span>Welcome to My Page<span style="color: #569cd6;">&lt;/h1&gt;</span></div>
+                <div class="line"></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;p</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"text-content"</span><span style="color: #569cd6;">&gt;</span>First paragraph<span style="color: #569cd6;">&lt;/p&gt;</span></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;p</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"text-content"</span><span style="color: #569cd6;">&gt;</span>Second paragraph<span style="color: #569cd6;">&lt;/p&gt;</span></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;p</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"text-content"</span><span style="color: #569cd6;">&gt;</span>Third paragraph<span style="color: #569cd6;">&lt;/p&gt;</span></div>
+                <div class="line"></div>
+                <div class="line"><span style="color: #569cd6;">&lt;/body&gt;</span></div>
+                <div class="line"><span style="color: #569cd6;">&lt;/html&gt;</span></div>
+            </div>
+
+            <h4>✅ Expected Output:</h4>
+            <div class="expected-output">
+                <h1 style="color: blue; text-align: center;">Welcome to My Page</h1>
+                <p style="background-color: lightyellow; padding: 10px; margin: 10px;">First paragraph</p>
+                <p style="background-color: lightyellow; padding: 10px; margin: 10px;">Second paragraph</p>
+                <p style="background-color: lightyellow; padding: 10px; margin: 10px;">Third paragraph</p>
+            </div>
+        </div>
+
+        <!-- Activity 2 -->
+        <div class="activity">
+            <div class="activity-header">
+                <div class="activity-number">2</div>
+                <div>
+                    <h3 class="activity-title">
+                        Multiple Classes
+                        <span class="activity-level level-intermediate">Intermediate</span>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="activity-description">
+                <strong>Goal:</strong> Create buttons with multiple classes for different styles
+            </div>
+
+            <div class="activity-instructions">
+                <h4>📝 Instructions:</h4>
+                <ol>
+                    <li>Create a base <code>.btn</code> class for common button styles</li>
+                    <li>Create color classes: <code>.btn-blue</code>, <code>.btn-green</code>, <code>.btn-red</code></li>
+                    <li>Create size classes: <code>.btn-small</code>, <code>.btn-large</code></li>
+                    <li>Combine classes on buttons</li>
+                </ol>
+            </div>
+
+            <div class="code-editor">
+                <div class="line"><span style="color: #569cd6;">&lt;style&gt;</span></div>
+                <div class="line">    <span style="color: #6a9955;">/* Base button style */</span></div>
+                <div class="line">    <span style="color: #d7ba7d;">.btn</span> {</div>
+                <div class="line">        <span style="color: #9cdcfe;">padding</span>: <span style="color: #b5cea8;">10px 20px</span>;</div>
+                <div class="line">        <span style="color: #9cdcfe;">border</span>: <span style="color: #ce9178;">none</span>;</div>
+                <div class="line">        <span style="color: #9cdcfe;">border-radius</span>: <span style="color: #b5cea8;">5px</span>;</div>
+                <div class="line">        <span style="color: #9cdcfe;">cursor</span>: <span style="color: #ce9178;">pointer</span>;</div>
+                <div class="line">        <span style="color: #9cdcfe;">color</span>: <span style="color: #ce9178;">white</span>;</div>
+                <div class="line">    }</div>
+                <div class="line"></div>
+                <div class="line">    <span style="color: #6a9955;">/* Color classes */</span></div>
+                <div class="line">    <span style="color: #d7ba7d;">.btn-blue</span> { <span style="color: #9cdcfe;">background-color</span>: <span style="color: #ce9178;">#667eea</span>; }</div>
+                <div class="line">    <span style="color: #d7ba7d;">.btn-green</span> { <span style="color: #9cdcfe;">background-color</span>: <span style="color: #ce9178;">#28a745</span>; }</div>
+                <div class="line">    <span style="color: #d7ba7d;">.btn-red</span> { <span style="color: #9cdcfe;">background-color</span>: <span style="color: #ce9178;">#dc3545</span>; }</div>
+                <div class="line"></div>
+                <div class="line">    <span style="color: #6a9955;">/* Size classes */</span></div>
+                <div class="line">    <span style="color: #d7ba7d;">.btn-small</span> { <span style="color: #9cdcfe;">font-size</span>: <span style="color: #b5cea8;">12px</span>; <span style="color: #9cdcfe;">padding</span>: <span style="color: #b5cea8;">5px 10px</span>; }</div>
+                <div class="line">    <span style="color: #d7ba7d;">.btn-large</span> { <span style="color: #9cdcfe;">font-size</span>: <span style="color: #b5cea8;">20px</span>; <span style="color: #9cdcfe;">padding</span>: <span style="color: #b5cea8;">15px 30px</span>; }</div>
+                <div class="line"><span style="color: #569cd6;">&lt;/style&gt;</span></div>
+                <div class="line"></div>
+                <div class="line"><span style="color: #6a9955;">&lt;!-- Combining multiple classes --&gt;</span></div>
+                <div class="line"><span style="color: #569cd6;">&lt;button</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"btn btn-blue"</span><span style="color: #569cd6;">&gt;</span>Blue Button<span style="color: #569cd6;">&lt;/button&gt;</span></div>
+                <div class="line"><span style="color: #569cd6;">&lt;button</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"btn btn-green btn-large"</span><span style="color: #569cd6;">&gt;</span>Large Green<span style="color: #569cd6;">&lt;/button&gt;</span></div>
+                <div class="line"><span style="color: #569cd6;">&lt;button</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"btn btn-red btn-small"</span><span style="color: #569cd6;">&gt;</span>Small Red<span style="color: #569cd6;">&lt;/button&gt;</span></div>
+            </div>
+
+            <h4>✅ Expected Output:</h4>
+            <div class="expected-output">
+                <button style="padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; color: white; background-color: #667eea; margin: 5px;">Blue Button</button>
+                <button style="padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer; color: white; background-color: #28a745; font-size: 20px; margin: 5px;">Large Green</button>
+                <button style="padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer; color: white; background-color: #dc3545; font-size: 12px; margin: 5px;">Small Red</button>
+            </div>
+        </div>
+
+        <!-- Activity 3 -->
+        <div class="activity">
+            <div class="activity-header">
+                <div class="activity-number">3</div>
+                <div>
+                    <h3 class="activity-title">
+                        Build a Product Card System
+                        <span class="activity-level level-intermediate">Intermediate</span>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="activity-description">
+                <strong>Goal:</strong> Create a reusable card system using classes, with unique IDs for specific cards
+            </div>
+
+            <div class="activity-instructions">
+                <h4>📝 Instructions:</h4>
+                <ol>
+                    <li>Create a <code>.card</code> class for the basic card style</li>
+                    <li>Create a <code>.card-featured</code> class for special cards</li>
+                    <li>Give each card a unique ID (product-1, product-2, product-3)</li>
+                    <li>Style the featured card differently</li>
+                </ol>
+            </div>
+
+            <div class="code-editor">
+                <div class="line"><span style="color: #569cd6;">&lt;style&gt;</span></div>
+                <div class="line">    <span style="color: #d7ba7d;">.card</span> {</div>
+                <div class="line">        <span style="color: #9cdcfe;">border</span>: <span style="color: #b5cea8;">2px solid #ddd</span>;</div>
+                <div class="line">        <span style="color: #9cdcfe;">padding</span>: <span style="color: #b5cea8;">20px</span>;</div>
+                <div class="line">        <span style="color: #9cdcfe;">margin</span>: <span style="color: #b5cea8;">10px</span>;</div>
+                <div class="line">        <span style="color: #9cdcfe;">border-radius</span>: <span style="color: #b5cea8;">10px</span>;</div>
+                <div class="line">        <span style="color: #9cdcfe;">display</span>: <span style="color: #ce9178;">inline-block</span>;</div>
+                <div class="line">        <span style="color: #9cdcfe;">width</span>: <span style="color: #b5cea8;">200px</span>;</div>
+                <div class="line">    }</div>
+                <div class="line"></div>
+                <div class="line">    <span style="color: #d7ba7d;">.card-featured</span> {</div>
+                <div class="line">        <span style="color: #9cdcfe;">border-color</span>: <span style="color: #ce9178;">gold</span>;</div>
+                <div class="line">        <span style="color: #9cdcfe;">background-color</span>: <span style="color: #ce9178;">#fffef0</span>;</div>
+                <div class="line">        <span style="color: #9cdcfe;">box-shadow</span>: <span style="color: #b5cea8;">0 0 10px gold</span>;</div>
+                <div class="line">    }</div>
+                <div class="line"><span style="color: #569cd6;">&lt;/style&gt;</span></div>
+                <div class="line"></div>
+                <div class="line"><span style="color: #569cd6;">&lt;div</span> <span style="color: #9cdcfe;">id</span>=<span style="color: #ce9178;">"product-1"</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"card"</span><span style="color: #569cd6;">&gt;</span></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;h3&gt;</span>Product 1<span style="color: #569cd6;">&lt;/h3&gt;</span></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;p&gt;</span>$29.99<span style="color: #569cd6;">&lt;/p&gt;</span></div>
+                <div class="line"><span style="color: #569cd6;">&lt;/div&gt;</span></div>
+                <div class="line"></div>
+                <div class="line"><span style="color: #569cd6;">&lt;div</span> <span style="color: #9cdcfe;">id</span>=<span style="color: #ce9178;">"product-2"</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"card card-featured"</span><span style="color: #569cd6;">&gt;</span></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;h3&gt;</span>⭐ Featured Product<span style="color: #569cd6;">&lt;/h3&gt;</span></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;p&gt;</span>$49.99<span style="color: #569cd6;">&lt;/p&gt;</span></div>
+                <div class="line"><span style="color: #569cd6;">&lt;/div&gt;</span></div>
+                <div class="line"></div>
+                <div class="line"><span style="color: #569cd6;">&lt;div</span> <span style="color: #9cdcfe;">id</span>=<span style="color: #ce9178;">"product-3"</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"card"</span><span style="color: #569cd6;">&gt;</span></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;h3&gt;</span>Product 3<span style="color: #569cd6;">&lt;/h3&gt;</span></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;p&gt;</span>$19.99<span style="color: #569cd6;">&lt;/p&gt;</span></div>
+                <div class="line"><span style="color: #569cd6;">&lt;/div&gt;</span></div>
+            </div>
+
+            <h4>✅ Expected Output:</h4>
+            <div class="expected-output">
+                <div style="border: 2px solid #ddd; padding: 20px; margin: 10px; border-radius: 10px; display: inline-block; width: 200px; vertical-align: top;">
+                    <h3 style="margin-top: 0;">Product 1</h3>
+                    <p>$29.99</p>
+                </div>
+                <div style="border: 2px solid gold; padding: 20px; margin: 10px; border-radius: 10px; display: inline-block; width: 200px; background-color: #fffef0; box-shadow: 0 0 10px gold; vertical-align: top;">
+                    <h3 style="margin-top: 0;">⭐ Featured Product</h3>
+                    <p>$49.99</p>
+                </div>
+                <div style="border: 2px solid #ddd; padding: 20px; margin: 10px; border-radius: 10px; display: inline-block; width: 200px; vertical-align: top;">
+                    <h3 style="margin-top: 0;">Product 3</h3>
+                    <p>$19.99</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Activity 4 -->
+        <div class="activity">
+            <div class="activity-header">
+                <div class="activity-number">4</div>
+                <div>
+                    <h3 class="activity-title">
+                        Create a Navigation Menu
+                        <span class="activity-level level-advanced">Advanced</span>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="activity-description">
+                <strong>Goal:</strong> Build a navigation menu using ID for the container and classes for menu items
+            </div>
+
+            <div class="activity-instructions">
+                <h4>📝 Instructions:</h4>
+                <ol>
+                    <li>Create a nav with <code>id="main-nav"</code></li>
+                    <li>Add links with <code>class="nav-link"</code></li>
+                    <li>Add one link with an additional <code>class="active"</code></li>
+                    <li>Style the active link differently</li>
+                </ol>
+            </div>
+
+            <div class="code-editor">
+                <div class="line"><span style="color: #569cd6;">&lt;style&gt;</span></div>
+                <div class="line">    <span style="color: #d7ba7d;">#main-nav</span> {</div>
+                <div class="line">        <span style="color: #9cdcfe;">background-color</span>: <span style="color: #ce9178;">#333</span>;</div>
+                <div class="line">        <span style="color: #9cdcfe;">padding</span>: <span style="color: #b5cea8;">15px</span>;</div>
+                <div class="line">    }</div>
+                <div class="line"></div>
+                <div class="line">    <span style="color: #d7ba7d;">.nav-link</span> {</div>
+                <div class="line">        <span style="color: #9cdcfe;">color</span>: <span style="color: #ce9178;">white</span>;</div>
+                <div class="line">        <span style="color: #9cdcfe;">text-decoration</span>: <span style="color: #ce9178;">none</span>;</div>
+                <div class="line">        <span style="color: #9cdcfe;">padding</span>: <span style="color: #b5cea8;">10px 20px</span>;</div>
+                <div class="line">        <span style="color: #9cdcfe;">margin</span>: <span style="color: #b5cea8;">0 5px</span>;</div>
+                <div class="line">    }</div>
+                <div class="line"></div>
+                <div class="line">    <span style="color: #d7ba7d;">.nav-link.active</span> {</div>
+                <div class="line">        <span style="color: #9cdcfe;">background-color</span>: <span style="color: #ce9178;">#667eea</span>;</div>
+                <div class="line">        <span style="color: #9cdcfe;">border-radius</span>: <span style="color: #b5cea8;">5px</span>;</div>
+                <div class="line">    }</div>
+                <div class="line"><span style="color: #569cd6;">&lt;/style&gt;</span></div>
+                <div class="line"></div>
+                <div class="line"><span style="color: #569cd6;">&lt;nav</span> <span style="color: #9cdcfe;">id</span>=<span style="color: #ce9178;">"main-nav"</span><span style="color: #569cd6;">&gt;</span></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;a</span> <span style="color: #9cdcfe;">href</span>=<span style="color: #ce9178;">"#"</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"nav-link active"</span><span style="color: #569cd6;">&gt;</span>Home<span style="color: #569cd6;">&lt;/a&gt;</span></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;a</span> <span style="color: #9cdcfe;">href</span>=<span style="color: #ce9178;">"#"</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"nav-link"</span><span style="color: #569cd6;">&gt;</span>About<span style="color: #569cd6;">&lt;/a&gt;</span></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;a</span> <span style="color: #9cdcfe;">href</span>=<span style="color: #ce9178;">"#"</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"nav-link"</span><span style="color: #569cd6;">&gt;</span>Services<span style="color: #569cd6;">&lt;/a&gt;</span></div>
+                <div class="line">    <span style="color: #569cd6;">&lt;a</span> <span style="color: #9cdcfe;">href</span>=<span style="color: #ce9178;">"#"</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"nav-link"</span><span style="color: #569cd6;">&gt;</span>Contact<span style="color: #569cd6;">&lt;/a&gt;</span></div>
+                <div class="line"><span style="color: #569cd6;">&lt;/nav&gt;</span></div>
+            </div>
+
+            <h4>✅ Expected Output:</h4>
+            <div class="expected-output">
+                <nav style="background-color: #333; padding: 15px; border-radius: 5px;">
+                    <a href="#" style="color: white; text-decoration: none; padding: 10px 20px; margin: 0 5px; background-color: #667eea; border-radius: 5px;">Home</a>
+                    <a href="#" style="color: white; text-decoration: none; padding: 10px 20px; margin: 0 5px;">About</a>
+                    <a href="#" style="color: white; text-decoration: none; padding: 10px 20px; margin: 0 5px;">Services</a>
+                    <a href="#" style="color: white; text-decoration: none; padding: 10px 20px; margin: 0 5px;">Contact</a>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; margin-top: 50px;">
+        <h3 style="margin-top: 0;">🎉 Great Job!</h3>
+        <p>You've learned about ID and Class attributes! You now know:</p>
+        <ul>
+            <li>✓ What ID and Class attributes are and their differences</li>
+            <li>✓ When to use ID (unique elements) vs Class (groups)</li>
+            <li>✓ How to apply multiple classes to one element</li>
+            <li>✓ How to combine ID and Class on the same element</li>
+            <li>✓ Best practices for naming IDs and classes</li>
+        </ul>
+        <p><strong>Next Step:</strong> Complete the <a href="../assignments/id-class-assignment.html" style="color: #ffd700;">ID and Class Assignment &rarr;</a></p>
+    </div>
+
+</body>
+
+</html>
+

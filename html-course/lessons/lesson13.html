@@ -1,276 +1,437 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lesson 13: HTML Multimedia</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            padding: 40px;
-            line-height: 1.8;
-            color: #333;
-        }
-        h1 { color: #667eea; margin-bottom: 20px; }
-        h2 { color: #764ba2; margin-top: 30px; margin-bottom: 15px; }
-        .code-block {
-            background-color: #f4f4f4;
-            border: 1px solid #ddd;
-            border-left: 4px solid #667eea;
-            padding: 15px;
-            margin: 20px 0;
-            font-family: 'Courier New', monospace;
-            overflow-x: auto;
-        }
-        .code-block .tag { color: #d73a49; font-weight: bold; }
-        .code-block .attr { color: #6f42c1; }
-        .code-block .value { color: #032f62; }
-        .code-block .text { color: #24292e; }
-        .info-box {
-            background-color: #e7f3ff;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-        .tip {
-            background-color: #fff3cd;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-            border-left: 4px solid #ffc107;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background-color: #764ba2;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="../../css/lesson-activity.css">
 </head>
 <body>
-    <h1>Lesson 13: HTML5 Multimedia</h1>
-    
-    <h2>HTML5 Multimedia Elements</h2>
-    <p>HTML5 introduced native support for audio and video without needing plugins.</p>
-
-    <div class="info-box">
-        <strong>Key Elements:</strong>
-        <ul>
-            <li><strong>&lt;video&gt;</strong> - Embed video files</li>
-            <li><strong>&lt;audio&gt;</strong> - Embed audio files</li>
-            <li><strong>&lt;iframe&gt;</strong> - Embed external content (YouTube, maps)</li>
-        </ul>
+    <div class="lesson-header">
+        <h1>🎬 Lesson 13: HTML5 Multimedia</h1>
+        <p class="lesson-intro">Learn to embed videos, audio, and external content like YouTube videos and Google Maps directly into your web pages using HTML5 multimedia elements!</p>
     </div>
 
-    <h2>Video Element</h2>
-    <p>The &lt;video&gt; tag embeds video files directly in your webpage.</p>
+    <div class="tag-explanation">
+        <h2>What are HTML5 Multimedia Elements?</h2>
+        <p>HTML5 introduced native support for multimedia content without needing plugins like Flash. You can now easily embed videos, audio files, and external content directly in your web pages.</p>
+        
+        <div class="tag-syntax">
+            <h3>Main Multimedia Elements:</h3>
+            <div class="syntax-box">
+                <code>&lt;video&gt;...&lt;/video&gt;</code>
+                <p>Embeds video files directly in your webpage</p>
+            </div>
+            <div class="syntax-box">
+                <code>&lt;audio&gt;...&lt;/audio&gt;</code>
+                <p>Embeds audio files for music or sounds</p>
+            </div>
+            <div class="syntax-box">
+                <code>&lt;iframe&gt;...&lt;/iframe&gt;</code>
+                <p>Embeds external content (YouTube, maps, other websites)</p>
+            </div>
+            <div class="syntax-box">
+                <code>&lt;source&gt;</code>
+                <p>Specifies multiple file formats for compatibility</p>
+            </div>
+        </div>
 
-    <div class="code-block">
-<span class="tag">&lt;video</span> <span class="attr">width</span>=<span class="value">"320"</span> <span class="attr">height</span>=<span class="value">"240"</span> <span class="attr">controls</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="value">"movie.mp4"</span> <span class="attr">type</span>=<span class="value">"video/mp4"</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="value">"movie.ogg"</span> <span class="attr">type</span>=<span class="value">"video/ogg"</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">Your browser does not support video.</span><br>
-<span class="tag">&lt;/video&gt;</span>
+        <div class="key-points">
+            <h3>🎯 Key Points</h3>
+            <ul>
+                <li>HTML5 multimedia works without Flash or other plugins</li>
+                <li>Always provide multiple formats for browser compatibility</li>
+                <li>Use <code>controls</code> attribute to show play/pause buttons</li>
+                <li>Avoid <code>autoplay</code> - it can be annoying to users</li>
+                <li>Iframes can embed external content from other websites</li>
+            </ul>
+        </div>
     </div>
 
-    <h3>Video Attributes</h3>
-    <table>
-        <tr>
-            <th>Attribute</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>controls</td>
-            <td>Show play/pause controls</td>
-        </tr>
-        <tr>
-            <td>autoplay</td>
-            <td>Start playing automatically</td>
-        </tr>
-        <tr>
-            <td>loop</td>
-            <td>Repeat video when finished</td>
-        </tr>
-        <tr>
-            <td>muted</td>
-            <td>Mute the audio</td>
-        </tr>
-        <tr>
-            <td>poster</td>
-            <td>Image shown before video plays</td>
-        </tr>
-        <tr>
-            <td>width/height</td>
-            <td>Video dimensions</td>
-        </tr>
-    </table>
+    <div class="activities-container">
+        <div class="activities-header">
+            <h2>🎯 Progressive Activities</h2>
+            <p>Complete these activities to master HTML multimedia!</p>
+        </div>
 
-    <h3>Video with All Attributes</h3>
-    <div class="code-block">
-<span class="tag">&lt;video</span> <span class="attr">width</span>=<span class="value">"640"</span> <span class="attr">height</span>=<span class="value">"360"</span> <span class="attr">controls</span> <span class="attr">loop</span> <span class="attr">poster</span>=<span class="value">"thumbnail.jpg"</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="value">"video.mp4"</span> <span class="attr">type</span>=<span class="value">"video/mp4"</span><span class="tag">&gt;</span><br>
-<span class="tag">&lt;/video&gt;</span>
+        <!-- Activity 1 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 1</span>
+                <h3 class="activity-title">Embed a Video</h3>
+                <span class="activity-level level-beginner">Beginner</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to embed a video file using the <code>&lt;video&gt;</code> element.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a <code>&lt;video&gt;</code> element</li>
+                    <li>Add <code>width="320"</code> and <code>height="240"</code> attributes</li>
+                    <li>Add the <code>controls</code> attribute to show play/pause buttons</li>
+                    <li>Inside video, add a <code>&lt;source&gt;</code> with src="video.mp4"</li>
+                    <li>Add fallback text for browsers that don't support video</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;My First Video&lt;/h2&gt;
+
+&lt;video width="320" height="240" controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A video player with play/pause controls. (Note: You need an actual video file for it to work)</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li><code>controls</code> attribute adds play, pause, and volume controls</li>
+                    <li>The fallback text shows if the browser doesn't support video</li>
+                    <li><code>type="video/mp4"</code> tells the browser the file format</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 2 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 2</span>
+                <h3 class="activity-title">Add an Audio Player</h3>
+                <span class="activity-level level-beginner">Beginner</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to embed an audio file using the <code>&lt;audio&gt;</code> element.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create an <code>&lt;audio&gt;</code> element with <code>controls</code></li>
+                    <li>Add a <code>&lt;source&gt;</code> with src="song.mp3"</li>
+                    <li>Specify <code>type="audio/mpeg"</code></li>
+                    <li>Add fallback text for unsupported browsers</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;Listen to This Song&lt;/h2&gt;
+
+&lt;audio controls&gt;
+    &lt;source src="song.mp3" type="audio/mpeg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>An audio player with play/pause controls. (Note: You need an actual audio file for it to work)</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li><code>&lt;audio&gt;</code> works similarly to <code>&lt;video&gt;</code></li>
+                    <li>Audio player is smaller and only shows controls, no video</li>
+                    <li>MP3 format works in all modern browsers</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 3 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 3</span>
+                <h3 class="activity-title">Video with Multiple Formats</h3>
+                <span class="activity-level level-intermediate">Intermediate</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to provide multiple video formats for better browser compatibility.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a video element with <code>controls</code></li>
+                    <li>Add TWO <code>&lt;source&gt;</code> elements</li>
+                    <li>First source: "video.mp4" with type="video/mp4"</li>
+                    <li>Second source: "video.webm" with type="video/webm"</li>
+                    <li>Browser will use the first format it supports</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;Video with Multiple Formats&lt;/h2&gt;
+
+&lt;video width="640" height="360" controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A video player that works across all browsers by trying different formats.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li>The browser tries each source in order</li>
+                    <li>It uses the first format it can play</li>
+                    <li>MP4 works in all modern browsers, WebM is a backup</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 4 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 4</span>
+                <h3 class="activity-title">Video with Advanced Attributes</h3>
+                <span class="activity-level level-intermediate">Intermediate</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to use additional video attributes like poster, loop, and muted.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a video with <code>controls</code></li>
+                    <li>Add <code>poster="thumbnail.jpg"</code> (image shown before playing)</li>
+                    <li>Add <code>loop</code> attribute (video repeats)</li>
+                    <li>Add <code>muted</code> attribute (starts without sound)</li>
+                    <li>Set width and height</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;Video with All Features&lt;/h2&gt;
+
+&lt;video width="640" height="360" controls loop muted 
+       poster="thumbnail.jpg"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A video player showing a thumbnail image before playing, muted by default, and repeating when finished.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li><code>poster</code> shows an image before the video starts</li>
+                    <li><code>loop</code> makes the video repeat automatically</li>
+                    <li><code>muted</code> starts with no sound (unmute with controls)</li>
+                    <li>Avoid using <code>autoplay</code> - it annoys users!</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 5 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 5</span>
+                <h3 class="activity-title">Embed a YouTube Video</h3>
+                <span class="activity-level level-intermediate">Intermediate</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to embed YouTube videos using the <code>&lt;iframe&gt;</code> element.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create an <code>&lt;iframe&gt;</code> element</li>
+                    <li>Set <code>width="560"</code> and <code>height="315"</code></li>
+                    <li>Set <code>src</code> to a YouTube embed URL</li>
+                    <li>Add <code>allowfullscreen</code> attribute</li>
+                    <li>Tip: Get embed code from YouTube's "Share" button</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;Watch This Tutorial&lt;/h2&gt;
+
+&lt;iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+        allowfullscreen&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;Note: Replace the video ID in the URL with your chosen video.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A YouTube video player embedded directly in your page with full controls.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li>Go to any YouTube video and click "Share" → "Embed"</li>
+                    <li>Copy the iframe code provided by YouTube</li>
+                    <li>The video ID is the last part of the URL</li>
+                    <li><code>allowfullscreen</code> enables fullscreen button</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 6 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 6</span>
+                <h3 class="activity-title">Create a Multimedia Page</h3>
+                <span class="activity-level level-advanced">Advanced</span>
+            </div>
+            <div class="activity-description">
+                <p>Build a complete multimedia page with video, audio, and embedded content.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a page with proper structure (header, main, sections)</li>
+                    <li>Section 1: Video player with poster and controls</li>
+                    <li>Section 2: Audio player with background music</li>
+                    <li>Section 3: Embedded YouTube video</li>
+                    <li>Section 4: Optional - Google Maps iframe of your location</li>
+                    <li>Add headings and descriptions for each section</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;header&gt;
+    &lt;h1&gt;My Multimedia Gallery&lt;/h1&gt;
+    &lt;p&gt;Explore videos, music, and more!&lt;/p&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;section&gt;
+        &lt;h2&gt;Featured Video&lt;/h2&gt;
+        &lt;video width="640" height="360" controls poster="poster.jpg"&gt;
+            &lt;source src="featured.mp4" type="video/mp4"&gt;
+            Your browser does not support video.
+        &lt;/video&gt;
+        &lt;p&gt;Watch our latest video content!&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+        &lt;h2&gt;Background Music&lt;/h2&gt;
+        &lt;audio controls&gt;
+            &lt;source src="music.mp3" type="audio/mpeg"&gt;
+            Your browser does not support audio.
+        &lt;/audio&gt;
+        &lt;p&gt;Enjoy our curated playlist.&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+        &lt;h2&gt;Tutorial Video&lt;/h2&gt;
+        &lt;iframe width="560" height="315"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                allowfullscreen&gt;
+        &lt;/iframe&gt;
+        &lt;p&gt;Learn from expert tutorials on YouTube.&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+        &lt;h2&gt;Find Us Here&lt;/h2&gt;
+        &lt;iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!..." 
+            width="600" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen&gt;
+        &lt;/iframe&gt;
+        &lt;p&gt;Visit our location on Google Maps.&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;&copy; 2025 Multimedia Gallery&lt;/p&gt;
+&lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A complete multimedia page with multiple sections, each containing different types of media content.</p>
+            </div>
+            <div class="challenge">
+                <h4>🏆 Challenge:</h4>
+                <ul>
+                    <li>Add CSS styling to make sections look professional</li>
+                    <li>Create a grid layout for multiple videos</li>
+                    <li>Add a playlist of audio files</li>
+                    <li>Embed a Spotify playlist using iframe</li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 
-    <h2>Audio Element</h2>
-    <p>The &lt;audio&gt; tag embeds audio files in your webpage.</p>
+    <div class="tag-reference" style="margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+        <h2>📚 Multimedia Reference</h2>
+        
+        <h3 style="color: #667eea;">Video Attributes</h3>
+        <table border="1" style="width: 100%; border-collapse: collapse; margin: 10px 0;">
+            <tr>
+                <th style="background: #667eea; color: white; padding: 10px;">Attribute</th>
+                <th style="background: #667eea; color: white; padding: 10px;">Description</th>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>controls</code></td>
+                <td style="padding: 8px;">Show play/pause/volume controls</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>autoplay</code></td>
+                <td style="padding: 8px;">Start playing automatically (avoid this!)</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>loop</code></td>
+                <td style="padding: 8px;">Repeat video when finished</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>muted</code></td>
+                <td style="padding: 8px;">Start with audio muted</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>poster</code></td>
+                <td style="padding: 8px;">Image shown before video plays</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>width/height</code></td>
+                <td style="padding: 8px;">Video player dimensions</td>
+            </tr>
+        </table>
 
-    <div class="code-block">
-<span class="tag">&lt;audio</span> <span class="attr">controls</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="value">"song.mp3"</span> <span class="attr">type</span>=<span class="value">"audio/mpeg"</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="value">"song.ogg"</span> <span class="attr">type</span>=<span class="value">"audio/ogg"</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">Your browser does not support audio.</span><br>
-<span class="tag">&lt;/audio&gt;</span>
-    </div>
-
-    <h3>Audio Attributes</h3>
-    <table>
-        <tr>
-            <th>Attribute</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>controls</td>
-            <td>Show play/pause controls</td>
-        </tr>
-        <tr>
-            <td>autoplay</td>
-            <td>Start playing automatically</td>
-        </tr>
-        <tr>
-            <td>loop</td>
-            <td>Repeat audio when finished</td>
-        </tr>
-        <tr>
-            <td>muted</td>
-            <td>Mute the audio</td>
-        </tr>
-        <tr>
-            <td>preload</td>
-            <td>How to load: none/metadata/auto</td>
-        </tr>
-    </table>
-
-    <h2>Iframe Element</h2>
-    <p>The &lt;iframe&gt; tag embeds external content like YouTube videos, Google Maps, or other websites.</p>
-
-    <h3>Embedding YouTube Video</h3>
-    <div class="code-block">
-<span class="tag">&lt;iframe</span> <span class="attr">width</span>=<span class="value">"560"</span> <span class="attr">height</span>=<span class="value">"315"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="value">"https://www.youtube.com/embed/VIDEO_ID"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">frameborder</span>=<span class="value">"0"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">allow</span>=<span class="value">"accelerometer; autoplay; encrypted-media"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">allowfullscreen</span><span class="tag">&gt;</span><br>
-<span class="tag">&lt;/iframe&gt;</span>
-    </div>
-
-    <h3>Embedding Google Maps</h3>
-    <div class="code-block">
-<span class="tag">&lt;iframe</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="value">"https://www.google.com/maps/embed?..."</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">width</span>=<span class="value">"600"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">height</span>=<span class="value">"450"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>=<span class="value">"border:0;"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">allowfullscreen</span><span class="tag">&gt;</span><br>
-<span class="tag">&lt;/iframe&gt;</span>
-    </div>
-
-    <h3>Embedding Another Website</h3>
-    <div class="code-block">
-<span class="tag">&lt;iframe</span> <span class="attr">src</span>=<span class="value">"https://www.example.com"</span> <span class="attr">width</span>=<span class="value">"800"</span> <span class="attr">height</span>=<span class="value">"600"</span><span class="tag">&gt;</span><br>
-<span class="tag">&lt;/iframe&gt;</span>
-    </div>
-
-    <h2>Supported File Formats</h2>
-
-    <h3>Video Formats</h3>
-    <table>
-        <tr>
-            <th>Format</th>
-            <th>Extension</th>
-            <th>Browser Support</th>
-        </tr>
-        <tr>
-            <td>MP4</td>
-            <td>.mp4</td>
-            <td>All modern browsers</td>
-        </tr>
-        <tr>
-            <td>WebM</td>
-            <td>.webm</td>
-            <td>Chrome, Firefox, Opera</td>
-        </tr>
-        <tr>
-            <td>Ogg</td>
-            <td>.ogg</td>
-            <td>Firefox, Chrome, Opera</td>
-        </tr>
-    </table>
-
-    <h3>Audio Formats</h3>
-    <table>
-        <tr>
-            <th>Format</th>
-            <th>Extension</th>
-            <th>Browser Support</th>
-        </tr>
-        <tr>
-            <td>MP3</td>
-            <td>.mp3</td>
-            <td>All modern browsers</td>
-        </tr>
-        <tr>
-            <td>WAV</td>
-            <td>.wav</td>
-            <td>All modern browsers</td>
-        </tr>
-        <tr>
-            <td>Ogg</td>
-            <td>.ogg</td>
-            <td>Firefox, Chrome, Opera</td>
-        </tr>
-    </table>
-
-    <div class="tip">
-        <strong>💡 Best Practices:</strong>
-        <ul>
-            <li>Always include multiple formats for browser compatibility</li>
-            <li>Add fallback text for unsupported browsers</li>
-            <li>Use <strong>controls</strong> attribute for user control</li>
-            <li>Don't use <strong>autoplay</strong> - it's annoying!</li>
-            <li>Add subtitles/captions using &lt;track&gt; for accessibility</li>
-            <li>Optimize video file sizes for web</li>
-        </ul>
-    </div>
-
-    <h2>Adding Subtitles</h2>
-    <div class="code-block">
-<span class="tag">&lt;video</span> <span class="attr">controls</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="value">"movie.mp4"</span> <span class="attr">type</span>=<span class="value">"video/mp4"</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;track</span> <span class="attr">src</span>=<span class="value">"subtitles_en.vtt"</span> <span class="attr">kind</span>=<span class="value">"subtitles"</span> <span class="attr">srclang</span>=<span class="value">"en"</span> <span class="attr">label</span>=<span class="value">"English"</span><span class="tag">&gt;</span><br>
-<span class="tag">&lt;/video&gt;</span>
-    </div>
-
-    <h2>Practice Exercise</h2>
-    <div class="info-box">
-        <strong>Try This:</strong>
-        <p>Create a multimedia page with:</p>
-        <ul>
-            <li>A video player with controls</li>
-            <li>An audio player for background music</li>
-            <li>An embedded YouTube video</li>
-            <li>A Google Maps iframe of your school/city</li>
-        </ul>
+        <h3 style="color: #667eea; margin-top: 20px;">Supported Formats</h3>
+        <p><strong>Video:</strong> MP4 (best compatibility), WebM, Ogg</p>
+        <p><strong>Audio:</strong> MP3 (best compatibility), WAV, Ogg</p>
     </div>
 
 </body>
 </html>
-

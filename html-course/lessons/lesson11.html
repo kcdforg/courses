@@ -1,209 +1,557 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lesson 11: Semantic HTML</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            padding: 40px;
-            line-height: 1.8;
-            color: #333;
-        }
-        h1 { color: #667eea; margin-bottom: 20px; }
-        h2 { color: #764ba2; margin-top: 30px; margin-bottom: 15px; }
-        .code-block {
-            background-color: #f4f4f4;
-            border: 1px solid #ddd;
-            border-left: 4px solid #667eea;
-            padding: 15px;
-            margin: 20px 0;
-            font-family: 'Courier New', monospace;
-            overflow-x: auto;
-        }
-        .code-block .tag { color: #d73a49; font-weight: bold; }
-        .code-block .text { color: #24292e; }
-        .info-box {
-            background-color: #e7f3ff;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-        .tip {
-            background-color: #fff3cd;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-            border-left: 4px solid #ffc107;
-        }
-        .side-by-side {
-            display: table;
-            width: 100%;
-            margin: 20px 0;
-            border-collapse: separate;
-            border-spacing: 15px 0;
-        }
-        .side-by-side .code-column, .side-by-side .output-column {
-            display: table-cell;
-            width: 50%;
-            vertical-align: top;
-        }
-        .side-by-side h4 { color: #667eea; margin-top: 0; margin-bottom: 10px; }
-        .output-box {
-            background-color: #fff;
-            border: 2px solid #667eea;
-            padding: 15px;
-            border-radius: 5px;
-            min-height: 100px;
-        }
-        .demo-layout {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin: 5px 0;
-        }
-        .demo-header { background-color: #667eea; color: white; padding: 10px; }
-        .demo-nav { background-color: #764ba2; color: white; padding: 10px; }
-        .demo-main { background-color: #f8f9fa; padding: 10px; min-height: 100px; }
-        .demo-aside { background-color: #e9ecef; padding: 10px; }
-        .demo-footer { background-color: #2c3e50; color: white; padding: 10px; }
-    </style>
+    <link rel="stylesheet" href="../../css/lesson-activity.css">
 </head>
 <body>
-    <h1>Lesson 11: Semantic HTML</h1>
-    
-    <h2>What is Semantic HTML?</h2>
-    <p>Semantic HTML uses tags that clearly describe their meaning and purpose. Instead of using generic &lt;div&gt; everywhere, semantic tags tell both browsers and developers what the content represents.</p>
-
-    <div class="info-box">
-        <strong>Benefits:</strong>
-        <ul>
-            <li>Better SEO (search engines understand content)</li>
-            <li>Improved accessibility (screen readers work better)</li>
-            <li>Easier to maintain and read code</li>
-            <li>More meaningful HTML structure</li>
-        </ul>
+    <div class="lesson-header">
+        <h1>🏗️ Lesson 11: Semantic HTML</h1>
+        <p class="lesson-intro">Learn to use meaningful HTML tags that describe the purpose of your content. Semantic HTML improves SEO, accessibility, and code readability!</p>
     </div>
 
-    <h2>Main Semantic Elements</h2>
+    <div class="tag-explanation">
+        <h2>What is Semantic HTML?</h2>
+        <p>Semantic HTML uses tags that clearly describe their meaning and purpose. Instead of using generic <code>&lt;div&gt;</code> elements everywhere, semantic tags tell both browsers and developers what the content represents.</p>
+        
+        <div class="key-points">
+            <h3>🎯 Benefits of Semantic HTML</h3>
+            <ul>
+                <li><strong>Better SEO:</strong> Search engines understand your content structure</li>
+                <li><strong>Improved Accessibility:</strong> Screen readers work better for visually impaired users</li>
+                <li><strong>Easier to Maintain:</strong> Code is more readable and meaningful</li>
+                <li><strong>Clearer Structure:</strong> Makes HTML more understandable</li>
+            </ul>
+        </div>
 
-    <h3>&lt;header&gt;</h3>
-    <p>Represents introductory content or navigation links. Usually contains logo, site title, and main navigation.</p>
-    <div class="code-block">
-<span class="tag">&lt;header&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;h1&gt;</span><span class="text">My Website</span><span class="tag">&lt;/h1&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;nav&gt;</span><span class="text">Navigation here</span><span class="tag">&lt;/nav&gt;</span><br>
-<span class="tag">&lt;/header&gt;</span>
-    </div>
-
-    <h3>&lt;nav&gt;</h3>
-    <p>Contains navigation links for the website.</p>
-    <div class="code-block">
-<span class="tag">&lt;nav&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ul&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="value">"home.html"</span><span class="tag">&gt;</span><span class="text">Home</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="value">"about.html"</span><span class="tag">&gt;</span><span class="text">About</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/ul&gt;</span><br>
-<span class="tag">&lt;/nav&gt;</span>
-    </div>
-
-    <h3>&lt;main&gt;</h3>
-    <p>Contains the main content of the page. Only one per page.</p>
-    <div class="code-block">
-<span class="tag">&lt;main&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;h2&gt;</span><span class="text">Welcome</span><span class="tag">&lt;/h2&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span><span class="text">Main content goes here...</span><span class="tag">&lt;/p&gt;</span><br>
-<span class="tag">&lt;/main&gt;</span>
-    </div>
-
-    <h3>&lt;article&gt;</h3>
-    <p>Self-contained content that could be distributed independently (blog post, news article, forum post).</p>
-    <div class="code-block">
-<span class="tag">&lt;article&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;h3&gt;</span><span class="text">Article Title</span><span class="tag">&lt;/h3&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span><span class="text">Article content...</span><span class="tag">&lt;/p&gt;</span><br>
-<span class="tag">&lt;/article&gt;</span>
-    </div>
-
-    <h3>&lt;section&gt;</h3>
-    <p>Groups related content together. Usually has a heading.</p>
-    <div class="code-block">
-<span class="tag">&lt;section&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;h2&gt;</span><span class="text">About Us</span><span class="tag">&lt;/h2&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span><span class="text">Information about the company...</span><span class="tag">&lt;/p&gt;</span><br>
-<span class="tag">&lt;/section&gt;</span>
-    </div>
-
-    <h3>&lt;aside&gt;</h3>
-    <p>Contains content indirectly related to main content (sidebar, related links).</p>
-    <div class="code-block">
-<span class="tag">&lt;aside&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;h3&gt;</span><span class="text">Related Links</span><span class="tag">&lt;/h3&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ul&gt;</span><span class="text">...</span><span class="tag">&lt;/ul&gt;</span><br>
-<span class="tag">&lt;/aside&gt;</span>
-    </div>
-
-    <h3>&lt;footer&gt;</h3>
-    <p>Contains footer information (copyright, contact info, links).</p>
-    <div class="code-block">
-<span class="tag">&lt;footer&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span><span class="text">&copy; 2025 My Website</span><span class="tag">&lt;/p&gt;</span><br>
-<span class="tag">&lt;/footer&gt;</span>
-    </div>
-
-    <h2>Complete Page Structure</h2>
-
-    <div class="side-by-side">
-        <div class="code-column">
-            <h4>HTML Code:</h4>
-            <div class="code-block">
-<span class="tag">&lt;body&gt;</span><br>
-&nbsp;&nbsp;<span class="tag">&lt;header&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;h1&gt;</span><span class="text">Site Title</span><span class="tag">&lt;/h1&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;nav&gt;</span><span class="text">Menu</span><span class="tag">&lt;/nav&gt;</span><br>
-&nbsp;&nbsp;<span class="tag">&lt;/header&gt;</span><br>
-<br>
-&nbsp;&nbsp;<span class="tag">&lt;main&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;article&gt;</span><span class="text">Content</span><span class="tag">&lt;/article&gt;</span><br>
-&nbsp;&nbsp;<span class="tag">&lt;/main&gt;</span><br>
-<br>
-&nbsp;&nbsp;<span class="tag">&lt;footer&gt;</span><span class="text">Footer</span><span class="tag">&lt;/footer&gt;</span><br>
-<span class="tag">&lt;/body&gt;</span>
+        <div class="tag-syntax">
+            <h3>Main Semantic Elements:</h3>
+            <div class="syntax-box">
+                <code>&lt;header&gt;</code>
+                <p>Introductory content or navigation (top of page or section)</p>
+            </div>
+            <div class="syntax-box">
+                <code>&lt;nav&gt;</code>
+                <p>Navigation links (menus, table of contents)</p>
+            </div>
+            <div class="syntax-box">
+                <code>&lt;main&gt;</code>
+                <p>Main content of the page (only one per page)</p>
+            </div>
+            <div class="syntax-box">
+                <code>&lt;article&gt;</code>
+                <p>Self-contained content (blog post, news article)</p>
+            </div>
+            <div class="syntax-box">
+                <code>&lt;section&gt;</code>
+                <p>Groups related content together (usually has a heading)</p>
+            </div>
+            <div class="syntax-box">
+                <code>&lt;aside&gt;</code>
+                <p>Content indirectly related to main content (sidebar, related links)</p>
+            </div>
+            <div class="syntax-box">
+                <code>&lt;footer&gt;</code>
+                <p>Footer information (copyright, contact, links)</p>
             </div>
         </div>
-        <div class="output-column">
-            <h4>Visual Layout:</h4>
-            <div class="output-box">
-                <div class="demo-header">Header - Site Title & Nav</div>
-                <div class="demo-main">Main - Content Area</div>
-                <div class="demo-footer">Footer - Copyright</div>
+
+        <div class="visual-diagram" style="margin: 30px 0;">
+            <h3>📐 Typical Page Structure:</h3>
+            <div style="border: 2px solid #667eea; border-radius: 8px; overflow: hidden;">
+                <div style="background: #667eea; color: white; padding: 15px; text-align: center; font-weight: bold;">
+                    &lt;header&gt; - Site Title & Navigation
+                </div>
+                <div style="display: flex;">
+                    <div style="flex: 3; background: #f8f9fa; padding: 20px; border-right: 2px solid #667eea;">
+                        <div style="background: white; padding: 15px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            &lt;main&gt;
+                            <div style="margin-top: 10px; padding: 10px; background: #e7f3ff; border-left: 3px solid #667eea;">
+                                &lt;article&gt; - Blog Post 1
+                            </div>
+                            <div style="margin-top: 10px; padding: 10px; background: #e7f3ff; border-left: 3px solid #667eea;">
+                                &lt;article&gt; - Blog Post 2
+                            </div>
+                        </div>
+                    </div>
+                    <div style="flex: 1; background: #e9ecef; padding: 20px;">
+                        <div style="background: white; padding: 10px; border: 1px solid #ddd; border-radius: 4px; text-align: center;">
+                            &lt;aside&gt;<br>Sidebar
+                        </div>
+                    </div>
+                </div>
+                <div style="background: #2c3e50; color: white; padding: 15px; text-align: center; font-weight: bold;">
+                    &lt;footer&gt; - Copyright & Links
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="tip">
-        <strong>💡 Best Practices:</strong>
-        <ul>
-            <li>Use semantic tags instead of &lt;div&gt; when possible</li>
-            <li>Only one &lt;main&gt; per page</li>
-            <li>&lt;article&gt; should make sense on its own</li>
-            <li>&lt;section&gt; should have a heading</li>
-            <li>Use &lt;header&gt; and &lt;footer&gt; in multiple contexts</li>
-        </ul>
+    <div class="activities-container">
+        <div class="activities-header">
+            <h2>🎯 Progressive Activities</h2>
+            <p>Complete these activities to master semantic HTML!</p>
+        </div>
+
+        <!-- Activity 1 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 1</span>
+                <h3 class="activity-title">Create a Header and Footer</h3>
+                <span class="activity-level level-beginner">Beginner</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to use <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> tags for page structure.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a <code>&lt;header&gt;</code> section with an <code>&lt;h1&gt;</code> title "My Website"</li>
+                    <li>Add a paragraph with a tagline inside the header</li>
+                    <li>Create a <code>&lt;footer&gt;</code> section at the bottom</li>
+                    <li>Add copyright text in the footer</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;header&gt;
+    &lt;h1&gt;My Website&lt;/h1&gt;
+    &lt;p&gt;Welcome to my awesome website!&lt;/p&gt;
+&lt;/header&gt;
+
+&lt;p&gt;Some content here...&lt;/p&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;&copy; 2025 My Website. All rights reserved.&lt;/p&gt;
+&lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A page with a clear header at the top and footer at the bottom, making the structure semantic and meaningful.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li><code>&lt;header&gt;</code> typically appears at the top of a page or section</li>
+                    <li><code>&lt;footer&gt;</code> typically appears at the bottom</li>
+                    <li>These tags give meaning to sections rather than just using <code>&lt;div&gt;</code></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 2 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 2</span>
+                <h3 class="activity-title">Add Navigation with &lt;nav&gt;</h3>
+                <span class="activity-level level-beginner">Beginner</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to create a navigation menu using the <code>&lt;nav&gt;</code> tag.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a <code>&lt;header&gt;</code> with a site title</li>
+                    <li>Add a <code>&lt;nav&gt;</code> section inside the header</li>
+                    <li>Inside nav, create an unordered list with 4 menu links</li>
+                    <li>Links should be: Home, About, Services, Contact</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;header&gt;
+    &lt;h1&gt;My Business Website&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="home.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="services.html"&gt;Services&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A header with a navigation menu containing four links arranged vertically (default list style).</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li><code>&lt;nav&gt;</code> clearly indicates navigation links</li>
+                    <li>Screen readers can jump directly to navigation sections</li>
+                    <li>Navigation usually contains lists of links</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 3 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 3</span>
+                <h3 class="activity-title">Use &lt;main&gt; for Main Content</h3>
+                <span class="activity-level level-beginner">Beginner</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to use the <code>&lt;main&gt;</code> tag to identify the primary content of your page.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a page with <code>&lt;header&gt;</code> containing site title</li>
+                    <li>Add a <code>&lt;main&gt;</code> section for the main content</li>
+                    <li>Inside main, add a heading and 2-3 paragraphs</li>
+                    <li>Add a <code>&lt;footer&gt;</code> at the bottom</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;header&gt;
+    &lt;h1&gt;My Blog&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;h2&gt;Welcome to My Blog&lt;/h2&gt;
+    &lt;p&gt;This is the main content area of my page. Here I share 
+       my thoughts and experiences.&lt;/p&gt;
+    &lt;p&gt;The main element should contain the primary content that 
+       is unique to this page.&lt;/p&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;&copy; 2025 My Blog&lt;/p&gt;
+&lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A well-structured page with header, main content area, and footer sections.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li>There should be only ONE <code>&lt;main&gt;</code> per page</li>
+                    <li><code>&lt;main&gt;</code> contains the primary content unique to that page</li>
+                    <li>Don't include repeated content like navigation or footer inside <code>&lt;main&gt;</code></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 4 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 4</span>
+                <h3 class="activity-title">Create Articles with &lt;article&gt;</h3>
+                <span class="activity-level level-intermediate">Intermediate</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to use <code>&lt;article&gt;</code> for self-contained, reusable content.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a <code>&lt;main&gt;</code> section</li>
+                    <li>Inside main, create 2 <code>&lt;article&gt;</code> elements</li>
+                    <li>Each article should have:
+                        <ul>
+                            <li>An <code>&lt;h2&gt;</code> heading (article title)</li>
+                            <li>A paragraph with article content</li>
+                            <li>A link saying "Read More"</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;h2&gt;Learning HTML is Fun&lt;/h2&gt;
+        &lt;p&gt;HTML is the foundation of web development. It's easy 
+           to learn and very powerful. Start your journey today!&lt;/p&gt;
+        &lt;a href="article1.html"&gt;Read More&lt;/a&gt;
+    &lt;/article&gt;
+
+    &lt;article&gt;
+        &lt;h2&gt;Why Semantic HTML Matters&lt;/h2&gt;
+        &lt;p&gt;Using semantic HTML improves accessibility, SEO, and 
+           makes your code easier to understand and maintain.&lt;/p&gt;
+        &lt;a href="article2.html"&gt;Read More&lt;/a&gt;
+    &lt;/article&gt;
+&lt;/main&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>Two distinct articles, each with its own heading, content, and link. Each article is self-contained.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li><code>&lt;article&gt;</code> is for content that makes sense on its own</li>
+                    <li>Blog posts, news articles, and forum posts are perfect for <code>&lt;article&gt;</code></li>
+                    <li>Each article should be independently distributable or reusable</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 5 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 5</span>
+                <h3 class="activity-title">Organize Content with &lt;section&gt;</h3>
+                <span class="activity-level level-intermediate">Intermediate</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to use <code>&lt;section&gt;</code> to group related content together.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a <code>&lt;main&gt;</code> element</li>
+                    <li>Inside, create 2 <code>&lt;section&gt;</code> elements</li>
+                    <li>First section about "Our Mission" with heading and paragraph</li>
+                    <li>Second section about "Our Team" with heading and paragraph</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;main&gt;
+    &lt;section&gt;
+        &lt;h2&gt;Our Mission&lt;/h2&gt;
+        &lt;p&gt;We strive to provide the best web development education 
+           to students worldwide, making learning accessible and fun.&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+        &lt;h2&gt;Our Team&lt;/h2&gt;
+        &lt;p&gt;Our team consists of experienced developers and educators 
+           passionate about teaching and technology.&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>Two distinct sections grouping related content, each with its own heading.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li><code>&lt;section&gt;</code> groups related content together</li>
+                    <li>Sections typically have a heading</li>
+                    <li>Use <code>&lt;section&gt;</code> for thematic groupings of content</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 6 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 6</span>
+                <h3 class="activity-title">Add a Sidebar with &lt;aside&gt;</h3>
+                <span class="activity-level level-intermediate">Intermediate</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to use <code>&lt;aside&gt;</code> for content indirectly related to the main content.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a <code>&lt;main&gt;</code> section with an article</li>
+                    <li>After main, add an <code>&lt;aside&gt;</code> section</li>
+                    <li>In aside, add heading "Related Links"</li>
+                    <li>Add an unordered list with 3-4 related links</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;h2&gt;Introduction to Web Development&lt;/h2&gt;
+        &lt;p&gt;Web development involves creating websites and web 
+           applications. It includes HTML, CSS, and JavaScript.&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/main&gt;
+
+&lt;aside&gt;
+    &lt;h3&gt;Related Links&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="html-tutorial.html"&gt;HTML Tutorial&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="css-guide.html"&gt;CSS Guide&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="js-basics.html"&gt;JavaScript Basics&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/aside&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A page with main content and a sidebar containing related links.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li><code>&lt;aside&gt;</code> is for content indirectly related to main content</li>
+                    <li>Common uses: sidebars, pull quotes, ads, related links</li>
+                    <li>Content in <code>&lt;aside&gt;</code> should be related but not essential</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 7 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 7</span>
+                <h3 class="activity-title">Build a Complete Semantic Page</h3>
+                <span class="activity-level level-advanced">Advanced</span>
+            </div>
+            <div class="activity-description">
+                <p>Create a complete, well-structured page using all semantic HTML elements.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a <code>&lt;header&gt;</code> with site title and navigation (3-4 links)</li>
+                    <li>Add a <code>&lt;main&gt;</code> section</li>
+                    <li>Inside main, create 2 <code>&lt;article&gt;</code> elements (blog posts)</li>
+                    <li>Each article should have heading, date, content, and "Read More" link</li>
+                    <li>Add an <code>&lt;aside&gt;</code> with "Recent Posts" and 3 links</li>
+                    <li>Add a <code>&lt;footer&gt;</code> with copyright and contact info</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;header&gt;
+    &lt;h1&gt;My Tech Blog&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="blog.html"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;h2&gt;Getting Started with HTML&lt;/h2&gt;
+        &lt;p&gt;&lt;em&gt;Published: December 2, 2025&lt;/em&gt;&lt;/p&gt;
+        &lt;p&gt;HTML is the backbone of the web. In this article, we'll 
+           explore the basics of HTML and how to create your first 
+           web page.&lt;/p&gt;
+        &lt;a href="html-basics.html"&gt;Read More &rarr;&lt;/a&gt;
+    &lt;/article&gt;
+
+    &lt;article&gt;
+        &lt;h2&gt;Understanding Semantic HTML&lt;/h2&gt;
+        &lt;p&gt;&lt;em&gt;Published: November 28, 2025&lt;/em&gt;&lt;/p&gt;
+        &lt;p&gt;Semantic HTML uses meaningful tags that describe content 
+           purpose. Learn why it matters for SEO and accessibility.&lt;/p&gt;
+        &lt;a href="semantic-html.html"&gt;Read More &rarr;&lt;/a&gt;
+    &lt;/article&gt;
+&lt;/main&gt;
+
+&lt;aside&gt;
+    &lt;h3&gt;Recent Posts&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="post1.html"&gt;CSS Flexbox Guide&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="post2.html"&gt;JavaScript Arrays&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="post3.html"&gt;Responsive Design Tips&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/aside&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;&copy; 2025 My Tech Blog. All rights reserved.&lt;/p&gt;
+    &lt;p&gt;Contact: info@mytechblog.com&lt;/p&gt;
+&lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A complete, professional blog homepage with semantic structure: header, navigation, main content with articles, sidebar, and footer.</p>
+            </div>
+            <div class="challenge">
+                <h4>🏆 Challenge:</h4>
+                <ul>
+                    <li>Add a <code>&lt;section&gt;</code> inside main to group articles</li>
+                    <li>Add more navigation items to the menu</li>
+                    <li>Include social media links in the footer</li>
+                    <li>Try nesting a <code>&lt;header&gt;</code> inside each <code>&lt;article&gt;</code></li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 
-    <h2>Practice Exercise</h2>
-    <div class="info-box">
-        <strong>Try This:</strong>
-        <p>Create a blog homepage with:</p>
-        <ul>
-            <li>&lt;header&gt; with site title and navigation</li>
-            <li>&lt;main&gt; containing 2-3 &lt;article&gt; elements</li>
-            <li>&lt;aside&gt; with "Recent Posts" sidebar</li>
-            <li>&lt;footer&gt; with copyright info</li>
-        </ul>
+    <div class="tag-reference" style="margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+        <h2>📚 Semantic Elements Reference</h2>
+        <table border="1" style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <th style="background: #667eea; color: white; padding: 10px;">Element</th>
+                <th style="background: #667eea; color: white; padding: 10px;">Purpose</th>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;header&gt;</code></td>
+                <td style="padding: 8px;">Introductory content or navigation</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;nav&gt;</code></td>
+                <td style="padding: 8px;">Navigation links</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;main&gt;</code></td>
+                <td style="padding: 8px;">Main content (only one per page)</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;article&gt;</code></td>
+                <td style="padding: 8px;">Self-contained, reusable content</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;section&gt;</code></td>
+                <td style="padding: 8px;">Thematic grouping of content</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;aside&gt;</code></td>
+                <td style="padding: 8px;">Indirectly related content (sidebar)</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;footer&gt;</code></td>
+                <td style="padding: 8px;">Footer information (copyright, contact)</td>
+            </tr>
+        </table>
     </div>
 
 </body>
 </html>
-

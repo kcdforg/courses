@@ -1,474 +1,538 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lesson 9: HTML Tables</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            padding: 40px;
-            line-height: 1.8;
-            color: #333;
-        }
-        h1 {
-            color: #667eea;
-            margin-bottom: 20px;
-        }
-        h2 {
-            color: #764ba2;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-        h3 {
-            color: #667eea;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
-        .code-block {
-            background-color: #f4f4f4;
-            border: 1px solid #ddd;
-            border-left: 4px solid #667eea;
-            padding: 15px;
-            margin: 20px 0;
-            font-family: 'Courier New', monospace;
-            overflow-x: auto;
-        }
-        .code-block .tag { color: #d73a49; font-weight: bold; }
-        .code-block .attr { color: #6f42c1; }
-        .code-block .value { color: #032f62; }
-        .code-block .text { color: #24292e; }
-        .info-box {
-            background-color: #e7f3ff;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-        .tip {
-            background-color: #fff3cd;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-            border-left: 4px solid #ffc107;
-        }
-        .example-output {
-            background-color: #fff;
-            border: 2px solid #667eea;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 5px;
-        }
-        .example-output h4 {
-            margin-top: 0;
-            color: #667eea;
-        }
-        .side-by-side {
-            display: table;
-            width: 100%;
-            margin: 20px 0;
-            border-collapse: separate;
-            border-spacing: 15px 0;
-        }
-        .side-by-side .code-column {
-            display: table-cell;
-            width: 50%;
-            vertical-align: top;
-        }
-        .side-by-side .output-column {
-            display: table-cell;
-            width: 50%;
-            vertical-align: top;
-        }
-        .side-by-side h4 {
-            color: #667eea;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        .output-box {
-            background-color: #fff;
-            border: 2px solid #667eea;
-            padding: 15px;
-            border-radius: 5px;
-            min-height: 100px;
-        }
-        /* Example table styles */
-        .demo-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-        }
-        .demo-table th, .demo-table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        .demo-table th {
-            background-color: #667eea;
-            color: white;
-        }
-        .demo-table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        .demo-table tr:hover {
-            background-color: #f0f7ff;
-        }
-        table.reference {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        table.reference th, table.reference td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        table.reference th {
-            background-color: #764ba2;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="../../css/lesson-activity.css">
 </head>
 <body>
-    <h1>Lesson 9: HTML Tables</h1>
-    
-    <h2>What are HTML Tables?</h2>
-    <p>HTML tables allow you to organize data into rows and columns. Tables are useful for displaying structured information like schedules, price lists, comparison charts, and more.</p>
-
-    <div class="info-box">
-        <strong>Key Concepts:</strong>
-        <ul>
-            <li>Tables are defined with the <strong>&lt;table&gt;</strong> tag</li>
-            <li>Each table row is defined with <strong>&lt;tr&gt;</strong></li>
-            <li>Table headers are defined with <strong>&lt;th&gt;</strong></li>
-            <li>Table data/cells are defined with <strong>&lt;td&gt;</strong></li>
-        </ul>
+    <div class="lesson-header">
+        <h1>📊 Lesson 9: HTML Tables</h1>
+        <p class="lesson-intro">Learn how to create tables to organize and display data in rows and columns. Tables are perfect for showing schedules, comparisons, and structured information!</p>
     </div>
 
-    <h2>Basic Table Structure</h2>
-    <p>Here's a simple example of a table:</p>
-
-    <div class="side-by-side">
-        <div class="code-column">
-            <h4>HTML Code:</h4>
-            <div class="code-block">
-<span class="tag">&lt;table&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th&gt;</span><span class="text">Name</span><span class="tag">&lt;/th&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th&gt;</span><span class="text">Age</span><span class="tag">&lt;/th&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th&gt;</span><span class="text">Grade</span><span class="tag">&lt;/th&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">John</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">15</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">10th</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">Sarah</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">14</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">9th</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span><br>
-<span class="tag">&lt;/table&gt;</span>
+    <div class="tag-explanation">
+        <h2>What are HTML Tables?</h2>
+        <p>HTML tables allow you to organize data into rows and columns. Tables are useful for displaying structured information like schedules, price lists, comparison charts, and more.</p>
+        
+        <div class="tag-syntax">
+            <h3>Table Tags:</h3>
+            <div class="syntax-box">
+                <code>&lt;table&gt;...&lt;/table&gt;</code>
+                <p>Defines the entire table</p>
+            </div>
+            <div class="syntax-box">
+                <code>&lt;tr&gt;...&lt;/tr&gt;</code>
+                <p>Defines a table row (table row)</p>
+            </div>
+            <div class="syntax-box">
+                <code>&lt;th&gt;...&lt;/th&gt;</code>
+                <p>Defines a table header cell (bold and centered)</p>
+            </div>
+            <div class="syntax-box">
+                <code>&lt;td&gt;...&lt;/td&gt;</code>
+                <p>Defines a table data cell (table data)</p>
             </div>
         </div>
-        <div class="output-column">
-            <h4>Output:</h4>
-            <div class="output-box">
-                <table class="demo-table">
-                    <tr>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th>Grade</th>
-                    </tr>
-                    <tr>
-                        <td>John</td>
-                        <td>15</td>
-                        <td>10th</td>
-                    </tr>
-                    <tr>
-                        <td>Sarah</td>
-                        <td>14</td>
-                        <td>9th</td>
-                    </tr>
-                </table>
-            </div>
+
+        <div class="key-points">
+            <h3>🎯 Key Points</h3>
+            <ul>
+                <li>Tables organize data in rows and columns</li>
+                <li>Each row is created with <code>&lt;tr&gt;</code></li>
+                <li>Header cells use <code>&lt;th&gt;</code> (bold and centered)</li>
+                <li>Data cells use <code>&lt;td&gt;</code> (regular text)</li>
+                <li>Tables should be used for data, not page layout</li>
+            </ul>
         </div>
-    </div>
 
-    <h2>Table with Border</h2>
-    <p>To add a border to your table, use the <strong>border</strong> attribute or CSS:</p>
-
-    <div class="code-block">
-<span class="tag">&lt;table</span> <span class="attr">border</span>=<span class="value">"1"</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th&gt;</span><span class="text">Subject</span><span class="tag">&lt;/th&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th&gt;</span><span class="text">Score</span><span class="tag">&lt;/th&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">Math</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">95</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">Science</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">88</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span><br>
-<span class="tag">&lt;/table&gt;</span>
-    </div>
-
-    <h2>Table with Caption</h2>
-    <p>Use the <strong>&lt;caption&gt;</strong> tag to add a title to your table:</p>
-
-    <div class="code-block">
-<span class="tag">&lt;table</span> <span class="attr">border</span>=<span class="value">"1"</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;caption&gt;</span><span class="text">Student Grades</span><span class="tag">&lt;/caption&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th&gt;</span><span class="text">Name</span><span class="tag">&lt;/th&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th&gt;</span><span class="text">Grade</span><span class="tag">&lt;/th&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">Alice</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">A</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span><br>
-<span class="tag">&lt;/table&gt;</span>
-    </div>
-
-    <h2>Spanning Columns and Rows</h2>
-    
-    <h3>Column Span (colspan)</h3>
-    <p>Use <strong>colspan</strong> to make a cell span multiple columns:</p>
-
-    <div class="side-by-side">
-        <div class="code-column">
-            <h4>HTML Code:</h4>
-            <div class="code-block">
-<span class="tag">&lt;table</span> <span class="attr">border</span>=<span class="value">"1"</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th</span> <span class="attr">colspan</span>=<span class="value">"3"</span><span class="tag">&gt;</span><span class="text">Student Information</span><span class="tag">&lt;/th&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th&gt;</span><span class="text">Name</span><span class="tag">&lt;/th&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th&gt;</span><span class="text">Age</span><span class="tag">&lt;/th&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th&gt;</span><span class="text">Grade</span><span class="tag">&lt;/th&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">Mike</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">16</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">11th</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span><br>
-<span class="tag">&lt;/table&gt;</span>
-            </div>
-        </div>
-        <div class="output-column">
-            <h4>Output:</h4>
-            <div class="output-box">
-                <table class="demo-table">
-                    <tr>
-                        <th colspan="3">Student Information</th>
-                    </tr>
-                    <tr>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th>Grade</th>
-                    </tr>
-                    <tr>
-                        <td>Mike</td>
-                        <td>16</td>
-                        <td>11th</td>
-                    </tr>
-                </table>
+        <div class="visual-diagram" style="margin: 30px 0;">
+            <h3>📋 Table Structure:</h3>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border: 2px solid #667eea;">
+                <div style="font-family: monospace; margin-bottom: 10px;">&lt;table border="1"&gt;</div>
+                <div style="margin-left: 20px;">
+                    <div style="background: #e7f3ff; padding: 10px; margin: 5px 0; border-left: 3px solid #667eea;">
+                        <div style="font-family: monospace;">&lt;tr&gt;</div>
+                        <div style="margin-left: 20px;">
+                            <div style="background: #fff3cd; padding: 5px; margin: 3px 0; border-left: 3px solid #ffc107;">
+                                &lt;th&gt;Header 1&lt;/th&gt;
+                            </div>
+                            <div style="background: #fff3cd; padding: 5px; margin: 3px 0; border-left: 3px solid #ffc107;">
+                                &lt;th&gt;Header 2&lt;/th&gt;
+                            </div>
+                        </div>
+                        <div style="font-family: monospace;">&lt;/tr&gt;</div>
+                    </div>
+                    <div style="background: #e7f3ff; padding: 10px; margin: 5px 0; border-left: 3px solid #667eea;">
+                        <div style="font-family: monospace;">&lt;tr&gt;</div>
+                        <div style="margin-left: 20px;">
+                            <div style="background: #d4edda; padding: 5px; margin: 3px 0; border-left: 3px solid #28a745;">
+                                &lt;td&gt;Data 1&lt;/td&gt;
+                            </div>
+                            <div style="background: #d4edda; padding: 5px; margin: 3px 0; border-left: 3px solid #28a745;">
+                                &lt;td&gt;Data 2&lt;/td&gt;
+                            </div>
+                        </div>
+                        <div style="font-family: monospace;">&lt;/tr&gt;</div>
+                    </div>
+                </div>
+                <div style="font-family: monospace;">&lt;/table&gt;</div>
             </div>
         </div>
     </div>
 
-    <h3>Row Span (rowspan)</h3>
-    <p>Use <strong>rowspan</strong> to make a cell span multiple rows:</p>
+    <div class="activities-container">
+        <div class="activities-header">
+            <h2>🎯 Progressive Activities</h2>
+            <p>Complete these activities to master HTML tables!</p>
+        </div>
 
-    <div class="side-by-side">
-        <div class="code-column">
-            <h4>HTML Code:</h4>
-            <div class="code-block">
-<span class="tag">&lt;table</span> <span class="attr">border</span>=<span class="value">"1"</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th&gt;</span><span class="text">Day</span><span class="tag">&lt;/th&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th&gt;</span><span class="text">Morning</span><span class="tag">&lt;/th&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th&gt;</span><span class="text">Afternoon</span><span class="tag">&lt;/th&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span> <span class="attr">rowspan</span>=<span class="value">"2"</span><span class="tag">&gt;</span><span class="text">Monday</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">Math</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">Science</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">English</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">History</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span><br>
-<span class="tag">&lt;/table&gt;</span>
+        <!-- Activity 1 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 1</span>
+                <h3 class="activity-title">Create Your First Table</h3>
+                <span class="activity-level level-beginner">Beginner</span>
+            </div>
+            <div class="activity-description">
+                <p>Create a simple table showing student information with Name, Age, and Grade columns.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a <code>&lt;table&gt;</code> with <code>border="1"</code></li>
+                    <li>Add a header row with <code>&lt;th&gt;</code> for "Name", "Age", and "Grade"</li>
+                    <li>Add 2 data rows with information about students</li>
+                    <li>Use <code>&lt;tr&gt;</code> for rows and <code>&lt;td&gt;</code> for data cells</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+        &lt;th&gt;Grade&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John&lt;/td&gt;
+        &lt;td&gt;15&lt;/td&gt;
+        &lt;td&gt;10th&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Sarah&lt;/td&gt;
+        &lt;td&gt;14&lt;/td&gt;
+        &lt;td&gt;9th&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A table with headers (Name, Age, Grade) and two rows of student data with visible borders.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li>The <code>border="1"</code> attribute makes borders visible</li>
+                    <li><code>&lt;th&gt;</code> cells are automatically bold and centered</li>
+                    <li>Each row must have the same number of cells</li>
+                </ul>
             </div>
         </div>
-        <div class="output-column">
-            <h4>Output:</h4>
-            <div class="output-box">
-                <table class="demo-table">
-                    <tr>
-                        <th>Day</th>
-                        <th>Morning</th>
-                        <th>Afternoon</th>
-                    </tr>
-                    <tr>
-                        <td rowspan="2">Monday</td>
-                        <td>Math</td>
-                        <td>Science</td>
-                    </tr>
-                    <tr>
-                        <td>English</td>
-                        <td>History</td>
-                    </tr>
-                </table>
+
+        <!-- Activity 2 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 2</span>
+                <h3 class="activity-title">Add a Caption to Your Table</h3>
+                <span class="activity-level level-beginner">Beginner</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to add a title to your table using the <code>&lt;caption&gt;</code> tag.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a table showing subjects and scores</li>
+                    <li>Add a <code>&lt;caption&gt;</code> tag right after <code>&lt;table&gt;</code></li>
+                    <li>The caption should say "My Test Scores"</li>
+                    <li>Add headers for "Subject" and "Score"</li>
+                    <li>Add at least 3 rows of data</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;table border="1"&gt;
+    &lt;caption&gt;My Test Scores&lt;/caption&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Subject&lt;/th&gt;
+        &lt;th&gt;Score&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Math&lt;/td&gt;
+        &lt;td&gt;95&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Science&lt;/td&gt;
+        &lt;td&gt;88&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;English&lt;/td&gt;
+        &lt;td&gt;92&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A table with "My Test Scores" as the title above the table, showing subjects and their scores.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li><code>&lt;caption&gt;</code> must come right after <code>&lt;table&gt;</code></li>
+                    <li>Caption appears centered above the table</li>
+                </ul>
             </div>
         </div>
+
+        <!-- Activity 3 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 3</span>
+                <h3 class="activity-title">Use Colspan to Span Columns</h3>
+                <span class="activity-level level-intermediate">Intermediate</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to make a cell span across multiple columns using <code>colspan</code>.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a table with 3 columns</li>
+                    <li>In the first row, use <code>colspan="3"</code> on a single <code>&lt;th&gt;</code></li>
+                    <li>The header should say "Student Information"</li>
+                    <li>Second row should have 3 separate headers: Name, Age, Grade</li>
+                    <li>Add a data row with student information</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th colspan="3"&gt;Student Information&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+        &lt;th&gt;Grade&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Mike&lt;/td&gt;
+        &lt;td&gt;16&lt;/td&gt;
+        &lt;td&gt;11th&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A table where "Student Information" spans across all 3 columns in the first row.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li><code>colspan="3"</code> makes a cell span 3 columns</li>
+                    <li>When using colspan, don't add extra cells in that row</li>
+                    <li>The colspan value should match the number of columns in other rows</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 4 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 4</span>
+                <h3 class="activity-title">Use Rowspan to Span Rows</h3>
+                <span class="activity-level level-intermediate">Intermediate</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to make a cell span across multiple rows using <code>rowspan</code>.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a class schedule table with 3 columns: Day, Morning, Afternoon</li>
+                    <li>Use <code>rowspan="2"</code> on "Monday" to make it span 2 rows</li>
+                    <li>Add morning and afternoon subjects for both periods</li>
+                    <li>Remember: when using rowspan, skip that cell in the next row!</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Day&lt;/th&gt;
+        &lt;th&gt;Morning&lt;/th&gt;
+        &lt;th&gt;Afternoon&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td rowspan="2"&gt;Monday&lt;/td&gt;
+        &lt;td&gt;Math&lt;/td&gt;
+        &lt;td&gt;Science&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;English&lt;/td&gt;
+        &lt;td&gt;History&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A table where "Monday" appears in a single cell that spans 2 rows vertically.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li><code>rowspan="2"</code> makes a cell span 2 rows</li>
+                    <li>In the second row, don't include the Day cell (it's already spanned)</li>
+                    <li>The second row only needs 2 cells (Morning and Afternoon)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 5 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 5</span>
+                <h3 class="activity-title">Organize with thead, tbody, and tfoot</h3>
+                <span class="activity-level level-intermediate">Intermediate</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to organize your table into logical sections: header, body, and footer.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a shopping list table with Item, Quantity, and Price columns</li>
+                    <li>Use <code>&lt;thead&gt;</code> for the header row</li>
+                    <li>Use <code>&lt;tbody&gt;</code> for the data rows (at least 2 items)</li>
+                    <li>Use <code>&lt;tfoot&gt;</code> for a total row</li>
+                    <li>In the footer, use <code>colspan="2"</code> for "Total" label</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;table border="1"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Item&lt;/th&gt;
+            &lt;th&gt;Quantity&lt;/th&gt;
+            &lt;th&gt;Price&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Notebook&lt;/td&gt;
+            &lt;td&gt;5&lt;/td&gt;
+            &lt;td&gt;$2.50&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Pen&lt;/td&gt;
+            &lt;td&gt;10&lt;/td&gt;
+            &lt;td&gt;$1.00&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td colspan="2"&gt;Total&lt;/td&gt;
+            &lt;td&gt;$22.50&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A well-organized table with header, body, and footer sections showing a shopping list with total.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li><code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code> help organize large tables</li>
+                    <li>These tags don't change the visual appearance but improve structure</li>
+                    <li>Screen readers use these sections for better navigation</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 6 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 6</span>
+                <h3 class="activity-title">Create a Weekly Schedule</h3>
+                <span class="activity-level level-advanced">Advanced</span>
+            </div>
+            <div class="activity-description">
+                <p>Build a complete weekly class schedule using all table features you've learned.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a table with a caption "My Class Schedule"</li>
+                    <li>Header row with: Period, Monday, Tuesday, Wednesday, Thursday, Friday</li>
+                    <li>Add 4 rows for Period 1-4</li>
+                    <li>Fill in with subject names</li>
+                    <li>Use <code>colspan</code> for lunch break spanning all days</li>
+                    <li>Add borders to all cells</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;table border="1"&gt;
+    &lt;caption&gt;My Class Schedule&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Period&lt;/th&gt;
+            &lt;th&gt;Monday&lt;/th&gt;
+            &lt;th&gt;Tuesday&lt;/th&gt;
+            &lt;th&gt;Wednesday&lt;/th&gt;
+            &lt;th&gt;Thursday&lt;/th&gt;
+            &lt;th&gt;Friday&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Period 1&lt;/td&gt;
+            &lt;td&gt;Math&lt;/td&gt;
+            &lt;td&gt;English&lt;/td&gt;
+            &lt;td&gt;Science&lt;/td&gt;
+            &lt;td&gt;History&lt;/td&gt;
+            &lt;td&gt;Art&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Period 2&lt;/td&gt;
+            &lt;td&gt;Science&lt;/td&gt;
+            &lt;td&gt;Math&lt;/td&gt;
+            &lt;td&gt;PE&lt;/td&gt;
+            &lt;td&gt;English&lt;/td&gt;
+            &lt;td&gt;Music&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Lunch&lt;/td&gt;
+            &lt;td colspan="5" style="text-align: center;"&gt;Lunch Break&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Period 3&lt;/td&gt;
+            &lt;td&gt;History&lt;/td&gt;
+            &lt;td&gt;Science&lt;/td&gt;
+            &lt;td&gt;Math&lt;/td&gt;
+            &lt;td&gt;Art&lt;/td&gt;
+            &lt;td&gt;English&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Period 4&lt;/td&gt;
+            &lt;td&gt;PE&lt;/td&gt;
+            &lt;td&gt;History&lt;/td&gt;
+            &lt;td&gt;English&lt;/td&gt;
+            &lt;td&gt;Math&lt;/td&gt;
+            &lt;td&gt;Science&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A complete weekly schedule with periods as rows, days as columns, and a lunch break spanning all days.</p>
+            </div>
+            <div class="challenge">
+                <h4>🏆 Challenge:</h4>
+                <ul>
+                    <li>Try adding a <code>&lt;tfoot&gt;</code> row showing "Classes end at 3 PM"</li>
+                    <li>Experiment with different colspan values</li>
+                    <li>Add a color to the lunch row using inline CSS</li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 
-    <h2>Table Sections: thead, tbody, tfoot</h2>
-    <p>You can organize your table into logical sections:</p>
-
-    <div class="side-by-side">
-        <div class="code-column">
-            <h4>HTML Code:</h4>
-            <div class="code-block">
-<span class="tag">&lt;table</span> <span class="attr">border</span>=<span class="value">"1"</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;thead&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th&gt;</span><span class="text">Item</span><span class="tag">&lt;/th&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th&gt;</span><span class="text">Quantity</span><span class="tag">&lt;/th&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;th&gt;</span><span class="text">Price</span><span class="tag">&lt;/th&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/thead&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tbody&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">Notebook</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">5</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">$2.50</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">Pen</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">10</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">$1.00</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tbody&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tfoot&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td</span> <span class="attr">colspan</span>=<span class="value">"2"</span><span class="tag">&gt;</span><span class="text">Total</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;td&gt;</span><span class="text">$22.50</span><span class="tag">&lt;/td&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tr&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tfoot&gt;</span><br>
-<span class="tag">&lt;/table&gt;</span>
-            </div>
-        </div>
-        <div class="output-column">
-            <h4>Output:</h4>
-            <div class="output-box">
-                <table class="demo-table">
-                    <thead>
-                        <tr>
-                            <th>Item</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Notebook</td>
-                            <td>5</td>
-                            <td>$2.50</td>
-                        </tr>
-                        <tr>
-                            <td>Pen</td>
-                            <td>10</td>
-                            <td>$1.00</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="2">Total</td>
-                            <td>$22.50</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <h2>Common Table Attributes</h2>
-    
-    <table class="reference">
-        <tr>
-            <th>Tag</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>&lt;table&gt;</td>
-            <td>Defines a table</td>
-        </tr>
-        <tr>
-            <td>&lt;tr&gt;</td>
-            <td>Defines a table row</td>
-        </tr>
-        <tr>
-            <td>&lt;th&gt;</td>
-            <td>Defines a table header cell (bold and centered by default)</td>
-        </tr>
-        <tr>
-            <td>&lt;td&gt;</td>
-            <td>Defines a table data cell</td>
-        </tr>
-        <tr>
-            <td>&lt;caption&gt;</td>
-            <td>Defines a table caption</td>
-        </tr>
-        <tr>
-            <td>&lt;thead&gt;</td>
-            <td>Groups the header content</td>
-        </tr>
-        <tr>
-            <td>&lt;tbody&gt;</td>
-            <td>Groups the body content</td>
-        </tr>
-        <tr>
-            <td>&lt;tfoot&gt;</td>
-            <td>Groups the footer content</td>
-        </tr>
-        <tr>
-            <td>colspan</td>
-            <td>Number of columns a cell should span</td>
-        </tr>
-        <tr>
-            <td>rowspan</td>
-            <td>Number of rows a cell should span</td>
-        </tr>
-    </table>
-
-    <div class="tip">
-        <strong>💡 Tips:</strong>
-        <ul>
-            <li>Use <strong>&lt;th&gt;</strong> for header cells - they are bold and centered automatically</li>
-            <li>Tables should be used for tabular data, not for page layout</li>
-            <li>Always add borders or CSS styling to make tables more readable</li>
-            <li>Use colspan and rowspan carefully - make sure your rows have the correct number of cells</li>
-        </ul>
-    </div>
-
-    <h2>Practice Exercise</h2>
-    <div class="info-box">
-        <strong>Try This:</strong>
-        <p>Create a weekly class schedule table with:</p>
-        <ul>
-            <li>Days of the week as columns (Monday to Friday)</li>
-            <li>Time periods as rows (Period 1 to Period 4)</li>
-            <li>Subject names in each cell</li>
-            <li>A caption saying "My Class Schedule"</li>
-            <li>Borders around all cells</li>
-        </ul>
+    <div class="tag-reference" style="margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+        <h2>📚 Table Tags Reference</h2>
+        <table border="1" style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <th style="background: #667eea; color: white; padding: 10px;">Tag</th>
+                <th style="background: #667eea; color: white; padding: 10px;">Description</th>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;table&gt;</code></td>
+                <td style="padding: 8px;">Defines a table</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;tr&gt;</code></td>
+                <td style="padding: 8px;">Defines a table row</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;th&gt;</code></td>
+                <td style="padding: 8px;">Defines a table header cell (bold and centered)</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;td&gt;</code></td>
+                <td style="padding: 8px;">Defines a table data cell</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;caption&gt;</code></td>
+                <td style="padding: 8px;">Defines a table caption/title</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;thead&gt;</code></td>
+                <td style="padding: 8px;">Groups the header content</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;tbody&gt;</code></td>
+                <td style="padding: 8px;">Groups the body content</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;tfoot&gt;</code></td>
+                <td style="padding: 8px;">Groups the footer content</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>colspan</code></td>
+                <td style="padding: 8px;">Number of columns a cell should span</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>rowspan</code></td>
+                <td style="padding: 8px;">Number of rows a cell should span</td>
+            </tr>
+        </table>
     </div>
 
 </body>
 </html>
-

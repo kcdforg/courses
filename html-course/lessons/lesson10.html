@@ -1,456 +1,566 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lesson 10: HTML Forms</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            padding: 40px;
-            line-height: 1.8;
-            color: #333;
-        }
-        h1 {
-            color: #667eea;
-            margin-bottom: 20px;
-        }
-        h2 {
-            color: #764ba2;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-        h3 {
-            color: #667eea;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
-        .code-block {
-            background-color: #f4f4f4;
-            border: 1px solid #ddd;
-            border-left: 4px solid #667eea;
-            padding: 15px;
-            margin: 20px 0;
-            font-family: 'Courier New', monospace;
-            overflow-x: auto;
-        }
-        .code-block .tag { color: #d73a49; font-weight: bold; }
-        .code-block .attr { color: #6f42c1; }
-        .code-block .value { color: #032f62; }
-        .code-block .text { color: #24292e; }
-        .info-box {
-            background-color: #e7f3ff;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-        .tip {
-            background-color: #fff3cd;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-            border-left: 4px solid #ffc107;
-        }
-        .side-by-side {
-            display: table;
-            width: 100%;
-            margin: 20px 0;
-            border-collapse: separate;
-            border-spacing: 15px 0;
-        }
-        .side-by-side .code-column {
-            display: table-cell;
-            width: 50%;
-            vertical-align: top;
-        }
-        .side-by-side .output-column {
-            display: table-cell;
-            width: 50%;
-            vertical-align: top;
-        }
-        .side-by-side h4 {
-            color: #667eea;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        .output-box {
-            background-color: #fff;
-            border: 2px solid #667eea;
-            padding: 15px;
-            border-radius: 5px;
-            min-height: 100px;
-        }
-        .output-box input, .output-box textarea, .output-box select {
-            margin: 5px 0;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .output-box button {
-            background-color: #667eea;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background-color: #764ba2;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="../../css/lesson-activity.css">
 </head>
 <body>
-    <h1>Lesson 10: HTML Forms</h1>
+    <div class="lesson-header">
+        <h1>📝 Lesson 10: HTML Forms</h1>
+        <p class="lesson-intro">Learn how to collect user input with HTML forms. Forms are essential for user interaction, allowing visitors to send information, register, login, and more!</p>
+    </div>
+
+    <div class="tag-explanation">
+        <h2>What are HTML Forms?</h2>
+        <p>HTML forms are used to collect user input. Forms can contain different types of input elements like text fields, checkboxes, radio buttons, submit buttons, and more.</p>
+        
+        <div class="tag-syntax">
+            <h3>Basic Form Structure:</h3>
+            <div class="syntax-box">
+                <code>&lt;form action="/submit" method="post"&gt;...&lt;/form&gt;</code>
+                <p>Container for all form elements</p>
+            </div>
+            <div class="syntax-box">
+                <code>&lt;label for="id"&gt;Label Text&lt;/label&gt;</code>
+                <p>Creates a label for an input field</p>
+            </div>
+            <div class="syntax-box">
+                <code>&lt;input type="text" name="field"&gt;</code>
+                <p>Creates an input field (various types)</p>
+            </div>
+            <div class="syntax-box">
+                <code>&lt;button type="submit"&gt;Submit&lt;/button&gt;</code>
+                <p>Creates a submit button</p>
+            </div>
+        </div>
+
+        <div class="key-points">
+            <h3>🎯 Key Points</h3>
+            <ul>
+                <li>Forms are created with <code>&lt;form&gt;</code> tag</li>
+                <li><code>action</code> attribute specifies where to send data</li>
+                <li><code>method</code> attribute specifies how to send data (GET or POST)</li>
+                <li>Always use <code>&lt;label&gt;</code> tags for accessibility</li>
+                <li>The <code>name</code> attribute is required to send data to server</li>
+                <li>Use appropriate input types for better user experience</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="activities-container">
+        <div class="activities-header">
+            <h2>🎯 Progressive Activities</h2>
+            <p>Complete these activities to master HTML forms!</p>
+        </div>
+
+        <!-- Activity 1 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 1</span>
+                <h3 class="activity-title">Create Your First Text Input</h3>
+                <span class="activity-level level-beginner">Beginner</span>
+            </div>
+            <div class="activity-description">
+                <p>Create a simple form with a text input field for entering a name.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a <code>&lt;form&gt;</code> element</li>
+                    <li>Add a <code>&lt;label&gt;</code> with text "Your Name:"</li>
+                    <li>Add an <code>&lt;input&gt;</code> with <code>type="text"</code></li>
+                    <li>Use <code>id="name"</code> and <code>name="name"</code> on the input</li>
+                    <li>Connect label and input using <code>for="name"</code></li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;form&gt;
+    &lt;label for="name"&gt;Your Name:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A form with a label "Your Name:" and a text input box where users can type.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li>The <code>id</code> attribute links the label to the input</li>
+                    <li><code>name</code> attribute is needed when sending data to a server</li>
+                    <li>Use <code>&lt;br&gt;</code> to put input on a new line</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 2 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 2</span>
+                <h3 class="activity-title">Add Different Input Types</h3>
+                <span class="activity-level level-beginner">Beginner</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to use different input types like email, password, and number.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a form with three fields:</li>
+                    <li>Email field with <code>type="email"</code></li>
+                    <li>Password field with <code>type="password"</code></li>
+                    <li>Age field with <code>type="number"</code></li>
+                    <li>Add proper labels for each field</li>
+                    <li>Add a submit button at the end</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;form&gt;
+    &lt;label for="email"&gt;Email:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="email" id="email" name="email"&gt;&lt;br&gt;&lt;br&gt;
     
-    <h2>What are HTML Forms?</h2>
-    <p>HTML forms are used to collect user input. Forms can contain different types of input elements like text fields, checkboxes, radio buttons, submit buttons, and more.</p>
+    &lt;label for="password"&gt;Password:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="password" id="password" name="password"&gt;&lt;br&gt;&lt;br&gt;
+    
+    &lt;label for="age"&gt;Age:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="number" id="age" name="age" min="1" max="120"&gt;&lt;br&gt;&lt;br&gt;
+    
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
 
-    <div class="info-box">
-        <strong>Key Points:</strong>
-        <ul>
-            <li>Forms are created with the <strong>&lt;form&gt;</strong> tag</li>
-            <li>Forms contain input elements for user data</li>
-            <li>Data can be sent to a server for processing</li>
-            <li>Forms are essential for user interaction on websites</li>
-        </ul>
-    </div>
-
-    <h2>Basic Form Structure</h2>
-
-    <div class="code-block">
-<span class="tag">&lt;form</span> <span class="attr">action</span>=<span class="value">"/submit"</span> <span class="attr">method</span>=<span class="value">"post"</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">Form elements go here...</span><br>
-<span class="tag">&lt;/form&gt;</span>
-    </div>
-
-    <div class="info-box">
-        <strong>Form Attributes:</strong>
-        <ul>
-            <li><strong>action</strong> - Where to send the form data</li>
-            <li><strong>method</strong> - How to send the data (GET or POST)</li>
-        </ul>
-    </div>
-
-    <h2>Text Input Fields</h2>
-
-    <div class="side-by-side">
-        <div class="code-column">
-            <h4>HTML Code:</h4>
-            <div class="code-block">
-<span class="tag">&lt;form&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"name"</span><span class="tag">&gt;</span><span class="text">Name:</span><span class="tag">&lt;/label&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"text"</span> <span class="attr">id</span>=<span class="value">"name"</span> <span class="attr">name</span>=<span class="value">"name"</span><span class="tag">&gt;</span><br>
-<span class="tag">&lt;/form&gt;</span>
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A form with three fields: email (validates email format), password (hides input), and age (only allows numbers).</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li><code>type="email"</code> validates email format automatically</li>
+                    <li><code>type="password"</code> hides the typed characters</li>
+                    <li><code>type="number"</code> accepts only numbers</li>
+                    <li>Use <code>min</code> and <code>max</code> to set number limits</li>
+                </ul>
             </div>
         </div>
-        <div class="output-column">
-            <h4>Output:</h4>
-            <div class="output-box">
-                <form>
-                    <label for="name">Name:</label><br>
-                    <input type="text" id="name" name="name" style="width: 90%;">
-                </form>
+
+        <!-- Activity 3 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 3</span>
+                <h3 class="activity-title">Use Radio Buttons</h3>
+                <span class="activity-level level-intermediate">Intermediate</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to create radio buttons that let users select ONE option from a group.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a form asking for gender</li>
+                    <li>Add two radio buttons: Male and Female</li>
+                    <li>Both radio buttons must have the same <code>name</code> attribute</li>
+                    <li>Each should have a different <code>value</code></li>
+                    <li>Add labels for each radio button</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;form&gt;
+    &lt;p&gt;Select Your Gender:&lt;/p&gt;
+    
+    &lt;input type="radio" id="male" name="gender" value="male"&gt;
+    &lt;label for="male"&gt;Male&lt;/label&gt;&lt;br&gt;
+    
+    &lt;input type="radio" id="female" name="gender" value="female"&gt;
+    &lt;label for="female"&gt;Female&lt;/label&gt;&lt;br&gt;
+    
+    &lt;input type="radio" id="other" name="gender" value="other"&gt;
+    &lt;label for="other"&gt;Other&lt;/label&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>Three radio buttons where only ONE can be selected at a time.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li>All radio buttons in a group must have the same <code>name</code> attribute</li>
+                    <li>This ensures only one can be selected at a time</li>
+                    <li>Each option should have a unique <code>id</code> and <code>value</code></li>
+                </ul>
             </div>
         </div>
-    </div>
 
-    <h2>Input Types</h2>
+        <!-- Activity 4 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 4</span>
+                <h3 class="activity-title">Add Checkboxes</h3>
+                <span class="activity-level level-intermediate">Intermediate</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to create checkboxes that let users select MULTIPLE options.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a form asking for hobbies</li>
+                    <li>Add at least 4 checkboxes for different hobbies</li>
+                    <li>All can have the same <code>name</code> or different names</li>
+                    <li>Add labels for each checkbox</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
 
-    <h3>1. Text Input</h3>
-    <div class="code-block">
-<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"text"</span> <span class="attr">name</span>=<span class="value">"username"</span> <span class="attr">placeholder</span>=<span class="value">"Enter your name"</span><span class="tag">&gt;</span>
-    </div>
+&lt;form&gt;
+    &lt;p&gt;Select Your Hobbies:&lt;/p&gt;
+    
+    &lt;input type="checkbox" id="reading" name="hobby" value="reading"&gt;
+    &lt;label for="reading"&gt;Reading&lt;/label&gt;&lt;br&gt;
+    
+    &lt;input type="checkbox" id="sports" name="hobby" value="sports"&gt;
+    &lt;label for="sports"&gt;Sports&lt;/label&gt;&lt;br&gt;
+    
+    &lt;input type="checkbox" id="music" name="hobby" value="music"&gt;
+    &lt;label for="music"&gt;Music&lt;/label&gt;&lt;br&gt;
+    
+    &lt;input type="checkbox" id="gaming" name="hobby" value="gaming"&gt;
+    &lt;label for="gaming"&gt;Gaming&lt;/label&gt;
+&lt;/form&gt;
 
-    <h3>2. Password Input</h3>
-    <div class="code-block">
-<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"password"</span> <span class="attr">name</span>=<span class="value">"password"</span> <span class="attr">placeholder</span>=<span class="value">"Enter password"</span><span class="tag">&gt;</span>
-    </div>
-
-    <h3>3. Email Input</h3>
-    <div class="code-block">
-<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"email"</span> <span class="attr">name</span>=<span class="value">"email"</span> <span class="attr">placeholder</span>=<span class="value">"your@email.com"</span><span class="tag">&gt;</span>
-    </div>
-
-    <h3>4. Number Input</h3>
-    <div class="code-block">
-<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"number"</span> <span class="attr">name</span>=<span class="value">"age"</span> <span class="attr">min</span>=<span class="value">"1"</span> <span class="attr">max</span>=<span class="value">"100"</span><span class="tag">&gt;</span>
-    </div>
-
-    <h3>5. Date Input</h3>
-    <div class="code-block">
-<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"date"</span> <span class="attr">name</span>=<span class="value">"birthday"</span><span class="tag">&gt;</span>
-    </div>
-
-    <h2>Radio Buttons</h2>
-    <p>Radio buttons let users select ONE option from a group:</p>
-
-    <div class="side-by-side">
-        <div class="code-column">
-            <h4>HTML Code:</h4>
-            <div class="code-block">
-<span class="tag">&lt;form&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span><span class="text">Gender:</span><span class="tag">&lt;/p&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"radio"</span> <span class="attr">id</span>=<span class="value">"male"</span> <span class="attr">name</span>=<span class="value">"gender"</span> <span class="attr">value</span>=<span class="value">"male"</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"male"</span><span class="tag">&gt;</span><span class="text">Male</span><span class="tag">&lt;/label&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"radio"</span> <span class="attr">id</span>=<span class="value">"female"</span> <span class="attr">name</span>=<span class="value">"gender"</span> <span class="attr">value</span>=<span class="value">"female"</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"female"</span><span class="tag">&gt;</span><span class="text">Female</span><span class="tag">&lt;/label&gt;</span><br>
-<span class="tag">&lt;/form&gt;</span>
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>Four checkboxes where users can select MULTIPLE options at the same time.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li>Unlike radio buttons, checkboxes allow multiple selections</li>
+                    <li>Users can check or uncheck any number of boxes</li>
+                    <li>Checkboxes with the same <code>name</code> can send multiple values</li>
+                </ul>
             </div>
         </div>
-        <div class="output-column">
-            <h4>Output:</h4>
-            <div class="output-box">
-                <form>
-                    <p>Gender:</p>
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Male</label><br>
-                    <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Female</label>
-                </form>
+
+        <!-- Activity 5 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 5</span>
+                <h3 class="activity-title">Create a Dropdown List</h3>
+                <span class="activity-level level-intermediate">Intermediate</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to create dropdown lists using <code>&lt;select&gt;</code> and <code>&lt;option&gt;</code> tags.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a form asking for favorite subject</li>
+                    <li>Use <code>&lt;select&gt;</code> tag with <code>id</code> and <code>name</code></li>
+                    <li>Add at least 5 <code>&lt;option&gt;</code> tags for different subjects</li>
+                    <li>Each option should have a <code>value</code> attribute</li>
+                    <li>Add a label before the select</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;form&gt;
+    &lt;label for="subject"&gt;Favorite Subject:&lt;/label&gt;&lt;br&gt;
+    &lt;select id="subject" name="subject"&gt;
+        &lt;option value=""&gt;-- Select a Subject --&lt;/option&gt;
+        &lt;option value="math"&gt;Mathematics&lt;/option&gt;
+        &lt;option value="science"&gt;Science&lt;/option&gt;
+        &lt;option value="english"&gt;English&lt;/option&gt;
+        &lt;option value="history"&gt;History&lt;/option&gt;
+        &lt;option value="art"&gt;Art&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A dropdown menu that opens when clicked, showing all subject options.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li>The <code>&lt;select&gt;</code> tag creates the dropdown</li>
+                    <li>Each <code>&lt;option&gt;</code> is a choice in the dropdown</li>
+                    <li>First option is often a placeholder with empty value</li>
+                </ul>
             </div>
         </div>
-    </div>
 
-    <h2>Checkboxes</h2>
-    <p>Checkboxes let users select MULTIPLE options:</p>
+        <!-- Activity 6 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 6</span>
+                <h3 class="activity-title">Add a Textarea</h3>
+                <span class="activity-level level-intermediate">Intermediate</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to create multi-line text input using <code>&lt;textarea&gt;</code>.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a form asking for comments or feedback</li>
+                    <li>Use <code>&lt;textarea&gt;</code> tag with <code>id</code> and <code>name</code></li>
+                    <li>Set <code>rows="5"</code> and <code>cols="40"</code></li>
+                    <li>Add a label before the textarea</li>
+                    <li>Add a submit button</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
 
-    <div class="side-by-side">
-        <div class="code-column">
-            <h4>HTML Code:</h4>
-            <div class="code-block">
-<span class="tag">&lt;form&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;p&gt;</span><span class="text">Hobbies:</span><span class="tag">&lt;/p&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"checkbox"</span> <span class="attr">id</span>=<span class="value">"reading"</span> <span class="attr">name</span>=<span class="value">"hobby"</span> <span class="attr">value</span>=<span class="value">"reading"</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"reading"</span><span class="tag">&gt;</span><span class="text">Reading</span><span class="tag">&lt;/label&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"checkbox"</span> <span class="attr">id</span>=<span class="value">"sports"</span> <span class="attr">name</span>=<span class="value">"hobby"</span> <span class="attr">value</span>=<span class="value">"sports"</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"sports"</span><span class="tag">&gt;</span><span class="text">Sports</span><span class="tag">&lt;/label&gt;</span><br>
-<span class="tag">&lt;/form&gt;</span>
+&lt;form&gt;
+    &lt;label for="comments"&gt;Your Comments:&lt;/label&gt;&lt;br&gt;
+    &lt;textarea id="comments" name="comments" rows="5" cols="40" 
+              placeholder="Enter your feedback here..."&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+    
+    &lt;button type="submit"&gt;Submit Feedback&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A large text box where users can type multiple lines of text.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li><code>&lt;textarea&gt;</code> is for multi-line text (unlike <code>&lt;input&gt;</code>)</li>
+                    <li><code>rows</code> sets the height, <code>cols</code> sets the width</li>
+                    <li><code>placeholder</code> shows hint text</li>
+                </ul>
             </div>
         </div>
-        <div class="output-column">
-            <h4>Output:</h4>
-            <div class="output-box">
-                <form>
-                    <p>Hobbies:</p>
-                    <input type="checkbox" id="reading" name="hobby" value="reading">
-                    <label for="reading">Reading</label><br>
-                    <input type="checkbox" id="sports" name="hobby" value="sports">
-                    <label for="sports">Sports</label>
-                </form>
+
+        <!-- Activity 7 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 7</span>
+                <h3 class="activity-title">Build a Complete Registration Form</h3>
+                <span class="activity-level level-advanced">Advanced</span>
+            </div>
+            <div class="activity-description">
+                <p>Create a comprehensive student registration form using all form elements you've learned.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a form with <code>action="/register"</code> and <code>method="post"</code></li>
+                    <li>Add text inputs for: First Name, Last Name</li>
+                    <li>Add email input with <code>required</code> attribute</li>
+                    <li>Add number input for Age</li>
+                    <li>Add date input for Date of Birth</li>
+                    <li>Add radio buttons for Gender</li>
+                    <li>Add dropdown for Grade Level (9th, 10th, 11th, 12th)</li>
+                    <li>Add checkboxes for Course Selection (at least 3 courses)</li>
+                    <li>Add textarea for Special Requests</li>
+                    <li>Add submit button with text "Register"</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;Student Registration Form&lt;/h2&gt;
+
+&lt;form action="/register" method="post"&gt;
+    &lt;!-- Personal Information --&gt;
+    &lt;h3&gt;Personal Information&lt;/h3&gt;
+    
+    &lt;label for="fname"&gt;First Name:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="text" id="fname" name="fname" required&gt;&lt;br&gt;&lt;br&gt;
+    
+    &lt;label for="lname"&gt;Last Name:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="text" id="lname" name="lname" required&gt;&lt;br&gt;&lt;br&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="email" id="email" name="email" required&gt;&lt;br&gt;&lt;br&gt;
+    
+    &lt;label for="age"&gt;Age:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="number" id="age" name="age" min="13" max="19"&gt;&lt;br&gt;&lt;br&gt;
+    
+    &lt;label for="dob"&gt;Date of Birth:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="date" id="dob" name="dob"&gt;&lt;br&gt;&lt;br&gt;
+    
+    &lt;!-- Gender --&gt;
+    &lt;p&gt;Gender:&lt;/p&gt;
+    &lt;input type="radio" id="male" name="gender" value="male"&gt;
+    &lt;label for="male"&gt;Male&lt;/label&gt;&lt;br&gt;
+    &lt;input type="radio" id="female" name="gender" value="female"&gt;
+    &lt;label for="female"&gt;Female&lt;/label&gt;&lt;br&gt;
+    &lt;input type="radio" id="other" name="gender" value="other"&gt;
+    &lt;label for="other"&gt;Other&lt;/label&gt;&lt;br&gt;&lt;br&gt;
+    
+    &lt;!-- Grade Level --&gt;
+    &lt;label for="grade"&gt;Grade Level:&lt;/label&gt;&lt;br&gt;
+    &lt;select id="grade" name="grade"&gt;
+        &lt;option value=""&gt;-- Select Grade --&lt;/option&gt;
+        &lt;option value="9"&gt;9th Grade&lt;/option&gt;
+        &lt;option value="10"&gt;10th Grade&lt;/option&gt;
+        &lt;option value="11"&gt;11th Grade&lt;/option&gt;
+        &lt;option value="12"&gt;12th Grade&lt;/option&gt;
+    &lt;/select&gt;&lt;br&gt;&lt;br&gt;
+    
+    &lt;!-- Course Selection --&gt;
+    &lt;p&gt;Select Courses:&lt;/p&gt;
+    &lt;input type="checkbox" id="math" name="course" value="math"&gt;
+    &lt;label for="math"&gt;Mathematics&lt;/label&gt;&lt;br&gt;
+    &lt;input type="checkbox" id="science" name="course" value="science"&gt;
+    &lt;label for="science"&gt;Science&lt;/label&gt;&lt;br&gt;
+    &lt;input type="checkbox" id="english" name="course" value="english"&gt;
+    &lt;label for="english"&gt;English&lt;/label&gt;&lt;br&gt;
+    &lt;input type="checkbox" id="history" name="course" value="history"&gt;
+    &lt;label for="history"&gt;History&lt;/label&gt;&lt;br&gt;&lt;br&gt;
+    
+    &lt;!-- Special Requests --&gt;
+    &lt;label for="requests"&gt;Special Requests or Comments:&lt;/label&gt;&lt;br&gt;
+    &lt;textarea id="requests" name="requests" rows="4" cols="50"&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+    
+    &lt;!-- Submit Button --&gt;
+    &lt;button type="submit"&gt;Register&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A complete, professional-looking registration form with all types of input fields organized logically.</p>
+            </div>
+            <div class="challenge">
+                <h4>🏆 Challenge:</h4>
+                <ul>
+                    <li>Add <code>placeholder</code> attributes to text inputs</li>
+                    <li>Group sections using <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code></li>
+                    <li>Add a "Reset" button with <code>type="reset"</code></li>
+                    <li>Add <code>maxlength</code> attributes to limit text length</li>
+                </ul>
             </div>
         </div>
+
     </div>
 
-    <h2>Dropdown List (Select)</h2>
+    <div class="tag-reference" style="margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+        <h2>📚 Form Elements Reference</h2>
+        <table border="1" style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <th style="background: #667eea; color: white; padding: 10px;">Element</th>
+                <th style="background: #667eea; color: white; padding: 10px;">Description</th>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;form&gt;</code></td>
+                <td style="padding: 8px;">Defines an HTML form</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;input&gt;</code></td>
+                <td style="padding: 8px;">Defines an input field</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;label&gt;</code></td>
+                <td style="padding: 8px;">Defines a label for an input</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;select&gt;</code></td>
+                <td style="padding: 8px;">Defines a dropdown list</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;option&gt;</code></td>
+                <td style="padding: 8px;">Defines an option in a dropdown</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;textarea&gt;</code></td>
+                <td style="padding: 8px;">Defines a multi-line text input</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;button&gt;</code></td>
+                <td style="padding: 8px;">Defines a clickable button</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;fieldset&gt;</code></td>
+                <td style="padding: 8px;">Groups related form elements</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>&lt;legend&gt;</code></td>
+                <td style="padding: 8px;">Defines a caption for fieldset</td>
+            </tr>
+        </table>
 
-    <div class="side-by-side">
-        <div class="code-column">
-            <h4>HTML Code:</h4>
-            <div class="code-block">
-<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"country"</span><span class="tag">&gt;</span><span class="text">Country:</span><span class="tag">&lt;/label&gt;</span><br>
-<span class="tag">&lt;select</span> <span class="attr">id</span>=<span class="value">"country"</span> <span class="attr">name</span>=<span class="value">"country"</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="value">"usa"</span><span class="tag">&gt;</span><span class="text">USA</span><span class="tag">&lt;/option&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="value">"uk"</span><span class="tag">&gt;</span><span class="text">UK</span><span class="tag">&lt;/option&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="value">"india"</span><span class="tag">&gt;</span><span class="text">India</span><span class="tag">&lt;/option&gt;</span><br>
-<span class="tag">&lt;/select&gt;</span>
-            </div>
-        </div>
-        <div class="output-column">
-            <h4>Output:</h4>
-            <div class="output-box">
-                <label for="country">Country:</label><br>
-                <select id="country" name="country" style="width: 90%;">
-                    <option value="usa">USA</option>
-                    <option value="uk">UK</option>
-                    <option value="india">India</option>
-                </select>
-            </div>
-        </div>
-    </div>
-
-    <h2>Textarea</h2>
-    <p>For multi-line text input:</p>
-
-    <div class="side-by-side">
-        <div class="code-column">
-            <h4>HTML Code:</h4>
-            <div class="code-block">
-<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"message"</span><span class="tag">&gt;</span><span class="text">Message:</span><span class="tag">&lt;/label&gt;</span><br>
-<span class="tag">&lt;textarea</span> <span class="attr">id</span>=<span class="value">"message"</span> <span class="attr">name</span>=<span class="value">"message"</span> <span class="attr">rows</span>=<span class="value">"4"</span> <span class="attr">cols</span>=<span class="value">"30"</span><span class="tag">&gt;</span><br>
-<span class="tag">&lt;/textarea&gt;</span>
-            </div>
-        </div>
-        <div class="output-column">
-            <h4>Output:</h4>
-            <div class="output-box">
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" style="width: 90%;"></textarea>
-            </div>
-        </div>
-    </div>
-
-    <h2>Submit Button</h2>
-
-    <div class="code-block">
-<span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="value">"submit"</span><span class="tag">&gt;</span><span class="text">Submit</span><span class="tag">&lt;/button&gt;</span><br>
-<br>
-<span class="text">Or:</span><br>
-<br>
-<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"submit"</span> <span class="attr">value</span>=<span class="value">"Submit"</span><span class="tag">&gt;</span>
-    </div>
-
-    <h2>Complete Form Example</h2>
-
-    <div class="side-by-side">
-        <div class="code-column">
-            <h4>HTML Code:</h4>
-            <div class="code-block">
-<span class="tag">&lt;form</span> <span class="attr">action</span>=<span class="value">"/submit"</span> <span class="attr">method</span>=<span class="value">"post"</span><span class="tag">&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"name"</span><span class="tag">&gt;</span><span class="text">Name:</span><span class="tag">&lt;/label&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"text"</span> <span class="attr">id</span>=<span class="value">"name"</span> <span class="attr">name</span>=<span class="value">"name"</span> <span class="attr">required</span><span class="tag">&gt;</span><br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"email"</span><span class="tag">&gt;</span><span class="text">Email:</span><span class="tag">&lt;/label&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"email"</span> <span class="attr">id</span>=<span class="value">"email"</span> <span class="attr">name</span>=<span class="value">"email"</span> <span class="attr">required</span><span class="tag">&gt;</span><br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"age"</span><span class="tag">&gt;</span><span class="text">Age:</span><span class="tag">&lt;/label&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"number"</span> <span class="attr">id</span>=<span class="value">"age"</span> <span class="attr">name</span>=<span class="value">"age"</span><span class="tag">&gt;</span><br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="value">"submit"</span><span class="tag">&gt;</span><span class="text">Submit</span><span class="tag">&lt;/button&gt;</span><br>
-<span class="tag">&lt;/form&gt;</span>
-            </div>
-        </div>
-        <div class="output-column">
-            <h4>Output:</h4>
-            <div class="output-box">
-                <form action="/submit" method="post">
-                    <label for="name">Name:</label><br>
-                    <input type="text" id="name" name="name" required style="width: 90%;"><br><br>
-                    
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email" required style="width: 90%;"><br><br>
-                    
-                    <label for="age">Age:</label><br>
-                    <input type="number" id="age" name="age" style="width: 90%;"><br><br>
-                    
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <h2>Common Input Attributes</h2>
-
-    <table>
-        <tr>
-            <th>Attribute</th>
-            <th>Description</th>
-            <th>Example</th>
-        </tr>
-        <tr>
-            <td>required</td>
-            <td>Field must be filled out</td>
-            <td>&lt;input type="text" required&gt;</td>
-        </tr>
-        <tr>
-            <td>placeholder</td>
-            <td>Hint text in the field</td>
-            <td>&lt;input placeholder="Enter name"&gt;</td>
-        </tr>
-        <tr>
-            <td>value</td>
-            <td>Default value</td>
-            <td>&lt;input value="John"&gt;</td>
-        </tr>
-        <tr>
-            <td>readonly</td>
-            <td>Cannot be modified</td>
-            <td>&lt;input readonly&gt;</td>
-        </tr>
-        <tr>
-            <td>disabled</td>
-            <td>Field is disabled</td>
-            <td>&lt;input disabled&gt;</td>
-        </tr>
-        <tr>
-            <td>maxlength</td>
-            <td>Maximum character length</td>
-            <td>&lt;input maxlength="10"&gt;</td>
-        </tr>
-        <tr>
-            <td>min / max</td>
-            <td>Minimum/maximum value</td>
-            <td>&lt;input type="number" min="1" max="100"&gt;</td>
-        </tr>
-    </table>
-
-    <h2>Form Validation Attributes</h2>
-
-    <div class="code-block">
-<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"text"</span> <span class="attr">name</span>=<span class="value">"username"</span> <span class="attr">required</span> <span class="attr">minlength</span>=<span class="value">"3"</span> <span class="attr">maxlength</span>=<span class="value">"20"</span><span class="tag">&gt;</span><br>
-<br>
-<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"email"</span> <span class="attr">name</span>=<span class="value">"email"</span> <span class="attr">required</span><span class="tag">&gt;</span><br>
-<br>
-<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"number"</span> <span class="attr">name</span>=<span class="value">"age"</span> <span class="attr">min</span>=<span class="value">"1"</span> <span class="attr">max</span>=<span class="value">"120"</span><span class="tag">&gt;</span>
-    </div>
-
-    <div class="tip">
-        <strong>💡 Best Practices:</strong>
-        <ul>
-            <li>Always use <strong>&lt;label&gt;</strong> tags for accessibility</li>
-            <li>Use the <strong>for</strong> attribute to associate labels with inputs</li>
-            <li>Use appropriate input types (email, number, date, etc.)</li>
-            <li>Add <strong>required</strong> attribute for mandatory fields</li>
-            <li>Use <strong>placeholder</strong> to give users hints</li>
-            <li>Group related fields using <strong>&lt;fieldset&gt;</strong> and <strong>&lt;legend&gt;</strong></li>
-            <li>Provide clear error messages for validation</li>
-        </ul>
-    </div>
-
-    <h2>Fieldset and Legend</h2>
-    <p>Group related form elements together:</p>
-
-    <div class="code-block">
-<span class="tag">&lt;fieldset&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;legend&gt;</span><span class="text">Personal Information</span><span class="tag">&lt;/legend&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"fname"</span><span class="tag">&gt;</span><span class="text">First name:</span><span class="tag">&lt;/label&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"text"</span> <span class="attr">id</span>=<span class="value">"fname"</span> <span class="attr">name</span>=<span class="value">"fname"</span><span class="tag">&gt;</span><br>
-<span class="tag">&lt;/fieldset&gt;</span>
-    </div>
-
-    <h2>Practice Exercise</h2>
-    <div class="info-box">
-        <strong>Try This:</strong>
-        <p>Create a student registration form with:</p>
-        <ul>
-            <li>Text fields for first name, last name, and student ID</li>
-            <li>Email field for email address</li>
-            <li>Number field for age</li>
-            <li>Date field for date of birth</li>
-            <li>Radio buttons for gender</li>
-            <li>Checkboxes for course selection (at least 3 courses)</li>
-            <li>Dropdown list for grade level</li>
-            <li>Textarea for comments or special requests</li>
-            <li>Submit button</li>
-            <li>Use proper labels and make name and email required</li>
-        </ul>
-    </div>
-
-    <div class="info-box" style="background-color: #d4edda; border-left: 4px solid #28a745;">
-        <strong>🎉 Congratulations!</strong>
-        <p>You've completed all 10 HTML lessons! You now have a solid foundation in HTML and can create well-structured web pages. Keep practicing and building projects to reinforce what you've learned!</p>
+        <h3 style="margin-top: 20px;">Input Types</h3>
+        <table border="1" style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <th style="background: #667eea; color: white; padding: 10px;">Type</th>
+                <th style="background: #667eea; color: white; padding: 10px;">Description</th>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>text</code></td>
+                <td style="padding: 8px;">Single-line text input</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>password</code></td>
+                <td style="padding: 8px;">Password field (hides input)</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>email</code></td>
+                <td style="padding: 8px;">Email address input</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>number</code></td>
+                <td style="padding: 8px;">Numeric input</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>date</code></td>
+                <td style="padding: 8px;">Date picker</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>radio</code></td>
+                <td style="padding: 8px;">Radio button (select one)</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>checkbox</code></td>
+                <td style="padding: 8px;">Checkbox (select multiple)</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code>submit</code></td>
+                <td style="padding: 8px;">Submit button</td>
+            </tr>
+        </table>
     </div>
 
 </body>
 </html>
-
