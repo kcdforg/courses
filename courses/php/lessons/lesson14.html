@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Regular Expressions - Learn PHP</title>
+    <link rel="stylesheet" href="../../../css/main-style.css">
+    <link rel="stylesheet" href="../../../css/course-layout.css">
+    <script src="../../../css/sidebar.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🎓 Learn Programming</h1>
+            <p class="tagline">Free Online Tutorials for School Students</p>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">PHP Course</div>
+            <ul class="sidebar-nav">
+                <li><a href="../index.html">Course Overview</a></li>
+                <li>
+                    <a href="#">Basics ▼</a>
+                    <ul>
+                        <li><a href="lesson1.html">Introduction</a></li>
+                        <li><a href="lesson2.html">Installation & Setup</a></li>
+                        <li><a href="lesson3.html">Syntax Basics</a></li>
+                        <li><a href="lesson4.html">Variables</a></li>
+                        <li><a href="lesson5.html">Data Types</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Control Structures ▼</a>
+                    <ul>
+                        <li><a href="lesson6.html">If Statements</a></li>
+                        <li><a href="lesson7.html">Switch Cases</a></li>
+                        <li><a href="lesson8.html">Loops</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Functions & Arrays ▼</a>
+                    <ul>
+                        <li><a href="lesson9.html">Functions</a></li>
+                        <li><a href="lesson10.html">Arrays</a></li>
+                        <li><a href="lesson11.html">Array Functions</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Advanced Topics ▼</a>
+                    <ul>
+                        <li><a href="lesson12.html">String Functions</a></li>
+                        <li><a href="lesson13.html">File Handling</a></li>
+                        <li><a href="lesson14.html" class="active">Regular Expressions</a></li>
+                    </ul>
+                </li>
+                <li><a href="../exercises/index.html">Exercises</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>PHP Regular Expressions</h1>
+                <p>Learn pattern matching and text processing with regular expressions.</p>
+            </div>
+
+            <section>
+                <h2>What are Regular Expressions?</h2>
+                <p>Regular expressions (regex) are patterns used to find and match text. They are powerful for text searching and validation.</p>
+
+                <h2>preg_match() - Find Pattern</h2>
+                <p>Searches for a single match:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $str = "The price is 100 dollars";
+    
+    if (preg_match("/[0-9]+/", $str)) {
+        echo "Match found!";
+    } else {
+        echo "No match";
+    }
+?&gt;</code></pre>
+                </div>
+
+                <h2>preg_match_all() - Find All Matches</h2>
+                <p>Finds all matches in a string:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $str = "Numbers: 10, 20, 30, 40";
+    
+    preg_match_all("/[0-9]+/", $str, $matches);
+    print_r($matches);
+?&gt;</code></pre>
+                </div>
+
+                <h2>preg_replace() - Replace Pattern</h2>
+                <p>Replaces text that matches a pattern:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $str = "April 15, 2024";
+    
+    // Replace numbers with X
+    $new = preg_replace("/[0-9]/", "X", $str);
+    echo $new; // Outputs: "April XX, XXXX"
+?&gt;</code></pre>
+                </div>
+
+                <h2>Basic Regex Patterns</h2>
+
+                <h3>Metacharacters</h3>
+                <ul class="topic-list">
+                    <li><code>^</code> - Start of string</li>
+                    <li><code>$</code> - End of string</li>
+                    <li><code>.</code> - Any single character</li>
+                    <li><code>*</code> - Zero or more occurrences</li>
+                    <li><code>+</code> - One or more occurrences</li>
+                    <li><code>?</code> - Zero or one occurrence</li>
+                    <li><code>{n,m}</code> - Between n and m occurrences</li>
+                </ul>
+
+                <h3>Character Classes</h3>
+                <ul class="topic-list">
+                    <li><code>[abc]</code> - Any character a, b, or c</li>
+                    <li><code>[a-z]</code> - Any lowercase letter</li>
+                    <li><code>[A-Z]</code> - Any uppercase letter</li>
+                    <li><code>[0-9]</code> - Any digit</li>
+                    <li><code>\w</code> - Word character (letter, digit, underscore)</li>
+                    <li><code>\d</code> - Digit</li>
+                    <li><code>\s</code> - Whitespace</li>
+                </ul>
+
+                <h2>Pattern Examples</h2>
+
+                <h3>Validate Email</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $email = "john@example.com";
+    $pattern = "/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
+    
+    if (preg_match($pattern, $email)) {
+        echo "Valid email";
+    }
+?&gt;</code></pre>
+                </div>
+
+                <h3>Validate Phone Number</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $phone = "123-456-7890";
+    $pattern = "/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/";
+    
+    if (preg_match($pattern, $phone)) {
+        echo "Valid phone";
+    }
+?&gt;</code></pre>
+                </div>
+
+                <h3>Extract Domain</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $url = "www.example.com";
+    $pattern = "/^(www\.)?([a-zA-Z0-9-]+\.[a-zA-Z]{2,})$/";
+    
+    if (preg_match($pattern, $url, $matches)) {
+        echo "Domain: " . $matches[2];
+    }
+?&gt;</code></pre>
+                </div>
+
+                <h3>preg_split() - Split String by Pattern</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $str = "apple, banana; orange, grape";
+    
+    // Split by comma or semicolon
+    $fruits = preg_split("/[,;]/", $str);
+    print_r($fruits);
+?&gt;</code></pre>
+                </div>
+
+                <h2>Case Insensitive Matching</h2>
+                <p>Use the 'i' modifier for case-insensitive matching:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $str = "Hello World";
+    
+    // Case insensitive
+    if (preg_match("/hello/i", $str)) {
+        echo "Match found!";
+    }
+?&gt;</code></pre>
+                </div>
+            </section>
+
+            <div class="lesson-nav">
+                <a href="lesson13.html">← Previous</a>
+                <a href="../exercises/index.html">Start Exercises →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Learn Programming. All rights reserved.</p>
+    </footer>
+</body>
+</html>

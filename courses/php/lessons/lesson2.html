@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Installation & Setup - Learn PHP</title>
+    <link rel="stylesheet" href="../../../css/main-style.css">
+    <link rel="stylesheet" href="../../../css/course-layout.css">
+    <script src="../../../css/sidebar.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>🎓 Learn Programming</h1>
+            <p class="tagline">Free Online Tutorials for School Students</p>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">PHP Course</div>
+            <ul class="sidebar-nav">
+                <li><a href="../index.html">Course Overview</a></li>
+                <li>
+                    <a href="#">Basics ▼</a>
+                    <ul>
+                        <li><a href="lesson1.html">Introduction</a></li>
+                        <li><a href="lesson2.html" class="active">Installation & Setup</a></li>
+                        <li><a href="lesson3.html">Syntax Basics</a></li>
+                        <li><a href="lesson4.html">Variables</a></li>
+                        <li><a href="lesson5.html">Data Types</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Control Structures ▼</a>
+                    <ul>
+                        <li><a href="lesson6.html">If Statements</a></li>
+                        <li><a href="lesson7.html">Switch Cases</a></li>
+                        <li><a href="lesson8.html">Loops</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Functions & Arrays ▼</a>
+                    <ul>
+                        <li><a href="lesson9.html">Functions</a></li>
+                        <li><a href="lesson10.html">Arrays</a></li>
+                        <li><a href="lesson11.html">Array Functions</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Advanced Topics ▼</a>
+                    <ul>
+                        <li><a href="lesson12.html">String Functions</a></li>
+                        <li><a href="lesson13.html">File Handling</a></li>
+                        <li><a href="lesson14.html">Regular Expressions</a></li>
+                    </ul>
+                </li>
+                <li><a href="../exercises/index.html">Exercises</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1>PHP Installation & Setup</h1>
+                <p>Learn how to install and set up PHP on your computer to start developing.</p>
+            </div>
+
+            <section>
+                <h2>System Requirements</h2>
+                <p>PHP can run on various platforms. Before installation, ensure you have:</p>
+                <ul class="topic-list">
+                    <li>A web server (Apache, Nginx, IIS)</li>
+                    <li>PHP installed on your server</li>
+                    <li>A text editor for writing code</li>
+                    <li>A web browser to test your applications</li>
+                </ul>
+
+                <h2>Installation Options</h2>
+
+                <h3>Option 1: Using XAMPP (Recommended for Beginners)</h3>
+                <p>XAMPP is the easiest way to install Apache, MySQL, PHP, and Perl on your computer.</p>
+                <div class="example-box">
+                    <strong>Steps:</strong>
+                    <ol class="topic-list">
+                        <li>Download XAMPP from <code>https://www.apachefriends.org</code></li>
+                        <li>Run the installer and follow the on-screen instructions</li>
+                        <li>Start Apache and MySQL from the XAMPP Control Panel</li>
+                        <li>Place your PHP files in the <code>htdocs</code> folder</li>
+                        <li>Visit <code>http://localhost/filename.php</code> in your browser</li>
+                    </ol>
+                </div>
+
+                <h3>Option 2: Using WAMP (Windows)</h3>
+                <p>WAMP stands for Windows, Apache, MySQL, PHP.</p>
+                <div class="example-box">
+                    <strong>Steps:</strong>
+                    <ol class="topic-list">
+                        <li>Download WAMP from <code>http://www.wampserver.com</code></li>
+                        <li>Install and run WAMP</li>
+                        <li>Access your files through <code>http://localhost</code></li>
+                    </ol>
+                </div>
+
+                <h3>Option 3: Linux/Mac Command Line</h3>
+                <div class="code-block">
+                    <pre><code># For Ubuntu/Debian
+sudo apt-get install php apache2 apache2-mod-php
+
+# For macOS
+brew install php apache2</code></pre>
+                </div>
+
+                <h2>Verify PHP Installation</h2>
+                <p>Create a test file named <code>test.php</code>:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    phpinfo();
+?&gt;</code></pre>
+                </div>
+                <p>If you see the PHP configuration details, PHP is successfully installed!</p>
+
+                <h2>Your First PHP Script</h2>
+                <p>Create a file named <code>hello.php</code>:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    echo "Hello, World!";
+?&gt;</code></pre>
+                </div>
+                <p>Save it in your web server's root directory and visit it in your browser.</p>
+            </section>
+
+            <div class="lesson-nav">
+                <a href="lesson1.html">← Previous</a>
+                <a href="lesson3.html">Next →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Learn Programming. All rights reserved.</p>
+    </footer>
+</body>
+</html>

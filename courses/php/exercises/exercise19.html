@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 19: Student Grade Management - PHP</title>
+    <link rel="stylesheet" href="../../../css/main-style.css">
+    <link rel="stylesheet" href="../../../css/course-layout.css">
+    <script src="../../../css/sidebar.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🎓 Learn Programming</h1>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">PHP Course</div>
+            <ul class="sidebar-nav">
+                <li><a href="../index.html">Course Overview</a></li>
+                <li><a href="index.html">Exercises</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>Exercise 19: Student Grade Management</h1>
+                <p>Create a system to manage student records.</p>
+            </div>
+
+            <section>
+                <h2>Objective</h2>
+                <p>Create an associative array-based student management system.</p>
+
+                <h2>Requirements</h2>
+                <ul class="topic-list">
+                    <li>Create array of students with name, marks, and subject</li>
+                    <li>Calculate grade for each student</li>
+                    <li>Find top 3 students by marks</li>
+                    <li>Calculate class average</li>
+                    <li>Display formatted report</li>
+                </ul>
+
+                <h2>Starter Code</h2>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $students = array(
+        array("name" => "John", "subject" => "Math", "marks" => 85),
+        array("name" => "Jane", "subject" => "Math", "marks" => 92),
+        array("name" => "Bob", "subject" => "Math", "marks" => 78),
+        // Add more students
+    );
+    
+    // TODO: Calculate grades
+    // TODO: Find top 3
+    // TODO: Calculate class average
+    
+?&gt;</code></pre>
+                </div>
+
+                <h2>Expected Output</h2>
+                <div class="code-block">
+                    <pre><code>Student Grade Report
+======================
+John | Math | 85 | B
+Jane | Math | 92 | A
+Bob | Math | 78 | C
+
+Top 3 Students:
+1. Jane - 92
+2. John - 85
+3. Bob - 78
+
+Class Average: 85</code></pre>
+                </div>
+            </section>
+
+            <div class="lesson-nav">
+                <a href="exercise18.html">← Previous Exercise</a>
+                <a href="exercise20.html">Next Exercise →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Learn Programming. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP File Handling - Learn PHP</title>
+    <link rel="stylesheet" href="../../../css/main-style.css">
+    <link rel="stylesheet" href="../../../css/course-layout.css">
+    <script src="../../../css/sidebar.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🎓 Learn Programming</h1>
+            <p class="tagline">Free Online Tutorials for School Students</p>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">PHP Course</div>
+            <ul class="sidebar-nav">
+                <li><a href="../index.html">Course Overview</a></li>
+                <li>
+                    <a href="#">Basics ▼</a>
+                    <ul>
+                        <li><a href="lesson1.html">Introduction</a></li>
+                        <li><a href="lesson2.html">Installation & Setup</a></li>
+                        <li><a href="lesson3.html">Syntax Basics</a></li>
+                        <li><a href="lesson4.html">Variables</a></li>
+                        <li><a href="lesson5.html">Data Types</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Control Structures ▼</a>
+                    <ul>
+                        <li><a href="lesson6.html">If Statements</a></li>
+                        <li><a href="lesson7.html">Switch Cases</a></li>
+                        <li><a href="lesson8.html">Loops</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Functions & Arrays ▼</a>
+                    <ul>
+                        <li><a href="lesson9.html">Functions</a></li>
+                        <li><a href="lesson10.html">Arrays</a></li>
+                        <li><a href="lesson11.html">Array Functions</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Advanced Topics ▼</a>
+                    <ul>
+                        <li><a href="lesson12.html">String Functions</a></li>
+                        <li><a href="lesson13.html" class="active">File Handling</a></li>
+                        <li><a href="lesson14.html">Regular Expressions</a></li>
+                    </ul>
+                </li>
+                <li><a href="../exercises/index.html">Exercises</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>PHP File Handling</h1>
+                <p>Learn how to work with files using PHP.</p>
+            </div>
+
+            <section>
+                <h2>file_exists() - Check if File Exists</h2>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    if (file_exists("test.txt")) {
+        echo "File exists";
+    } else {
+        echo "File does not exist";
+    }
+?&gt;</code></pre>
+                </div>
+
+                <h2>Reading Files</h2>
+
+                <h3>file_get_contents() - Read Entire File</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $content = file_get_contents("test.txt");
+    echo $content;
+?&gt;</code></pre>
+                </div>
+
+                <h3>file() - Read into Array</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $lines = file("test.txt");
+    
+    foreach ($lines as $line) {
+        echo $line . "&lt;br&gt;";
+    }
+?&gt;</code></pre>
+                </div>
+
+                <h3>readfile() - Output File</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    readfile("test.txt"); // Directly outputs file content
+?&gt;</code></pre>
+                </div>
+
+                <h2>Writing Files</h2>
+
+                <h3>file_put_contents() - Write to File</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $text = "Hello, World!";
+    
+    // Create or overwrite
+    file_put_contents("test.txt", $text);
+    
+    // Append to file
+    file_put_contents("test.txt", $text, FILE_APPEND);
+?&gt;</code></pre>
+                </div>
+
+                <h3>fopen() / fwrite() / fclose()</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    // Open file
+    $file = fopen("test.txt", "w");
+    
+    // Write to file
+    fwrite($file, "Hello World");
+    
+    // Close file
+    fclose($file);
+?&gt;</code></pre>
+                </div>
+
+                <h2>File Modes</h2>
+                <ul class="topic-list">
+                    <li><code>"r"</code> - Read only</li>
+                    <li><code>"w"</code> - Write (creates or truncates)</li>
+                    <li><code>"a"</code> - Append (creates if not exists)</li>
+                    <li><code>"x"</code> - Create new file (error if exists)</li>
+                    <li><code>"r+"</code> - Read and write</li>
+                    <li><code>"w+"</code> - Write and read (truncates)</li>
+                    <li><code>"a+"</code> - Append and read</li>
+                </ul>
+
+                <h2>Additional File Functions</h2>
+
+                <h3>unlink() - Delete File</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    if (file_exists("test.txt")) {
+        unlink("test.txt");
+        echo "File deleted";
+    }
+?&gt;</code></pre>
+                </div>
+
+                <h3>copy() - Copy File</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    copy("test.txt", "test_copy.txt");
+?&gt;</code></pre>
+                </div>
+
+                <h3>rename() - Rename File</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    rename("test.txt", "myfile.txt");
+?&gt;</code></pre>
+                </div>
+
+                <h3>is_file() / is_dir()</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    if (is_file("test.txt")) {
+        echo "It's a file";
+    }
+    
+    if (is_dir("mydir")) {
+        echo "It's a directory";
+    }
+?&gt;</code></pre>
+                </div>
+
+                <h3>filesize() - Get File Size</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    echo filesize("test.txt"); // Returns size in bytes
+?&gt;</code></pre>
+                </div>
+            </section>
+
+            <div class="lesson-nav">
+                <a href="lesson12.html">← Previous</a>
+                <a href="lesson14.html">Next →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Learn Programming. All rights reserved.</p>
+    </footer>
+</body>
+</html>

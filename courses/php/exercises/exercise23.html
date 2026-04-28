@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 23: Email Validator - PHP</title>
+    <link rel="stylesheet" href="../../../css/main-style.css">
+    <link rel="stylesheet" href="../../../css/course-layout.css">
+    <script src="../../../css/sidebar.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🎓 Learn Programming</h1>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">PHP Course</div>
+            <ul class="sidebar-nav">
+                <li><a href="../index.html">Course Overview</a></li>
+                <li><a href="index.html">Exercises</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>Exercise 23: Email Validator</h1>
+                <p>Use regular expressions to validate email addresses.</p>
+            </div>
+
+            <section>
+                <h2>Objective</h2>
+                <p>Master regular expressions for email validation.</p>
+
+                <h2>Email Validation Rules</h2>
+                <ul class="topic-list">
+                    <li>Must contain @ symbol</li>
+                    <li>Must contain . after @</li>
+                    <li>Text before @ (username)</li>
+                    <li>Text between @ and . (domain)</li>
+                    <li>Text after . (TLD)</li>
+                </ul>
+
+                <h2>Requirements</h2>
+                <ul class="topic-list">
+                    <li>Create regex pattern for email</li>
+                    <li>Create validateEmail() function</li>
+                    <li>Test with various email formats</li>
+                    <li>Provide feedback on validation</li>
+                </ul>
+
+                <h2>Starter Code</h2>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    function validateEmail($email) {
+        // TODO: Create regex pattern
+        // TODO: Validate email
+    }
+    
+    $emails = array(
+        "john@example.com",
+        "invalid.email",
+        "test@domain.co.uk",
+        "no-at-sign.com"
+    );
+    
+    // TODO: Validate each email
+    
+?&gt;</code></pre>
+                </div>
+
+                <h2>Expected Output</h2>
+                <div class="code-block">
+                    <pre><code>john@example.com - Valid
+invalid.email - Invalid
+test@domain.co.uk - Valid
+no-at-sign.com - Invalid</code></pre>
+                </div>
+            </section>
+
+            <div class="lesson-nav">
+                <a href="exercise22.html">← Previous Exercise</a>
+                <a href="exercise24.html">Next Exercise →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Learn Programming. All rights reserved.</p>
+    </footer>
+</body>
+</html>

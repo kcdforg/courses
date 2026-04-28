@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise: Create Your Profile Page</title>
+    <link rel="stylesheet" href="../../../css/lesson-activity.css">
+    <style>
+        /* Additional clean styles for this exercise */
+        .goal-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .goal-box h3 {
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+        
+        .step-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .step-card h4 {
+            color: #667eea;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .preview-box {
+            background: #1a1a2e;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        /* Clean Profile Card Preview */
+        .demo-profile {
+            background: white;
+            max-width: 350px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .demo-banner {
+            height: 100px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .demo-avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            border-radius: 50%;
+            margin: -50px auto 15px;
+            border: 4px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+        
+        .demo-info {
+            padding: 0 25px 25px;
+            text-align: center;
+        }
+        
+        .demo-name {
+            font-size: 1.5em;
+            color: #333;
+            margin: 0 0 5px;
+        }
+        
+        .demo-title {
+            color: #666;
+            margin: 0 0 15px;
+        }
+        
+        .demo-bio {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        
+        .demo-stats {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 15px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 20px;
+        }
+        
+        .demo-stat {
+            text-align: center;
+        }
+        
+        .demo-stat-num {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .demo-stat-label {
+            font-size: 0.8em;
+            color: #888;
+        }
+        
+        .demo-skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .demo-skill {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 0.85em;
+        }
+        
+        .demo-social {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .demo-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+        
+        .demo-social .github { background: #333; }
+        .demo-social .linkedin { background: #0077b5; }
+        .demo-social .twitter { background: #1da1f2; }
+        .demo-social .email { background: #e94560; }
+        
+        .id-label {
+            background: #ffc107;
+            color: #333;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        .class-label {
+            background: #28a745;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        .reference-table {
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        .reference-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        
+        .reference-table td:first-child {
+            width: 40%;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="lesson-header">
+        <h1>👤 Exercise: Create Your Profile Page</h1>
+        <p>Practice using ID and Class by building a personal profile card</p>
+    </div>
+
+    <!-- Goal Section -->
+    <div class="tag-explanation">
+        <div class="goal-box">
+            <h3>🎯 What You Will Build</h3>
+            <p>A beautiful profile card with your name, photo, bio, stats, skills, and social links.</p>
+            <p style="margin-bottom: 0;"><strong>Time:</strong> 45 minutes | <strong>File to create:</strong> <code style="background: rgba(255,255,255,0.2); color: #ffd700;">my-profile.html</code></p>
+        </div>
+
+        <h2>📸 Preview of Final Result</h2>
+        
+        <div class="preview-box">
+            <div class="demo-profile">
+                <div class="demo-banner"></div>
+                <div class="demo-avatar">👨‍💻</div>
+                <div class="demo-info">
+                    <h2 class="demo-name">John Doe</h2>
+                    <p class="demo-title">Web Developer</p>
+                    <p class="demo-bio">Learning HTML, CSS, and JavaScript. Passionate about creating beautiful websites!</p>
+                    
+                    <div class="demo-stats">
+                        <div class="demo-stat">
+                            <div class="demo-stat-num">12</div>
+                            <div class="demo-stat-label">Projects</div>
+                        </div>
+                        <div class="demo-stat">
+                            <div class="demo-stat-num">500</div>
+                            <div class="demo-stat-label">Followers</div>
+                        </div>
+                        <div class="demo-stat">
+                            <div class="demo-stat-num">50</div>
+                            <div class="demo-stat-label">Following</div>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-skills">
+                        <span class="demo-skill">HTML</span>
+                        <span class="demo-skill">CSS</span>
+                        <span class="demo-skill">JavaScript</span>
+                    </div>
+                    
+                    <div class="demo-social">
+                        <a href="#" class="github">💻</a>
+                        <a href="#" class="linkedin">💼</a>
+                        <a href="#" class="twitter">🐦</a>
+                        <a href="#" class="email">📧</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- What You'll Use Section -->
+    <div class="tag-explanation">
+        <h2>📚 ID and Class You Will Use</h2>
+        
+        <div class="key-points">
+            <strong>🆔 IDs (Unique - used only once):</strong>
+            <table class="reference-table">
+                <tr>
+                    <td><code>id="profile-card"</code></td>
+                    <td>The main card container</td>
+                </tr>
+                <tr>
+                    <td><code>id="profile-banner"</code></td>
+                    <td>The colored banner at top</td>
+                </tr>
+                <tr>
+                    <td><code>id="profile-avatar"</code></td>
+                    <td>Your profile picture/emoji</td>
+                </tr>
+                <tr>
+                    <td><code>id="profile-info"</code></td>
+                    <td>The info section below avatar</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="key-points" style="margin-top: 20px;">
+            <strong>📦 Classes (Reusable - can use many times):</strong>
+            <table class="reference-table">
+                <tr>
+                    <td><code>class="profile-name"</code></td>
+                    <td>Your name heading</td>
+                </tr>
+                <tr>
+                    <td><code>class="profile-title"</code></td>
+                    <td>Your role/title</td>
+                </tr>
+                <tr>
+                    <td><code>class="profile-bio"</code></td>
+                    <td>About you paragraph</td>
+                </tr>
+                <tr>
+                    <td><code>class="stat-item"</code></td>
+                    <td>Each stat box (Projects, Followers, etc.)</td>
+                </tr>
+                <tr>
+                    <td><code>class="skill-tag"</code></td>
+                    <td>Each skill badge</td>
+                </tr>
+                <tr>
+                    <td><code>class="social-link"</code></td>
+                    <td>Each social media button</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Step by Step Instructions -->
+    <div class="activities-container">
+        <div class="activities-header">
+            <h2>📝 Step-by-Step Instructions</h2>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="step-card">
+            <h4><span class="step-number">1</span> Create the HTML File</h4>
+            <p>Create a new file named <code>my-profile.html</code> and add this basic structure:</p>
+            
+            <div class="code-editor">
+<div class="line"><span style="color: #569cd6;">&lt;!DOCTYPE html&gt;</span></div>
+<div class="line"><span style="color: #569cd6;">&lt;html&gt;</span></div>
+<div class="line"><span style="color: #569cd6;">&lt;head&gt;</span></div>
+<div class="line">    <span style="color: #569cd6;">&lt;title&gt;</span>My Profile<span style="color: #569cd6;">&lt;/title&gt;</span></div>
+<div class="line">    <span style="color: #569cd6;">&lt;style&gt;</span></div>
+<div class="line">        <span style="color: #6a9955;">/* We will add CSS here */</span></div>
+<div class="line">    <span style="color: #569cd6;">&lt;/style&gt;</span></div>
+<div class="line"><span style="color: #569cd6;">&lt;/head&gt;</span></div>
+<div class="line"><span style="color: #569cd6;">&lt;body&gt;</span></div>
+<div class="line">    <span style="color: #6a9955;">&lt;!-- Profile card goes here --&gt;</span></div>
+<div class="line"><span style="color: #569cd6;">&lt;/body&gt;</span></div>
+<div class="line"><span style="color: #569cd6;">&lt;/html&gt;</span></div>
+            </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card">
+            <h4><span class="step-number">2</span> Add the Page Background (CSS)</h4>
+            <p>Inside <code>&lt;style&gt;</code>, add this CSS to make a nice dark background:</p>
+            
+            <div class="code-editor">
+<div class="line"><span style="color: #d7ba7d;">body</span> {</div>
+<div class="line">    <span style="color: #9cdcfe;">margin</span>: <span style="color: #b5cea8;">0</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">padding</span>: <span style="color: #b5cea8;">40px</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">min-height</span>: <span style="color: #b5cea8;">100vh</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">display</span>: <span style="color: #ce9178;">flex</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">justify-content</span>: <span style="color: #ce9178;">center</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">align-items</span>: <span style="color: #ce9178;">center</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">background</span>: <span style="color: #ce9178;">linear-gradient(135deg, #1a1a2e, #16213e)</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">font-family</span>: <span style="color: #ce9178;">'Segoe UI', sans-serif</span>;</div>
+<div class="line">}</div>
+            </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+            <h4><span class="step-number">3</span> Create the Profile Card Container <span class="id-label">ID</span></h4>
+            <p>Add the main card div inside <code>&lt;body&gt;</code>:</p>
+            
+            <div class="code-editor">
+<div class="line"><span style="color: #6a9955;">&lt;!-- HTML --&gt;</span></div>
+<div class="line"><span style="color: #569cd6;">&lt;div</span> <span style="color: #9cdcfe;">id</span>=<span style="color: #ce9178;">"profile-card"</span><span style="color: #569cd6;">&gt;</span></div>
+<div class="line">    <span style="color: #6a9955;">&lt;!-- Everything goes inside here --&gt;</span></div>
+<div class="line"><span style="color: #569cd6;">&lt;/div&gt;</span></div>
+            </div>
+            
+            <div class="code-editor" style="margin-top: 10px;">
+<div class="line"><span style="color: #6a9955;">/* CSS - Add to style section */</span></div>
+<div class="line"><span style="color: #d7ba7d;">#profile-card</span> {</div>
+<div class="line">    <span style="color: #9cdcfe;">background</span>: <span style="color: #ce9178;">white</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">width</span>: <span style="color: #b5cea8;">350px</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">border-radius</span>: <span style="color: #b5cea8;">15px</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">overflow</span>: <span style="color: #ce9178;">hidden</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">box-shadow</span>: <span style="color: #ce9178;">0 10px 30px rgba(0,0,0,0.3)</span>;</div>
+<div class="line">}</div>
+            </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-card">
+            <h4><span class="step-number">4</span> Add the Banner <span class="id-label">ID</span></h4>
+            <p>Add a colorful banner at the top (inside profile-card):</p>
+            
+            <div class="code-editor">
+<div class="line"><span style="color: #6a9955;">&lt;!-- HTML - inside profile-card --&gt;</span></div>
+<div class="line"><span style="color: #569cd6;">&lt;div</span> <span style="color: #9cdcfe;">id</span>=<span style="color: #ce9178;">"profile-banner"</span><span style="color: #569cd6;">&gt;&lt;/div&gt;</span></div>
+            </div>
+            
+            <div class="code-editor" style="margin-top: 10px;">
+<div class="line"><span style="color: #6a9955;">/* CSS */</span></div>
+<div class="line"><span style="color: #d7ba7d;">#profile-banner</span> {</div>
+<div class="line">    <span style="color: #9cdcfe;">height</span>: <span style="color: #b5cea8;">100px</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">background</span>: <span style="color: #ce9178;">linear-gradient(135deg, #667eea, #764ba2)</span>;</div>
+<div class="line">}</div>
+            </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step-card">
+            <h4><span class="step-number">5</span> Add the Avatar <span class="id-label">ID</span></h4>
+            <p>Add a circular avatar that overlaps the banner:</p>
+            
+            <div class="code-editor">
+<div class="line"><span style="color: #6a9955;">&lt;!-- HTML - after banner --&gt;</span></div>
+<div class="line"><span style="color: #569cd6;">&lt;div</span> <span style="color: #9cdcfe;">id</span>=<span style="color: #ce9178;">"profile-avatar"</span><span style="color: #569cd6;">&gt;</span>👨‍💻<span style="color: #569cd6;">&lt;/div&gt;</span></div>
+            </div>
+            
+            <div class="code-editor" style="margin-top: 10px;">
+<div class="line"><span style="color: #6a9955;">/* CSS */</span></div>
+<div class="line"><span style="color: #d7ba7d;">#profile-avatar</span> {</div>
+<div class="line">    <span style="color: #9cdcfe;">width</span>: <span style="color: #b5cea8;">100px</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">height</span>: <span style="color: #b5cea8;">100px</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">background</span>: <span style="color: #ce9178;">linear-gradient(135deg, #11998e, #38ef7d)</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">border-radius</span>: <span style="color: #b5cea8;">50%</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">border</span>: <span style="color: #ce9178;">4px solid white</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">margin</span>: <span style="color: #b5cea8;">-50px auto 15px</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">display</span>: <span style="color: #ce9178;">flex</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">align-items</span>: <span style="color: #ce9178;">center</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">justify-content</span>: <span style="color: #ce9178;">center</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">font-size</span>: <span style="color: #b5cea8;">40px</span>;</div>
+<div class="line">}</div>
+            </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="step-card">
+            <h4><span class="step-number">6</span> Add Info Section with Name, Title, Bio <span class="id-label">ID</span> <span class="class-label">CLASS</span></h4>
+            <p>Add the info container with your details:</p>
+            
+            <div class="code-editor">
+<div class="line"><span style="color: #6a9955;">&lt;!-- HTML - after avatar --&gt;</span></div>
+<div class="line"><span style="color: #569cd6;">&lt;div</span> <span style="color: #9cdcfe;">id</span>=<span style="color: #ce9178;">"profile-info"</span><span style="color: #569cd6;">&gt;</span></div>
+<div class="line">    <span style="color: #569cd6;">&lt;h2</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"profile-name"</span><span style="color: #569cd6;">&gt;</span>Your Name<span style="color: #569cd6;">&lt;/h2&gt;</span></div>
+<div class="line">    <span style="color: #569cd6;">&lt;p</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"profile-title"</span><span style="color: #569cd6;">&gt;</span>Student / Developer<span style="color: #569cd6;">&lt;/p&gt;</span></div>
+<div class="line">    <span style="color: #569cd6;">&lt;p</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"profile-bio"</span><span style="color: #569cd6;">&gt;</span>Write about yourself here!</span><span style="color: #569cd6;">&lt;/p&gt;</span></div>
+<div class="line"><span style="color: #569cd6;">&lt;/div&gt;</span></div>
+            </div>
+            
+            <div class="code-editor" style="margin-top: 10px;">
+<div class="line"><span style="color: #6a9955;">/* CSS */</span></div>
+<div class="line"><span style="color: #d7ba7d;">#profile-info</span> { <span style="color: #9cdcfe;">padding</span>: <span style="color: #b5cea8;">0 25px 25px</span>; <span style="color: #9cdcfe;">text-align</span>: <span style="color: #ce9178;">center</span>; }</div>
+<div class="line"><span style="color: #d7ba7d;">.profile-name</span> { <span style="color: #9cdcfe;">color</span>: <span style="color: #ce9178;">#333</span>; <span style="color: #9cdcfe;">margin</span>: <span style="color: #b5cea8;">0 0 5px</span>; }</div>
+<div class="line"><span style="color: #d7ba7d;">.profile-title</span> { <span style="color: #9cdcfe;">color</span>: <span style="color: #ce9178;">#666</span>; <span style="color: #9cdcfe;">margin</span>: <span style="color: #b5cea8;">0 0 15px</span>; }</div>
+<div class="line"><span style="color: #d7ba7d;">.profile-bio</span> { <span style="color: #9cdcfe;">color</span>: <span style="color: #ce9178;">#555</span>; <span style="color: #9cdcfe;">line-height</span>: <span style="color: #b5cea8;">1.5</span>; }</div>
+            </div>
+        </div>
+
+        <!-- Step 7 -->
+        <div class="step-card">
+            <h4><span class="step-number">7</span> Add Stats Section <span class="class-label">CLASS</span></h4>
+            <p>Add stats like Projects, Followers, Following (inside profile-info):</p>
+            
+            <div class="code-editor">
+<div class="line"><span style="color: #6a9955;">&lt;!-- HTML - inside profile-info, after bio --&gt;</span></div>
+<div class="line"><span style="color: #569cd6;">&lt;div</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"stats-container"</span><span style="color: #569cd6;">&gt;</span></div>
+<div class="line">    <span style="color: #569cd6;">&lt;div</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"stat-item"</span><span style="color: #569cd6;">&gt;</span></div>
+<div class="line">        <span style="color: #569cd6;">&lt;div</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"stat-number"</span><span style="color: #569cd6;">&gt;</span>12<span style="color: #569cd6;">&lt;/div&gt;</span></div>
+<div class="line">        <span style="color: #569cd6;">&lt;div</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"stat-label"</span><span style="color: #569cd6;">&gt;</span>Projects<span style="color: #569cd6;">&lt;/div&gt;</span></div>
+<div class="line">    <span style="color: #569cd6;">&lt;/div&gt;</span></div>
+<div class="line">    <span style="color: #6a9955;">&lt;!-- Repeat for Followers and Following --&gt;</span></div>
+<div class="line"><span style="color: #569cd6;">&lt;/div&gt;</span></div>
+            </div>
+            
+            <div class="code-editor" style="margin-top: 10px;">
+<div class="line"><span style="color: #6a9955;">/* CSS */</span></div>
+<div class="line"><span style="color: #d7ba7d;">.stats-container</span> {</div>
+<div class="line">    <span style="color: #9cdcfe;">display</span>: <span style="color: #ce9178;">flex</span>; <span style="color: #9cdcfe;">justify-content</span>: <span style="color: #ce9178;">center</span>; <span style="color: #9cdcfe;">gap</span>: <span style="color: #b5cea8;">25px</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">padding</span>: <span style="color: #b5cea8;">15px 0</span>; <span style="color: #9cdcfe;">border-top</span>: <span style="color: #ce9178;">1px solid #eee</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">border-bottom</span>: <span style="color: #ce9178;">1px solid #eee</span>; <span style="color: #9cdcfe;">margin</span>: <span style="color: #b5cea8;">20px 0</span>;</div>
+<div class="line">}</div>
+<div class="line"><span style="color: #d7ba7d;">.stat-item</span> { <span style="color: #9cdcfe;">text-align</span>: <span style="color: #ce9178;">center</span>; }</div>
+<div class="line"><span style="color: #d7ba7d;">.stat-number</span> { <span style="color: #9cdcfe;">font-size</span>: <span style="color: #b5cea8;">1.3em</span>; <span style="color: #9cdcfe;">font-weight</span>: <span style="color: #ce9178;">bold</span>; <span style="color: #9cdcfe;">color</span>: <span style="color: #ce9178;">#667eea</span>; }</div>
+<div class="line"><span style="color: #d7ba7d;">.stat-label</span> { <span style="color: #9cdcfe;">font-size</span>: <span style="color: #b5cea8;">0.8em</span>; <span style="color: #9cdcfe;">color</span>: <span style="color: #ce9178;">#888</span>; }</div>
+            </div>
+        </div>
+
+        <!-- Step 8 -->
+        <div class="step-card">
+            <h4><span class="step-number">8</span> Add Skills <span class="class-label">CLASS</span></h4>
+            <p>Add skill badges:</p>
+            
+            <div class="code-editor">
+<div class="line"><span style="color: #6a9955;">&lt;!-- HTML - after stats --&gt;</span></div>
+<div class="line"><span style="color: #569cd6;">&lt;div</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"skills-container"</span><span style="color: #569cd6;">&gt;</span></div>
+<div class="line">    <span style="color: #569cd6;">&lt;span</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"skill-tag"</span><span style="color: #569cd6;">&gt;</span>HTML<span style="color: #569cd6;">&lt;/span&gt;</span></div>
+<div class="line">    <span style="color: #569cd6;">&lt;span</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"skill-tag"</span><span style="color: #569cd6;">&gt;</span>CSS<span style="color: #569cd6;">&lt;/span&gt;</span></div>
+<div class="line">    <span style="color: #569cd6;">&lt;span</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"skill-tag"</span><span style="color: #569cd6;">&gt;</span>JavaScript<span style="color: #569cd6;">&lt;/span&gt;</span></div>
+<div class="line"><span style="color: #569cd6;">&lt;/div&gt;</span></div>
+            </div>
+            
+            <div class="code-editor" style="margin-top: 10px;">
+<div class="line"><span style="color: #6a9955;">/* CSS */</span></div>
+<div class="line"><span style="color: #d7ba7d;">.skills-container</span> { <span style="color: #9cdcfe;">display</span>: <span style="color: #ce9178;">flex</span>; <span style="color: #9cdcfe;">flex-wrap</span>: <span style="color: #ce9178;">wrap</span>; <span style="color: #9cdcfe;">justify-content</span>: <span style="color: #ce9178;">center</span>; <span style="color: #9cdcfe;">gap</span>: <span style="color: #b5cea8;">8px</span>; <span style="color: #9cdcfe;">margin-bottom</span>: <span style="color: #b5cea8;">20px</span>; }</div>
+<div class="line"><span style="color: #d7ba7d;">.skill-tag</span> {</div>
+<div class="line">    <span style="color: #9cdcfe;">background</span>: <span style="color: #ce9178;">linear-gradient(135deg, #667eea, #764ba2)</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">color</span>: <span style="color: #ce9178;">white</span>; <span style="color: #9cdcfe;">padding</span>: <span style="color: #b5cea8;">6px 14px</span>; <span style="color: #9cdcfe;">border-radius</span>: <span style="color: #b5cea8;">15px</span>; <span style="color: #9cdcfe;">font-size</span>: <span style="color: #b5cea8;">0.85em</span>;</div>
+<div class="line">}</div>
+            </div>
+        </div>
+
+        <!-- Step 9 -->
+        <div class="step-card">
+            <h4><span class="step-number">9</span> Add Social Links <span class="class-label">CLASS</span> (Multiple Classes!)</h4>
+            <p>Add social links with multiple classes:</p>
+            
+            <div class="code-editor">
+<div class="line"><span style="color: #6a9955;">&lt;!-- HTML - after skills --&gt;</span></div>
+<div class="line"><span style="color: #569cd6;">&lt;div</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"social-container"</span><span style="color: #569cd6;">&gt;</span></div>
+<div class="line">    <span style="color: #569cd6;">&lt;a</span> <span style="color: #9cdcfe;">href</span>=<span style="color: #ce9178;">"#"</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"social-link github"</span><span style="color: #569cd6;">&gt;</span>💻<span style="color: #569cd6;">&lt;/a&gt;</span></div>
+<div class="line">    <span style="color: #569cd6;">&lt;a</span> <span style="color: #9cdcfe;">href</span>=<span style="color: #ce9178;">"#"</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"social-link linkedin"</span><span style="color: #569cd6;">&gt;</span>💼<span style="color: #569cd6;">&lt;/a&gt;</span></div>
+<div class="line">    <span style="color: #569cd6;">&lt;a</span> <span style="color: #9cdcfe;">href</span>=<span style="color: #ce9178;">"#"</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"social-link twitter"</span><span style="color: #569cd6;">&gt;</span>🐦<span style="color: #569cd6;">&lt;/a&gt;</span></div>
+<div class="line">    <span style="color: #569cd6;">&lt;a</span> <span style="color: #9cdcfe;">href</span>=<span style="color: #ce9178;">"#"</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"social-link email"</span><span style="color: #569cd6;">&gt;</span>📧<span style="color: #569cd6;">&lt;/a&gt;</span></div>
+<div class="line"><span style="color: #569cd6;">&lt;/div&gt;</span></div>
+            </div>
+            
+            <div class="code-editor" style="margin-top: 10px;">
+<div class="line"><span style="color: #6a9955;">/* CSS */</span></div>
+<div class="line"><span style="color: #d7ba7d;">.social-container</span> { <span style="color: #9cdcfe;">display</span>: <span style="color: #ce9178;">flex</span>; <span style="color: #9cdcfe;">justify-content</span>: <span style="color: #ce9178;">center</span>; <span style="color: #9cdcfe;">gap</span>: <span style="color: #b5cea8;">12px</span>; }</div>
+<div class="line"><span style="color: #d7ba7d;">.social-link</span> {</div>
+<div class="line">    <span style="color: #9cdcfe;">width</span>: <span style="color: #b5cea8;">40px</span>; <span style="color: #9cdcfe;">height</span>: <span style="color: #b5cea8;">40px</span>; <span style="color: #9cdcfe;">border-radius</span>: <span style="color: #b5cea8;">50%</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">display</span>: <span style="color: #ce9178;">flex</span>; <span style="color: #9cdcfe;">align-items</span>: <span style="color: #ce9178;">center</span>; <span style="color: #9cdcfe;">justify-content</span>: <span style="color: #ce9178;">center</span>;</div>
+<div class="line">    <span style="color: #9cdcfe;">text-decoration</span>: <span style="color: #ce9178;">none</span>; <span style="color: #9cdcfe;">font-size</span>: <span style="color: #b5cea8;">1.1em</span>;</div>
+<div class="line">}</div>
+<div class="line"><span style="color: #d7ba7d;">.github</span> { <span style="color: #9cdcfe;">background</span>: <span style="color: #ce9178;">#333</span>; }</div>
+<div class="line"><span style="color: #d7ba7d;">.linkedin</span> { <span style="color: #9cdcfe;">background</span>: <span style="color: #ce9178;">#0077b5</span>; }</div>
+<div class="line"><span style="color: #d7ba7d;">.twitter</span> { <span style="color: #9cdcfe;">background</span>: <span style="color: #ce9178;">#1da1f2</span>; }</div>
+<div class="line"><span style="color: #d7ba7d;">.email</span> { <span style="color: #9cdcfe;">background</span>: <span style="color: #ce9178;">#e94560</span>; }</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Checklist -->
+    <div class="tag-explanation">
+        <h2>✅ Checklist - Did You Complete Everything?</h2>
+        
+        <div class="key-points">
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 8px 0;">☐ Created <code>my-profile.html</code> file</li>
+                <li style="padding: 8px 0;">☐ Used <code>id="profile-card"</code> for main container</li>
+                <li style="padding: 8px 0;">☐ Used <code>id="profile-banner"</code> with gradient</li>
+                <li style="padding: 8px 0;">☐ Used <code>id="profile-avatar"</code> with circular shape</li>
+                <li style="padding: 8px 0;">☐ Used <code>id="profile-info"</code> for content</li>
+                <li style="padding: 8px 0;">☐ Used <code>class="profile-name"</code>, <code>class="profile-title"</code>, <code>class="profile-bio"</code></li>
+                <li style="padding: 8px 0;">☐ Created 3 stat items using <code>class="stat-item"</code></li>
+                <li style="padding: 8px 0;">☐ Created skill tags using <code>class="skill-tag"</code></li>
+                <li style="padding: 8px 0;">☐ Created social links with <strong>multiple classes</strong>: <code>class="social-link github"</code></li>
+                <li style="padding: 8px 0;">☐ Personalized with YOUR information!</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Summary -->
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; margin-top: 30px;">
+        <h3 style="margin-top: 0;">🎉 Great Job!</h3>
+        <p>In this exercise you practiced:</p>
+        <ul>
+            <li>✓ Using <strong>ID</strong> for unique elements (card, banner, avatar, info)</li>
+            <li>✓ Using <strong>Class</strong> for reusable styles (stats, skills, social links)</li>
+            <li>✓ Using <strong>multiple classes</strong> on one element (social-link + color)</li>
+            <li>✓ CSS selectors: <code>#id</code> and <code>.class</code></li>
+        </ul>
+        <p style="margin-bottom: 0;"><strong>Challenge:</strong> Try changing the colors and adding more skills!</p>
+    </div>
+
+</body>
+</html>

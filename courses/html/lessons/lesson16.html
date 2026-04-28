@@ -1,0 +1,496 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 16: HTML Entities</title>
+    <link rel="stylesheet" href="../../../css/lesson-activity.css">
+</head>
+<body>
+    <div class="lesson-header">
+        <h1>🔤 Lesson 16: HTML Entities & Special Characters</h1>
+        <p class="lesson-intro">Learn to display special characters, symbols, and reserved HTML characters using HTML entities. Essential for showing &lt;, &gt;, &copy;, and more!</p>
+    </div>
+
+    <div class="tag-explanation">
+        <h2>What are HTML Entities?</h2>
+        <p>HTML entities are special codes used to display characters that are either reserved in HTML (like &lt; and &gt;) or not available on your keyboard (like © and €). They start with <code>&amp;</code> and end with <code>;</code></p>
+        
+        <div class="key-points">
+            <h3>🎯 Why Use Entities?</h3>
+            <ul>
+                <li>Display reserved HTML characters (&lt;, &gt;, &amp;)</li>
+                <li>Show special symbols (©, ®, €, ™)</li>
+                <li>Add mathematical symbols (×, ÷, ≠)</li>
+                <li>Include accented characters (é, ñ, ü)</li>
+                <li>Add arrows and other symbols (→, ←, ★)</li>
+            </ul>
+        </div>
+
+        <div class="tag-syntax">
+            <h3>Entity Syntax:</h3>
+            <div class="syntax-box">
+                <code>&amp;entity_name;</code>
+                <p>Named entity (e.g., <code>&amp;copy;</code> displays ©)</p>
+            </div>
+            <div class="syntax-box">
+                <code>&amp;#number;</code>
+                <p>Numeric entity (e.g., <code>&amp;#169;</code> displays ©)</p>
+            </div>
+        </div>
+
+        <div class="visual-diagram" style="margin: 30px 0;">
+            <h3>📋 Most Common Entities:</h3>
+            <table border="1" style="width: 100%; border-collapse: collapse;">
+                <tr style="background: #667eea; color: white;">
+                    <th style="padding: 10px;">Character</th>
+                    <th style="padding: 10px;">Entity Name</th>
+                    <th style="padding: 10px;">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; font-size: 20px;">&lt;</td>
+                    <td style="padding: 8px;"><code>&amp;lt;</code></td>
+                    <td style="padding: 8px;">Less than</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; font-size: 20px;">&gt;</td>
+                    <td style="padding: 8px;"><code>&amp;gt;</code></td>
+                    <td style="padding: 8px;">Greater than</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; font-size: 20px;">&amp;</td>
+                    <td style="padding: 8px;"><code>&amp;amp;</code></td>
+                    <td style="padding: 8px;">Ampersand</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; font-size: 20px;">&copy;</td>
+                    <td style="padding: 8px;"><code>&amp;copy;</code></td>
+                    <td style="padding: 8px;">Copyright</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; font-size: 20px;">&reg;</td>
+                    <td style="padding: 8px;"><code>&amp;reg;</code></td>
+                    <td style="padding: 8px;">Registered trademark</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; font-size: 20px;">&euro;</td>
+                    <td style="padding: 8px;"><code>&amp;euro;</code></td>
+                    <td style="padding: 8px;">Euro currency</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="activities-container">
+        <div class="activities-header">
+            <h2>🎯 Progressive Activities</h2>
+            <p>Complete these activities to master HTML entities!</p>
+        </div>
+
+        <!-- Activity 1 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 1</span>
+                <h3 class="activity-title">Display Reserved Characters</h3>
+                <span class="activity-level level-beginner">Beginner</span>
+            </div>
+            <div class="activity-description">
+                <p>Learn to display HTML code on your page using entities.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a paragraph showing HTML code example</li>
+                    <li>Use <code>&amp;lt;</code> for &lt;</li>
+                    <li>Use <code>&amp;gt;</code> for &gt;</li>
+                    <li>The HTML code should appear as text, not be interpreted</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;HTML Code Example&lt;/h2&gt;
+
+&lt;p&gt;To create a paragraph, use: &amp;lt;p&amp;gt;Your text&amp;lt;/p&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;To create a heading, use: &amp;lt;h1&amp;gt;Title&amp;lt;/h1&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;To add a link, use: &amp;lt;a href="url"&amp;gt;Link text&amp;lt;/a&amp;gt;&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>The HTML tags appear as visible text instead of being interpreted as actual HTML.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li><code>&amp;lt;</code> displays as &lt;</li>
+                    <li><code>&amp;gt;</code> displays as &gt;</li>
+                    <li>Without entities, <code>&lt;p&gt;</code> would create an actual paragraph</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 2 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 2</span>
+                <h3 class="activity-title">Add Copyright and Trademark Symbols</h3>
+                <span class="activity-level level-beginner">Beginner</span>
+            </div>
+            <div class="activity-description">
+                <p>Use entities to add professional copyright and trademark symbols.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Add copyright symbol using <code>&amp;copy;</code></li>
+                    <li>Add registered trademark using <code>&amp;reg;</code></li>
+                    <li>Add trademark symbol using <code>&amp;trade;</code></li>
+                    <li>Create a professional footer with these symbols</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1&gt;Welcome to TechCorp&amp;reg;&lt;/h1&gt;
+
+&lt;p&gt;Our flagship product is WebBuilder&amp;trade;, the easiest 
+   way to create websites.&lt;/p&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;&amp;copy; 2025 TechCorp&amp;reg;. All rights reserved.&lt;/p&gt;
+    &lt;p&gt;WebBuilder&amp;trade; is a trademark of TechCorp.&lt;/p&gt;
+&lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>Professional-looking text with ©, ®, and ™ symbols appearing correctly.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li><code>&amp;copy;</code> → ©</li>
+                    <li><code>&amp;reg;</code> → ®</li>
+                    <li><code>&amp;trade;</code> → ™</li>
+                    <li>These symbols make your site look professional</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 3 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 3</span>
+                <h3 class="activity-title">Display Currency Symbols</h3>
+                <span class="activity-level level-intermediate">Intermediate</span>
+            </div>
+            <div class="activity-description">
+                <p>Create a price list using various currency symbols.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create a price list for products</li>
+                    <li>Use <code>&amp;euro;</code> for €</li>
+                    <li>Use <code>&amp;pound;</code> for £</li>
+                    <li>Use <code>&amp;yen;</code> for ¥</li>
+                    <li>Display prices in different currencies</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;International Prices&lt;/h2&gt;
+
+&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Product&lt;/th&gt;
+        &lt;th&gt;EUR&lt;/th&gt;
+        &lt;th&gt;GBP&lt;/th&gt;
+        &lt;th&gt;JPY&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Laptop&lt;/td&gt;
+        &lt;td&gt;&amp;euro;999&lt;/td&gt;
+        &lt;td&gt;&amp;pound;899&lt;/td&gt;
+        &lt;td&gt;&amp;yen;120,000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Mouse&lt;/td&gt;
+        &lt;td&gt;&amp;euro;25&lt;/td&gt;
+        &lt;td&gt;&amp;pound;20&lt;/td&gt;
+        &lt;td&gt;&amp;yen;2,500&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A price table with proper currency symbols: €, £, and ¥</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li><code>&amp;euro;</code> → €</li>
+                    <li><code>&amp;pound;</code> → £</li>
+                    <li><code>&amp;yen;</code> → ¥</li>
+                    <li>Also available: <code>&amp;cent;</code> → ¢</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 4 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 4</span>
+                <h3 class="activity-title">Use Mathematical Symbols</h3>
+                <span class="activity-level level-intermediate">Intermediate</span>
+            </div>
+            <div class="activity-description">
+                <p>Display mathematical equations using HTML entities.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create mathematical equations</li>
+                    <li>Use <code>&amp;times;</code> for ×</li>
+                    <li>Use <code>&amp;divide;</code> for ÷</li>
+                    <li>Use <code>&amp;plusmn;</code> for ±</li>
+                    <li>Use <code>&amp;ne;</code> for ≠</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;Math Problems&lt;/h2&gt;
+
+&lt;p&gt;Problem 1: 5 &amp;times; 3 = 15&lt;/p&gt;
+
+&lt;p&gt;Problem 2: 20 &amp;divide; 4 = 5&lt;/p&gt;
+
+&lt;p&gt;Problem 3: &amp;plusmn;10 (plus or minus 10)&lt;/p&gt;
+
+&lt;p&gt;Problem 4: 5 &amp;ne; 3 (5 is not equal to 3)&lt;/p&gt;
+
+&lt;p&gt;Problem 5: x &amp;le; 10 (x is less than or equal to 10)&lt;/p&gt;
+
+&lt;p&gt;Problem 6: y &amp;ge; 5 (y is greater than or equal to 5)&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>Mathematical equations with proper symbols: ×, ÷, ±, ≠, ≤, ≥</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li><code>&amp;times;</code> → ×</li>
+                    <li><code>&amp;divide;</code> → ÷</li>
+                    <li><code>&amp;plusmn;</code> → ±</li>
+                    <li><code>&amp;ne;</code> → ≠</li>
+                    <li><code>&amp;le;</code> → ≤</li>
+                    <li><code>&amp;ge;</code> → ≥</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 5 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 5</span>
+                <h3 class="activity-title">Add Arrows and Special Symbols</h3>
+                <span class="activity-level level-intermediate">Intermediate</span>
+            </div>
+            <div class="activity-description">
+                <p>Use arrow entities and other special symbols in your content.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create navigation or instructions using arrows</li>
+                    <li>Use <code>&amp;rarr;</code> for →</li>
+                    <li>Use <code>&amp;larr;</code> for ←</li>
+                    <li>Use <code>&amp;uarr;</code> for ↑</li>
+                    <li>Use <code>&amp;darr;</code> for ↓</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;Website Navigation&lt;/h2&gt;
+
+&lt;p&gt;&amp;larr; Previous Page | Next Page &amp;rarr;&lt;/p&gt;
+
+&lt;h3&gt;Instructions&lt;/h3&gt;
+
+&lt;p&gt;Step 1: Click "Start" button &amp;darr;&lt;/p&gt;
+&lt;button&gt;Start&lt;/button&gt;
+
+&lt;p&gt;Step 2: Scroll &amp;uarr; to the top when finished&lt;/p&gt;
+
+&lt;h3&gt;Flow Chart&lt;/h3&gt;
+
+&lt;p&gt;Start &amp;rarr; Process &amp;rarr; End&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>Text with arrows: ←, →, ↑, ↓ making navigation and instructions clearer.</p>
+            </div>
+            <div class="hints">
+                <h4>💡 Hints:</h4>
+                <ul>
+                    <li><code>&amp;rarr;</code> → → (right arrow)</li>
+                    <li><code>&amp;larr;</code> → ← (left arrow)</li>
+                    <li><code>&amp;uarr;</code> → ↑ (up arrow)</li>
+                    <li><code>&amp;darr;</code> → ↓ (down arrow)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Activity 6 -->
+        <div class="activity">
+            <div class="activity-header">
+                <span class="activity-number">Activity 6</span>
+                <h3 class="activity-title">Create a Symbol Reference Page</h3>
+                <span class="activity-level level-advanced">Advanced</span>
+            </div>
+            <div class="activity-description">
+                <p>Build a complete reference page showing various HTML entities.</p>
+            </div>
+            <div class="activity-instructions">
+                <h4>Instructions:</h4>
+                <ol>
+                    <li>Create sections for different symbol categories</li>
+                    <li>Include: Reserved characters, Currency, Math, Arrows</li>
+                    <li>Show both the entity code and the resulting symbol</li>
+                    <li>Use a table for organized display</li>
+                    <li>Add descriptions for each symbol</li>
+                </ol>
+            </div>
+            <div class="code-editor">
+                <pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1&gt;HTML Entities Quick Reference&lt;/h1&gt;
+
+&lt;section&gt;
+    &lt;h2&gt;Reserved Characters&lt;/h2&gt;
+    &lt;table border="1"&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Symbol&lt;/th&gt;
+            &lt;th&gt;Entity&lt;/th&gt;
+            &lt;th&gt;Description&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&amp;lt;&lt;/td&gt;
+            &lt;td&gt;&amp;amp;lt;&lt;/td&gt;
+            &lt;td&gt;Less than&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&amp;gt;&lt;/td&gt;
+            &lt;td&gt;&amp;amp;gt;&lt;/td&gt;
+            &lt;td&gt;Greater than&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&amp;amp;&lt;/td&gt;
+            &lt;td&gt;&amp;amp;amp;&lt;/td&gt;
+            &lt;td&gt;Ampersand&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+    &lt;h2&gt;Currency Symbols&lt;/h2&gt;
+    &lt;p&gt;&amp;euro; Euro | &amp;pound; Pound | &amp;yen; Yen | &amp;cent; Cent&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+    &lt;h2&gt;Mathematical Symbols&lt;/h2&gt;
+    &lt;p&gt;&amp;times; Multiply | &amp;divide; Divide | &amp;plusmn; Plus/Minus | 
+       &amp;ne; Not Equal&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+    &lt;h2&gt;Arrows&lt;/h2&gt;
+    &lt;p&gt;&amp;larr; Left | &amp;rarr; Right | &amp;uarr; Up | &amp;darr; Down&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+    &lt;h2&gt;Legal &amp;amp; Business&lt;/h2&gt;
+    &lt;p&gt;&amp;copy; Copyright | &amp;reg; Registered | &amp;trade; Trademark&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;&amp;copy; 2025 HTML Entities Reference. All rights reserved.&lt;/p&gt;
+&lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="expected-output">
+                <h4>Expected Output:</h4>
+                <p>A comprehensive reference page showing all major HTML entities organized by category.</p>
+            </div>
+            <div class="challenge">
+                <h4>🏆 Challenge:</h4>
+                <ul>
+                    <li>Add a section for accented characters (é, ñ, ü)</li>
+                    <li>Include numeric entities alongside named entities</li>
+                    <li>Add emoji entities (<code>&amp;#128512;</code> for 😀)</li>
+                    <li>Style the page with colors and better formatting</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="tag-reference" style="margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+        <h2>📚 Common HTML Entities</h2>
+        <table border="1" style="width: 100%; border-collapse: collapse;">
+            <tr style="background: #667eea; color: white;">
+                <th style="padding: 10px;">Category</th>
+                <th style="padding: 10px;">Examples</th>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><strong>Reserved</strong></td>
+                <td style="padding: 8px;"><code>&amp;lt;</code> <code>&amp;gt;</code> <code>&amp;amp;</code> <code>&amp;quot;</code></td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><strong>Currency</strong></td>
+                <td style="padding: 8px;"><code>&amp;euro;</code> <code>&amp;pound;</code> <code>&amp;yen;</code> <code>&amp;cent;</code></td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><strong>Math</strong></td>
+                <td style="padding: 8px;"><code>&amp;times;</code> <code>&amp;divide;</code> <code>&amp;plusmn;</code> <code>&amp;ne;</code></td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><strong>Arrows</strong></td>
+                <td style="padding: 8px;"><code>&amp;larr;</code> <code>&amp;rarr;</code> <code>&amp;uarr;</code> <code>&amp;darr;</code></td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><strong>Legal</strong></td>
+                <td style="padding: 8px;"><code>&amp;copy;</code> <code>&amp;reg;</code> <code>&amp;trade;</code></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

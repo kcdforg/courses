@@ -152,6 +152,7 @@ body {
 
 .course-card.html-card:hover { border-color: #e34c26; }
 .course-card.css-card:hover { border-color: #264de4; }
+.course-card.php-card:hover { border-color: #7377ad; }
 .course-card.js-card:hover { border-color: #f0db4f; }
 .course-card.python-card:hover { border-color: #306998; }
 .course-card.c-card:hover { border-color: #a8b9cc; }

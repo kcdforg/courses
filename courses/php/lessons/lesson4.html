@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Variables - Learn PHP</title>
+    <link rel="stylesheet" href="../../../css/main-style.css">
+    <link rel="stylesheet" href="../../../css/course-layout.css">
+    <script src="../../../css/sidebar.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🎓 Learn Programming</h1>
+            <p class="tagline">Free Online Tutorials for School Students</p>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">PHP Course</div>
+            <ul class="sidebar-nav">
+                <li><a href="../index.html">Course Overview</a></li>
+                <li>
+                    <a href="#">Basics ▼</a>
+                    <ul>
+                        <li><a href="lesson1.html">Introduction</a></li>
+                        <li><a href="lesson2.html">Installation & Setup</a></li>
+                        <li><a href="lesson3.html">Syntax Basics</a></li>
+                        <li><a href="lesson4.html" class="active">Variables</a></li>
+                        <li><a href="lesson5.html">Data Types</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Control Structures ▼</a>
+                    <ul>
+                        <li><a href="lesson6.html">If Statements</a></li>
+                        <li><a href="lesson7.html">Switch Cases</a></li>
+                        <li><a href="lesson8.html">Loops</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Functions & Arrays ▼</a>
+                    <ul>
+                        <li><a href="lesson9.html">Functions</a></li>
+                        <li><a href="lesson10.html">Arrays</a></li>
+                        <li><a href="lesson11.html">Array Functions</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Advanced Topics ▼</a>
+                    <ul>
+                        <li><a href="lesson12.html">String Functions</a></li>
+                        <li><a href="lesson13.html">File Handling</a></li>
+                        <li><a href="lesson14.html">Regular Expressions</a></li>
+                    </ul>
+                </li>
+                <li><a href="../exercises/index.html">Exercises</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>PHP Variables</h1>
+                <p>Learn how to create and work with variables in PHP.</p>
+            </div>
+
+            <section>
+                <h2>Creating Variables</h2>
+                <p>Variables in PHP start with a dollar sign ($) followed by the variable name.</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $name = "John";
+    $age = 25;
+    $price = 9.99;
+    echo $name;
+?&gt;</code></pre>
+                </div>
+
+                <h2>Variable Naming Rules</h2>
+                <ul class="topic-list">
+                    <li>Variable names start with a dollar sign ($)</li>
+                    <li>Variable names start with a letter or underscore (_), not a number</li>
+                    <li>Variable names can only contain alphanumeric characters and underscores (A-z, 0-9, _)</li>
+                    <li>Variable names are case-sensitive ($name and $Name are different)</li>
+                </ul>
+
+                <h2>Scope of Variables</h2>
+                <p>PHP has three different variable scopes:</p>
+
+                <h3>1. Local Scope</h3>
+                <p>Variables declared inside a function have local scope:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    function myFunction() {
+        $x = 5; // Local scope
+        echo $x; // Works
+    }
+    
+    myFunction();
+    echo $x; // ERROR - not accessible
+?&gt;</code></pre>
+                </div>
+
+                <h3>2. Global Scope</h3>
+                <p>Variables declared outside functions have global scope:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $x = 5; // Global scope
+    
+    function myFunction() {
+        global $x; // Access global variable
+        echo $x; // Works
+    }
+    
+    myFunction();
+?&gt;</code></pre>
+                </div>
+
+                <h3>3. Static Scope</h3>
+                <p>Static variables retain their value between function calls:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    function counter() {
+        static $count = 0;
+        $count++;
+        echo $count; // Increments each call
+    }
+    
+    counter(); // Outputs 1
+    counter(); // Outputs 2
+    counter(); // Outputs 3
+?&gt;</code></pre>
+                </div>
+
+                <h2>Type Juggling</h2>
+                <p>PHP automatically converts variable types as needed:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $x = "5"; // String
+    $y = 10; // Integer
+    echo $x + $y; // Outputs 15 (converted to integer)
+?&gt;</code></pre>
+                </div>
+            </section>
+
+            <div class="lesson-nav">
+                <a href="lesson3.html">← Previous</a>
+                <a href="lesson5.html">Next →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Learn Programming. All rights reserved.</p>
+    </footer>
+</body>
+</html>

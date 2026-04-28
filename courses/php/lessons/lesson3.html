@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Syntax Basics - Learn PHP</title>
+    <link rel="stylesheet" href="../../../css/main-style.css">
+    <link rel="stylesheet" href="../../../css/course-layout.css">
+    <script src="../../../css/sidebar.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🎓 Learn Programming</h1>
+            <p class="tagline">Free Online Tutorials for School Students</p>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">PHP Course</div>
+            <ul class="sidebar-nav">
+                <li><a href="../index.html">Course Overview</a></li>
+                <li>
+                    <a href="#">Basics ▼</a>
+                    <ul>
+                        <li><a href="lesson1.html">Introduction</a></li>
+                        <li><a href="lesson2.html">Installation & Setup</a></li>
+                        <li><a href="lesson3.html" class="active">Syntax Basics</a></li>
+                        <li><a href="lesson4.html">Variables</a></li>
+                        <li><a href="lesson5.html">Data Types</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Control Structures ▼</a>
+                    <ul>
+                        <li><a href="lesson6.html">If Statements</a></li>
+                        <li><a href="lesson7.html">Switch Cases</a></li>
+                        <li><a href="lesson8.html">Loops</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Functions & Arrays ▼</a>
+                    <ul>
+                        <li><a href="lesson9.html">Functions</a></li>
+                        <li><a href="lesson10.html">Arrays</a></li>
+                        <li><a href="lesson11.html">Array Functions</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Advanced Topics ▼</a>
+                    <ul>
+                        <li><a href="lesson12.html">String Functions</a></li>
+                        <li><a href="lesson13.html">File Handling</a></li>
+                        <li><a href="lesson14.html">Regular Expressions</a></li>
+                    </ul>
+                </li>
+                <li><a href="../exercises/index.html">Exercises</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>PHP Syntax Basics</h1>
+                <p>Learn the fundamental syntax rules and structure of PHP code.</p>
+            </div>
+
+            <section>
+                <h2>PHP Tags</h2>
+                <p>PHP code must be enclosed within PHP tags:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    // PHP code goes here
+?&gt;</code></pre>
+                </div>
+
+                <h2>Statements and Comments</h2>
+                <p>Every PHP statement ends with a semicolon (;). Comments are ignored by the parser.</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    echo "Hello World"; // This is a comment
+    /* This is a multi-line
+       comment */
+    // Another comment
+?&gt;</code></pre>
+                </div>
+
+                <h2>Echo and Print</h2>
+                <p>Both <code>echo</code> and <code>print</code> output text, but <code>echo</code> is slightly faster.</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    echo "This is output using echo";
+    print "This is output using print";
+    echo "Output", " ", "multiple", " ", "strings";
+?&gt;</code></pre>
+                </div>
+
+                <h2>Whitespace and Line Breaks</h2>
+                <p>Extra whitespace, line breaks, and indentation have no effect on PHP code execution.</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    echo "Hello";
+    
+    
+    echo "World"; // Same output as above
+?&gt;</code></pre>
+                </div>
+
+                <h2>Case Sensitivity</h2>
+                <ul class="topic-list">
+                    <li><code>Keywords</code> are NOT case-sensitive (echo, print, etc.)</li>
+                    <li><code>User-defined functions</code> are NOT case-sensitive</li>
+                    <li><code>Variable names</code> ARE case-sensitive</li>
+                </ul>
+
+                <div class="example-box">
+                    <strong>Example:</strong>
+                    <div class="code-block">
+                        <pre><code>&lt;?php
+    ECHO "Hello"; // Works
+    echo "World"; // Works
+    $name = "John"; // Correct
+    echo $NAME; // ERROR - undefined variable
+?&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <div class="lesson-nav">
+                <a href="lesson2.html">← Previous</a>
+                <a href="lesson4.html">Next →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Learn Programming. All rights reserved.</p>
+    </footer>
+</body>
+</html>

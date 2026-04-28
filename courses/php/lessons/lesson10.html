@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Arrays - Learn PHP</title>
+    <link rel="stylesheet" href="../../../css/main-style.css">
+    <link rel="stylesheet" href="../../../css/course-layout.css">
+    <script src="../../../css/sidebar.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🎓 Learn Programming</h1>
+            <p class="tagline">Free Online Tutorials for School Students</p>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">PHP Course</div>
+            <ul class="sidebar-nav">
+                <li><a href="../index.html">Course Overview</a></li>
+                <li>
+                    <a href="#">Basics ▼</a>
+                    <ul>
+                        <li><a href="lesson1.html">Introduction</a></li>
+                        <li><a href="lesson2.html">Installation & Setup</a></li>
+                        <li><a href="lesson3.html">Syntax Basics</a></li>
+                        <li><a href="lesson4.html">Variables</a></li>
+                        <li><a href="lesson5.html">Data Types</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Control Structures ▼</a>
+                    <ul>
+                        <li><a href="lesson6.html">If Statements</a></li>
+                        <li><a href="lesson7.html">Switch Cases</a></li>
+                        <li><a href="lesson8.html">Loops</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Functions & Arrays ▼</a>
+                    <ul>
+                        <li><a href="lesson9.html">Functions</a></li>
+                        <li><a href="lesson10.html" class="active">Arrays</a></li>
+                        <li><a href="lesson11.html">Array Functions</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Advanced Topics ▼</a>
+                    <ul>
+                        <li><a href="lesson12.html">String Functions</a></li>
+                        <li><a href="lesson13.html">File Handling</a></li>
+                        <li><a href="lesson14.html">Regular Expressions</a></li>
+                    </ul>
+                </li>
+                <li><a href="../exercises/index.html">Exercises</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>PHP Arrays</h1>
+                <p>Learn how to create and work with arrays in PHP.</p>
+            </div>
+
+            <section>
+                <h2>Indexed Arrays</h2>
+                <p>Arrays with numeric indices:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $fruits = array("Apple", "Banana", "Orange");
+    echo $fruits[0]; // Outputs "Apple"
+    
+    // Short syntax
+    $colors = ["Red", "Green", "Blue"];
+    echo $colors[1]; // Outputs "Green"
+?&gt;</code></pre>
+                </div>
+
+                <h2>Associative Arrays</h2>
+                <p>Arrays with named keys:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $person = array(
+        "name" => "John",
+        "age" => 25,
+        "city" => "New York"
+    );
+    
+    echo $person["name"]; // Outputs "John"
+    echo $person["age"]; // Outputs 25
+?&gt;</code></pre>
+                </div>
+
+                <h2>Adding Elements</h2>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $fruits = ["Apple", "Banana"];
+    
+    // Add element
+    $fruits[] = "Orange"; // Index 2
+    $fruits[3] = "Mango";
+    
+    // For associative arrays
+    $person = ["name" => "John"];
+    $person["age"] = 25;
+?&gt;</code></pre>
+                </div>
+
+                <h2>Removing Elements</h2>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $fruits = ["Apple", "Banana", "Orange"];
+    
+    unset($fruits[1]); // Removes "Banana"
+?&gt;</code></pre>
+                </div>
+
+                <h2>Getting Array Length</h2>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $fruits = ["Apple", "Banana", "Orange"];
+    echo count($fruits); // Outputs 3
+    echo sizeof($fruits); // Also outputs 3
+?&gt;</code></pre>
+                </div>
+
+                <h2>Multidimensional Arrays</h2>
+                <p>Arrays containing other arrays:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $matrix = array(
+        array(1, 2, 3),
+        array(4, 5, 6),
+        array(7, 8, 9)
+    );
+    
+    echo $matrix[0][0]; // Outputs 1
+    echo $matrix[1][2]; // Outputs 6
+    echo $matrix[2][1]; // Outputs 8
+?&gt;</code></pre>
+                </div>
+
+                <h2>Looping Through Arrays</h2>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $fruits = ["Apple", "Banana", "Orange"];
+    
+    // Using foreach
+    foreach ($fruits as $fruit) {
+        echo $fruit . " ";
+    }
+    
+    // Using for loop
+    for ($i = 0; $i < count($fruits); $i++) {
+        echo $fruits[$i] . " ";
+    }
+?&gt;</code></pre>
+                </div>
+            </section>
+
+            <div class="lesson-nav">
+                <a href="lesson9.html">← Previous</a>
+                <a href="lesson11.html">Next →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Learn Programming. All rights reserved.</p>
+    </footer>
+</body>
+</html>

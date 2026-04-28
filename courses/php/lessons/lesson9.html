@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Functions - Learn PHP</title>
+    <link rel="stylesheet" href="../../../css/main-style.css">
+    <link rel="stylesheet" href="../../../css/course-layout.css">
+    <script src="../../../css/sidebar.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🎓 Learn Programming</h1>
+            <p class="tagline">Free Online Tutorials for School Students</p>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">PHP Course</div>
+            <ul class="sidebar-nav">
+                <li><a href="../index.html">Course Overview</a></li>
+                <li>
+                    <a href="#">Basics ▼</a>
+                    <ul>
+                        <li><a href="lesson1.html">Introduction</a></li>
+                        <li><a href="lesson2.html">Installation & Setup</a></li>
+                        <li><a href="lesson3.html">Syntax Basics</a></li>
+                        <li><a href="lesson4.html">Variables</a></li>
+                        <li><a href="lesson5.html">Data Types</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Control Structures ▼</a>
+                    <ul>
+                        <li><a href="lesson6.html">If Statements</a></li>
+                        <li><a href="lesson7.html">Switch Cases</a></li>
+                        <li><a href="lesson8.html">Loops</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Functions & Arrays ▼</a>
+                    <ul>
+                        <li><a href="lesson9.html" class="active">Functions</a></li>
+                        <li><a href="lesson10.html">Arrays</a></li>
+                        <li><a href="lesson11.html">Array Functions</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Advanced Topics ▼</a>
+                    <ul>
+                        <li><a href="lesson12.html">String Functions</a></li>
+                        <li><a href="lesson13.html">File Handling</a></li>
+                        <li><a href="lesson14.html">Regular Expressions</a></li>
+                    </ul>
+                </li>
+                <li><a href="../exercises/index.html">Exercises</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>PHP Functions</h1>
+                <p>Learn how to create and use reusable functions in PHP.</p>
+            </div>
+
+            <section>
+                <h2>Creating Functions</h2>
+                <p>A function is a reusable block of code:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    function sayHello() {
+        echo "Hello, World!";
+    }
+    
+    sayHello(); // Call the function
+?&gt;</code></pre>
+                </div>
+
+                <h2>Function Parameters</h2>
+                <p>Functions can accept parameters:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    function greet($name) {
+        echo "Hello, " . $name . "!";
+    }
+    
+    greet("John"); // Outputs "Hello, John!"
+    greet("Jane");
+?&gt;</code></pre>
+                </div>
+
+                <h2>Multiple Parameters</h2>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    function add($a, $b) {
+        return $a + $b;
+    }
+    
+    echo add(5, 3); // Outputs 8
+?&gt;</code></pre>
+                </div>
+
+                <h2>Default Parameter Values</h2>
+                <p>Provide default values for parameters:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    function welcome($name = "Guest") {
+        echo "Welcome, " . $name . "!";
+    }
+    
+    welcome(); // Outputs "Welcome, Guest!"
+    welcome("John"); // Outputs "Welcome, John!"
+?&gt;</code></pre>
+                </div>
+
+                <h2>Return Values</h2>
+                <p>Use return to get a value from a function:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    function multiply($a, $b) {
+        return $a * $b;
+    }
+    
+    $result = multiply(4, 5);
+    echo $result; // Outputs 20
+?&gt;</code></pre>
+                </div>
+
+                <h2>Variable Scope in Functions</h2>
+                <p>Variables inside functions are local by default:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $globalVar = "I'm global";
+    
+    function test() {
+        global $globalVar; // Access global variable
+        echo $globalVar;
+    }
+    
+    test();
+?&gt;</code></pre>
+                </div>
+
+                <h2>Type Declarations</h2>
+                <p>Specify parameter and return types:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    function calculate(int $a, int $b): int {
+        return $a + $b;
+    }
+    
+    echo calculate(5, 3); // Returns 8
+?&gt;</code></pre>
+                </div>
+            </section>
+
+            <div class="lesson-nav">
+                <a href="lesson8.html">← Previous</a>
+                <a href="lesson10.html">Next →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Learn Programming. All rights reserved.</p>
+    </footer>
+</body>
+</html>

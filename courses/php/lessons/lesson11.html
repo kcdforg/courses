@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Array Functions - Learn PHP</title>
+    <link rel="stylesheet" href="../../../css/main-style.css">
+    <link rel="stylesheet" href="../../../css/course-layout.css">
+    <script src="../../../css/sidebar.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🎓 Learn Programming</h1>
+            <p class="tagline">Free Online Tutorials for School Students</p>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">PHP Course</div>
+            <ul class="sidebar-nav">
+                <li><a href="../index.html">Course Overview</a></li>
+                <li>
+                    <a href="#">Basics ▼</a>
+                    <ul>
+                        <li><a href="lesson1.html">Introduction</a></li>
+                        <li><a href="lesson2.html">Installation & Setup</a></li>
+                        <li><a href="lesson3.html">Syntax Basics</a></li>
+                        <li><a href="lesson4.html">Variables</a></li>
+                        <li><a href="lesson5.html">Data Types</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Control Structures ▼</a>
+                    <ul>
+                        <li><a href="lesson6.html">If Statements</a></li>
+                        <li><a href="lesson7.html">Switch Cases</a></li>
+                        <li><a href="lesson8.html">Loops</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Functions & Arrays ▼</a>
+                    <ul>
+                        <li><a href="lesson9.html">Functions</a></li>
+                        <li><a href="lesson10.html">Arrays</a></li>
+                        <li><a href="lesson11.html" class="active">Array Functions</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Advanced Topics ▼</a>
+                    <ul>
+                        <li><a href="lesson12.html">String Functions</a></li>
+                        <li><a href="lesson13.html">File Handling</a></li>
+                        <li><a href="lesson14.html">Regular Expressions</a></li>
+                    </ul>
+                </li>
+                <li><a href="../exercises/index.html">Exercises</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>PHP Array Functions</h1>
+                <p>Learn useful built-in functions for working with arrays.</p>
+            </div>
+
+            <section>
+                <h2>Common Array Functions</h2>
+
+                <h3>count() - Get Array Length</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $fruits = ["Apple", "Banana", "Orange"];
+    echo count($fruits); // Outputs 3
+?&gt;</code></pre>
+                </div>
+
+                <h3>array_push() - Add Elements</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $fruits = ["Apple", "Banana"];
+    array_push($fruits, "Orange", "Mango");
+    // $fruits now contains 4 elements
+?&gt;</code></pre>
+                </div>
+
+                <h3>array_pop() - Remove Last Element</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $fruits = ["Apple", "Banana", "Orange"];
+    $last = array_pop($fruits);
+    echo $last; // Outputs "Orange"
+?&gt;</code></pre>
+                </div>
+
+                <h3>array_shift() / array_unshift()</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $fruits = ["Apple", "Banana", "Orange"];
+    
+    // Remove first element
+    $first = array_shift($fruits);
+    
+    // Add element at beginning
+    array_unshift($fruits, "Mango");
+?&gt;</code></pre>
+                </div>
+
+                <h3>in_array() - Check if Value Exists</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $fruits = ["Apple", "Banana", "Orange"];
+    
+    if (in_array("Banana", $fruits)) {
+        echo "Found!";
+    }
+?&gt;</code></pre>
+                </div>
+
+                <h3>array_search() - Find Key of Value</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $fruits = ["Apple", "Banana", "Orange"];
+    $key = array_search("Banana", $fruits);
+    echo $key; // Outputs 1
+?&gt;</code></pre>
+                </div>
+
+                <h3>array_keys() / array_values()</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $person = ["name" => "John", "age" => 25, "city" => "NYC"];
+    
+    // Get all keys
+    $keys = array_keys($person);
+    
+    // Get all values
+    $values = array_values($person);
+?&gt;</code></pre>
+                </div>
+
+                <h3>sort() / rsort() / asort() / arsort()</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $fruits = ["Orange", "Apple", "Banana"];
+    
+    sort($fruits);       // Ascending order
+    rsort($fruits);      // Descending order
+    asort($fruits);      // Ascending with keys
+    arsort($fruits);     // Descending with keys
+?&gt;</code></pre>
+                </div>
+
+                <h3>array_merge() - Combine Arrays</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $arr1 = ["a" => "red", "b" => "green"];
+    $arr2 = ["c" => "blue", "d" => "yellow"];
+    
+    $result = array_merge($arr1, $arr2);
+?&gt;</code></pre>
+                </div>
+
+                <h3>array_slice() / array_splice()</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $fruits = ["Apple", "Banana", "Orange", "Mango"];
+    
+    // Get portion of array
+    $slice = array_slice($fruits, 1, 2); // ["Banana", "Orange"]
+    
+    // Replace elements
+    array_splice($fruits, 1, 2, ["Grape", "Kiwi"]);
+?&gt;</code></pre>
+                </div>
+
+                <h3>array_filter() / array_map()</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $numbers = [1, 2, 3, 4, 5];
+    
+    // Filter even numbers
+    $even = array_filter($numbers, function($n) {
+        return $n % 2 == 0;
+    });
+    
+    // Double each number
+    $doubled = array_map(function($n) {
+        return $n * 2;
+    }, $numbers);
+?&gt;</code></pre>
+                </div>
+            </section>
+
+            <div class="lesson-nav">
+                <a href="lesson10.html">← Previous</a>
+                <a href="lesson12.html">Next →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Learn Programming. All rights reserved.</p>
+    </footer>
+</body>
+</html>

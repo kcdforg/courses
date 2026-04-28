@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP String Functions - Learn PHP</title>
+    <link rel="stylesheet" href="../../../css/main-style.css">
+    <link rel="stylesheet" href="../../../css/course-layout.css">
+    <script src="../../../css/sidebar.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🎓 Learn Programming</h1>
+            <p class="tagline">Free Online Tutorials for School Students</p>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">PHP Course</div>
+            <ul class="sidebar-nav">
+                <li><a href="../index.html">Course Overview</a></li>
+                <li>
+                    <a href="#">Basics ▼</a>
+                    <ul>
+                        <li><a href="lesson1.html">Introduction</a></li>
+                        <li><a href="lesson2.html">Installation & Setup</a></li>
+                        <li><a href="lesson3.html">Syntax Basics</a></li>
+                        <li><a href="lesson4.html">Variables</a></li>
+                        <li><a href="lesson5.html">Data Types</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Control Structures ▼</a>
+                    <ul>
+                        <li><a href="lesson6.html">If Statements</a></li>
+                        <li><a href="lesson7.html">Switch Cases</a></li>
+                        <li><a href="lesson8.html">Loops</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Functions & Arrays ▼</a>
+                    <ul>
+                        <li><a href="lesson9.html">Functions</a></li>
+                        <li><a href="lesson10.html">Arrays</a></li>
+                        <li><a href="lesson11.html">Array Functions</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Advanced Topics ▼</a>
+                    <ul>
+                        <li><a href="lesson12.html" class="active">String Functions</a></li>
+                        <li><a href="lesson13.html">File Handling</a></li>
+                        <li><a href="lesson14.html">Regular Expressions</a></li>
+                    </ul>
+                </li>
+                <li><a href="../exercises/index.html">Exercises</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>PHP String Functions</h1>
+                <p>Learn essential functions for working with strings in PHP.</p>
+            </div>
+
+            <section>
+                <h2>Common String Functions</h2>
+
+                <h3>strlen() - String Length</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $str = "Hello World";
+    echo strlen($str); // Outputs 11
+?&gt;</code></pre>
+                </div>
+
+                <h3>str_word_count() - Count Words</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $str = "Hello World PHP";
+    echo str_word_count($str); // Outputs 3
+?&gt;</code></pre>
+                </div>
+
+                <h3>strrev() - Reverse String</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $str = "Hello";
+    echo strrev($str); // Outputs "olleH"
+?&gt;</code></pre>
+                </div>
+
+                <h3>strpos() - Find Substring Position</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $str = "Hello World";
+    echo strpos($str, "World"); // Outputs 6
+    echo strpos($str, "PHP"); // Outputs false
+?&gt;</code></pre>
+                </div>
+
+                <h3>str_replace() - Replace Text</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $str = "Hello World";
+    $new = str_replace("World", "PHP", $str);
+    echo $new; // Outputs "Hello PHP"
+?&gt;</code></pre>
+                </div>
+
+                <h3>substr() - Extract Substring</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $str = "Hello World";
+    echo substr($str, 0, 5);   // Outputs "Hello"
+    echo substr($str, 6);      // Outputs "World"
+    echo substr($str, -5);     // Outputs "World"
+?&gt;</code></pre>
+                </div>
+
+                <h3>strtoupper() / strtolower()</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $str = "Hello World";
+    echo strtoupper($str); // Outputs "HELLO WORLD"
+    echo strtolower($str); // Outputs "hello world"
+?&gt;</code></pre>
+                </div>
+
+                <h3>trim() / ltrim() / rtrim()</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $str = "  Hello World  ";
+    
+    echo trim($str);   // Removes spaces both sides
+    echo ltrim($str);  // Removes left spaces
+    echo rtrim($str);  // Removes right spaces
+?&gt;</code></pre>
+                </div>
+
+                <h3>str_split() - Convert String to Array</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $str = "Hello";
+    $arr = str_split($str);
+    // Result: ["H", "e", "l", "l", "o"]
+    
+    $arr2 = str_split($str, 2);
+    // Result: ["He", "ll", "o"]
+?&gt;</code></pre>
+                </div>
+
+                <h3>explode() / implode()</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    // Split string into array
+    $str = "Apple,Banana,Orange";
+    $arr = explode(",", $str);
+    
+    // Join array into string
+    $str2 = implode(",", $arr);
+?&gt;</code></pre>
+                </div>
+
+                <h3>ucfirst() / ucwords()</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $str = "hello world";
+    
+    echo ucfirst($str);  // Outputs "Hello world"
+    echo ucwords($str);  // Outputs "Hello World"
+?&gt;</code></pre>
+                </div>
+
+                <h3>number_format() - Format Numbers</h3>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $num = 1234.56789;
+    echo number_format($num, 2); // Outputs "1,234.57"
+?&gt;</code></pre>
+                </div>
+            </section>
+
+            <div class="lesson-nav">
+                <a href="lesson11.html">← Previous</a>
+                <a href="lesson13.html">Next →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Learn Programming. All rights reserved.</p>
+    </footer>
+</body>
+</html>

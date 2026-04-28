@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP If Statements - Learn PHP</title>
+    <link rel="stylesheet" href="../../../css/main-style.css">
+    <link rel="stylesheet" href="../../../css/course-layout.css">
+    <script src="../../../css/sidebar.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🎓 Learn Programming</h1>
+            <p class="tagline">Free Online Tutorials for School Students</p>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">PHP Course</div>
+            <ul class="sidebar-nav">
+                <li><a href="../index.html">Course Overview</a></li>
+                <li>
+                    <a href="#">Basics ▼</a>
+                    <ul>
+                        <li><a href="lesson1.html">Introduction</a></li>
+                        <li><a href="lesson2.html">Installation & Setup</a></li>
+                        <li><a href="lesson3.html">Syntax Basics</a></li>
+                        <li><a href="lesson4.html">Variables</a></li>
+                        <li><a href="lesson5.html">Data Types</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Control Structures ▼</a>
+                    <ul>
+                        <li><a href="lesson6.html" class="active">If Statements</a></li>
+                        <li><a href="lesson7.html">Switch Cases</a></li>
+                        <li><a href="lesson8.html">Loops</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Functions & Arrays ▼</a>
+                    <ul>
+                        <li><a href="lesson9.html">Functions</a></li>
+                        <li><a href="lesson10.html">Arrays</a></li>
+                        <li><a href="lesson11.html">Array Functions</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Advanced Topics ▼</a>
+                    <ul>
+                        <li><a href="lesson12.html">String Functions</a></li>
+                        <li><a href="lesson13.html">File Handling</a></li>
+                        <li><a href="lesson14.html">Regular Expressions</a></li>
+                    </ul>
+                </li>
+                <li><a href="../exercises/index.html">Exercises</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>PHP If Statements</h1>
+                <p>Learn how to make decisions in your code with conditional statements.</p>
+            </div>
+
+            <section>
+                <h2>The If Statement</h2>
+                <p>Use the if statement to execute code only if a condition is true.</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    if (condition) {
+        // Code to execute if condition is true
+    }
+?&gt;</code></pre>
+                </div>
+
+                <h2>Comparison Operators</h2>
+                <ul class="topic-list">
+                    <li><code>==</code> - Equal to</li>
+                    <li><code>!=</code> - Not equal to</li>
+                    <li><code>===</code> - Identical (equal and same type)</li>
+                    <li><code>!==</code> - Not identical</li>
+                    <li><code>&lt;</code> - Less than</li>
+                    <li><code>&gt;</code> - Greater than</li>
+                    <li><code>&lt;=</code> - Less than or equal to</li>
+                    <li><code>&gt;=</code> - Greater than or equal to</li>
+                </ul>
+
+                <h2>The If...Else Statement</h2>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $age = 20;
+    
+    if ($age >= 18) {
+        echo "You are an adult";
+    } else {
+        echo "You are a minor";
+    }
+?&gt;</code></pre>
+                </div>
+
+                <h2>The If...Else If...Else Statement</h2>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $score = 75;
+    
+    if ($score >= 90) {
+        echo "Grade A";
+    } else if ($score >= 80) {
+        echo "Grade B";
+    } else if ($score >= 70) {
+        echo "Grade C";
+    } else {
+        echo "Grade F";
+    }
+?&gt;</code></pre>
+                </div>
+
+                <h2>Logical Operators</h2>
+                <ul class="topic-list">
+                    <li><code>and</code> or <code>&&</code> - Both conditions must be true</li>
+                    <li><code>or</code> or <code>||</code> - At least one condition must be true</li>
+                    <li><code>xor</code> - Exactly one condition must be true</li>
+                    <li><code>!</code> - NOT operator (negation)</li>
+                </ul>
+
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $age = 20;
+    $hasLicense = true;
+    
+    if ($age >= 18 && $hasLicense) {
+        echo "You can drive";
+    }
+?&gt;</code></pre>
+                </div>
+
+                <h2>Ternary Operator</h2>
+                <p>A shorthand way to write if...else statements:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $age = 20;
+    $status = ($age >= 18) ? "Adult" : "Minor";
+    echo $status; // Outputs "Adult"
+?&gt;</code></pre>
+                </div>
+            </section>
+
+            <div class="lesson-nav">
+                <a href="lesson5.html">← Previous</a>
+                <a href="lesson7.html">Next →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Learn Programming. All rights reserved.</p>
+    </footer>
+</body>
+</html>

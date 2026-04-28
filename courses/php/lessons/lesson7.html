@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Switch Statements - Learn PHP</title>
+    <link rel="stylesheet" href="../../../css/main-style.css">
+    <link rel="stylesheet" href="../../../css/course-layout.css">
+    <script src="../../../css/sidebar.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🎓 Learn Programming</h1>
+            <p class="tagline">Free Online Tutorials for School Students</p>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">PHP Course</div>
+            <ul class="sidebar-nav">
+                <li><a href="../index.html">Course Overview</a></li>
+                <li>
+                    <a href="#">Basics ▼</a>
+                    <ul>
+                        <li><a href="lesson1.html">Introduction</a></li>
+                        <li><a href="lesson2.html">Installation & Setup</a></li>
+                        <li><a href="lesson3.html">Syntax Basics</a></li>
+                        <li><a href="lesson4.html">Variables</a></li>
+                        <li><a href="lesson5.html">Data Types</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Control Structures ▼</a>
+                    <ul>
+                        <li><a href="lesson6.html">If Statements</a></li>
+                        <li><a href="lesson7.html" class="active">Switch Cases</a></li>
+                        <li><a href="lesson8.html">Loops</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Functions & Arrays ▼</a>
+                    <ul>
+                        <li><a href="lesson9.html">Functions</a></li>
+                        <li><a href="lesson10.html">Arrays</a></li>
+                        <li><a href="lesson11.html">Array Functions</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Advanced Topics ▼</a>
+                    <ul>
+                        <li><a href="lesson12.html">String Functions</a></li>
+                        <li><a href="lesson13.html">File Handling</a></li>
+                        <li><a href="lesson14.html">Regular Expressions</a></li>
+                    </ul>
+                </li>
+                <li><a href="../exercises/index.html">Exercises</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>PHP Switch Statements</h1>
+                <p>Use switch statements to select one of several code blocks to execute.</p>
+            </div>
+
+            <section>
+                <h2>Switch Statement Syntax</h2>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    switch (expression) {
+        case value1:
+            // Code if expression equals value1
+            break;
+        case value2:
+            // Code if expression equals value2
+            break;
+        default:
+            // Code if expression doesn't match any case
+    }
+?&gt;</code></pre>
+                </div>
+
+                <h2>How It Works</h2>
+                <ul class="topic-list">
+                    <li>The expression is evaluated once</li>
+                    <li>The value is compared with each case</li>
+                    <li>When a match is found, the code executes</li>
+                    <li>The <code>break</code> statement stops execution</li>
+                    <li>The <code>default</code> keyword handles no matches</li>
+                </ul>
+
+                <h2>Example</h2>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $day = 3;
+    
+    switch ($day) {
+        case 1:
+            echo "Monday";
+            break;
+        case 2:
+            echo "Tuesday";
+            break;
+        case 3:
+            echo "Wednesday";
+            break;
+        case 4:
+            echo "Thursday";
+            break;
+        case 5:
+            echo "Friday";
+            break;
+        default:
+            echo "Weekend";
+    }
+    // Outputs "Wednesday"
+?&gt;</code></pre>
+                </div>
+
+                <h2>The Default Keyword</h2>
+                <p>The default keyword specifies code to run if no cases match:</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $color = "purple";
+    
+    switch ($color) {
+        case "red":
+            echo "Red";
+            break;
+        case "blue":
+            echo "Blue";
+            break;
+        default:
+            echo "Unknown color";
+    }
+    // Outputs "Unknown color"
+?&gt;</code></pre>
+                </div>
+
+                <h2>Important Notes</h2>
+                <ul class="topic-list">
+                    <li>Always include <code>break;</code> statements to avoid fall-through behavior</li>
+                    <li>Use strict comparison (===) in some cases</li>
+                    <li>Switch is more efficient than multiple if...else for many conditions</li>
+                </ul>
+            </section>
+
+            <div class="lesson-nav">
+                <a href="lesson6.html">← Previous</a>
+                <a href="lesson8.html">Next →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Learn Programming. All rights reserved.</p>
+    </footer>
+</body>
+</html>

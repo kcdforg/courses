@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5: Number Classification - PHP</title>
+    <link rel="stylesheet" href="../../../css/main-style.css">
+    <link rel="stylesheet" href="../../../css/course-layout.css">
+    <script src="../../../css/sidebar.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🎓 Learn Programming</h1>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">PHP Course</div>
+            <ul class="sidebar-nav">
+                <li><a href="../index.html">Course Overview</a></li>
+                <li><a href="index.html">Exercises</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>Exercise 5: Number Classification</h1>
+                <p>Classify numbers based on various properties.</p>
+            </div>
+
+            <section>
+                <h2>Objective</h2>
+                <p>Use multiple if-else statements to classify a number.</p>
+
+                <h2>Requirements</h2>
+                <ul class="topic-list">
+                    <li>Check if number is positive, negative, or zero</li>
+                    <li>Check if number is even or odd</li>
+                    <li>Combine both checks in output</li>
+                    <li>Test with multiple numbers</li>
+                </ul>
+
+                <h2>Starter Code</h2>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $number = 42;
+    
+    // TODO: Check if positive/negative/zero
+    // TODO: Check if even/odd
+    // TODO: Display classification
+    
+?&gt;</code></pre>
+                </div>
+
+                <h2>Expected Output</h2>
+                <div class="code-block">
+                    <pre><code>Number: 42
+Classification: Positive, Even
+
+Number: -15
+Classification: Negative, Odd
+
+Number: 0
+Classification: Zero</code></pre>
+                </div>
+
+                <h2>Hint</h2>
+                <p>Use the modulo operator (%) to check even/odd: <code>$number % 2 == 0</code> for even.</p>
+            </section>
+
+            <div class="lesson-nav">
+                <a href="exercise4.html">← Previous Exercise</a>
+                <a href="exercise6.html">Next Exercise →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Learn Programming. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 16: String Validation - PHP</title>
+    <link rel="stylesheet" href="../../../css/main-style.css">
+    <link rel="stylesheet" href="../../../css/course-layout.css">
+    <script src="../../../css/sidebar.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🎓 Learn Programming</h1>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">PHP Course</div>
+            <ul class="sidebar-nav">
+                <li><a href="../index.html">Course Overview</a></li>
+                <li><a href="index.html">Exercises</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>Exercise 16: String Validation Functions</h1>
+                <p>Create functions to validate email, phone, and password.</p>
+            </div>
+
+            <section>
+                <h2>Objective</h2>
+                <p>Use string and regex functions for data validation.</p>
+
+                <h2>Requirements</h2>
+                <ul class="topic-list">
+                    <li>Create validateEmail() function</li>
+                    <li>Create validatePhone() function</li>
+                    <li>Create validatePassword() function</li>
+                    <li>Test with valid and invalid inputs</li>
+                </ul>
+
+                <h2>Validation Rules</h2>
+                <ul class="topic-list">
+                    <li><strong>Email:</strong> Must contain @ and . in proper format</li>
+                    <li><strong>Phone:</strong> 10 digits, can have dashes or spaces</li>
+                    <li><strong>Password:</strong> Min 8 characters, mix of upper/lower/digits</li>
+                </ul>
+
+                <h2>Starter Code</h2>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    function validateEmail($email) {
+        // TODO: Validate email format
+    }
+    
+    function validatePhone($phone) {
+        // TODO: Validate phone number
+    }
+    
+    function validatePassword($password) {
+        // TODO: Validate password strength
+    }
+    
+    // TODO: Test with multiple values
+    
+?&gt;</code></pre>
+                </div>
+
+                <h2>Expected Output</h2>
+                <div class="code-block">
+                    <pre><code>Email 'john@example.com': Valid
+Email 'invalid.email': Invalid
+Phone '555-123-4567': Valid
+Phone '12345': Invalid
+Password 'Pass123': Invalid (too short)
+Password 'Pass1234': Valid</code></pre>
+                </div>
+            </section>
+
+            <div class="lesson-nav">
+                <a href="exercise15.html">← Previous Exercise</a>
+                <a href="exercise17.html">Next Exercise →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Learn Programming. All rights reserved.</p>
+    </footer>
+</body>
+</html>

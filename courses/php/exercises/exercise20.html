@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 20: Inventory Management - PHP</title>
+    <link rel="stylesheet" href="../../../css/main-style.css">
+    <link rel="stylesheet" href="../../../css/course-layout.css">
+    <script src="../../../css/sidebar.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🎓 Learn Programming</h1>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">PHP Course</div>
+            <ul class="sidebar-nav">
+                <li><a href="../index.html">Course Overview</a></li>
+                <li><a href="index.html">Exercises</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>Exercise 20: Inventory Management</h1>
+                <p>Build a simple inventory system.</p>
+            </div>
+
+            <section>
+                <h2>Objective</h2>
+                <p>Create an inventory management system using arrays and functions.</p>
+
+                <h2>Requirements</h2>
+                <ul class="topic-list">
+                    <li>Create product inventory array</li>
+                    <li>Add function to display all products</li>
+                    <li>Add function to update quantity</li>
+                    <li>Calculate total inventory value</li>
+                    <li>Find low stock items (qty < 10)</li>
+                    <li>Generate inventory report</li>
+                </ul>
+
+                <h2>Starter Code</h2>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $inventory = array(
+        array("id" => 1, "name" => "Laptop", "qty" => 15, "price" => 50000),
+        array("id" => 2, "name" => "Mouse", "qty" => 5, "price" => 500),
+        array("id" => 3, "name" => "Keyboard", "qty" => 20, "price" => 2000),
+    );
+    
+    function addProduct(&$inventory, $id, $name, $qty, $price) {
+        // TODO: Add product to inventory
+    }
+    
+    // TODO: Display inventory
+    // TODO: Update quantities
+    // TODO: Generate report
+    
+?&gt;</code></pre>
+                </div>
+
+                <h2>Expected Output</h2>
+                <div class="code-block">
+                    <pre><code>Inventory Report
+=================
+ID | Product | Qty | Price | Total Value
+1 | Laptop | 15 | 50000 | 750000
+2 | Mouse | 5 | 500 | 2500
+3 | Keyboard | 20 | 2000 | 40000
+
+Total Inventory Value: 792500
+Low Stock Items: Mouse</code></pre>
+                </div>
+            </section>
+
+            <div class="lesson-nav">
+                <a href="exercise19.html">← Previous Exercise</a>
+                <a href="exercise21.html">Next Exercise →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Learn Programming. All rights reserved.</p>
+    </footer>
+</body>
+</html>

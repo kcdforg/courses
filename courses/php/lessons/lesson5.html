@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Data Types - Learn PHP</title>
+    <link rel="stylesheet" href="../../../css/main-style.css">
+    <link rel="stylesheet" href="../../../css/course-layout.css">
+    <script src="../../../css/sidebar.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🎓 Learn Programming</h1>
+            <p class="tagline">Free Online Tutorials for School Students</p>
+        </div>
+    </header>
+
+    <div class="course-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">PHP Course</div>
+            <ul class="sidebar-nav">
+                <li><a href="../index.html">Course Overview</a></li>
+                <li>
+                    <a href="#">Basics ▼</a>
+                    <ul>
+                        <li><a href="lesson1.html">Introduction</a></li>
+                        <li><a href="lesson2.html">Installation & Setup</a></li>
+                        <li><a href="lesson3.html">Syntax Basics</a></li>
+                        <li><a href="lesson4.html">Variables</a></li>
+                        <li><a href="lesson5.html" class="active">Data Types</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Control Structures ▼</a>
+                    <ul>
+                        <li><a href="lesson6.html">If Statements</a></li>
+                        <li><a href="lesson7.html">Switch Cases</a></li>
+                        <li><a href="lesson8.html">Loops</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Functions & Arrays ▼</a>
+                    <ul>
+                        <li><a href="lesson9.html">Functions</a></li>
+                        <li><a href="lesson10.html">Arrays</a></li>
+                        <li><a href="lesson11.html">Array Functions</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Advanced Topics ▼</a>
+                    <ul>
+                        <li><a href="lesson12.html">String Functions</a></li>
+                        <li><a href="lesson13.html">File Handling</a></li>
+                        <li><a href="lesson14.html">Regular Expressions</a></li>
+                    </ul>
+                </li>
+                <li><a href="../exercises/index.html">Exercises</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h1>PHP Data Types</h1>
+                <p>Understand the different data types available in PHP.</p>
+            </div>
+
+            <section>
+                <h2>PHP Data Types</h2>
+                <p>PHP supports the following data types:</p>
+
+                <h2>1. String</h2>
+                <p>A string is a sequence of characters enclosed in quotes.</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $str1 = "Hello World"; // Double quotes
+    $str2 = 'Hello World'; // Single quotes
+    echo $str1;
+?&gt;</code></pre>
+                </div>
+
+                <h2>2. Integer</h2>
+                <p>An integer is a whole number without decimals.</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $int = 1234;
+    $int = -1234; // Negative
+    $int = 0x8C; // Hexadecimal
+    var_dump($int);
+?&gt;</code></pre>
+                </div>
+
+                <h2>3. Float (Double)</h2>
+                <p>A float is a number with decimal points.</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $float = 9.99;
+    $float = 2.0e3; // Scientific notation
+    var_dump($float);
+?&gt;</code></pre>
+                </div>
+
+                <h2>4. Boolean</h2>
+                <p>A boolean is either TRUE or FALSE.</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $bool1 = true;
+    $bool2 = false;
+    
+    if ($bool1) {
+        echo "True!";
+    }
+?&gt;</code></pre>
+                </div>
+
+                <h2>5. Array</h2>
+                <p>An array stores multiple values in a single variable.</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $fruits = array("Apple", "Banana", "Orange");
+    echo $fruits[0]; // Outputs "Apple"
+    
+    // Short syntax
+    $colors = ["Red", "Green", "Blue"];
+?&gt;</code></pre>
+                </div>
+
+                <h2>6. Object</h2>
+                <p>An object is an instance of a class.</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    class Car {
+        public $color = "red";
+    }
+    
+    $car = new Car();
+    echo $car->color;
+?&gt;</code></pre>
+                </div>
+
+                <h2>7. NULL</h2>
+                <p>A variable with NULL value represents an empty value.</p>
+                <div class="code-block">
+                    <pre><code>&lt;?php
+    $x = "Hello";
+    $x = null; // Now empty
+    var_dump($x);
+?&gt;</code></pre>
+                </div>
+
+                <h2>Type Checking Functions</h2>
+                <ul class="topic-list">
+                    <li><code>is_string()</code> - Check if variable is a string</li>
+                    <li><code>is_int()</code> - Check if variable is an integer</li>
+                    <li><code>is_float()</code> - Check if variable is a float</li>
+                    <li><code>is_bool()</code> - Check if variable is a boolean</li>
+                    <li><code>is_array()</code> - Check if variable is an array</li>
+                    <li><code>is_null()</code> - Check if variable is NULL</li>
+                </ul>
+            </section>
+
+            <div class="lesson-nav">
+                <a href="lesson4.html">← Previous</a>
+                <a href="lesson6.html">Next →</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Learn Programming. All rights reserved.</p>
+    </footer>
+</body>
+</html>
